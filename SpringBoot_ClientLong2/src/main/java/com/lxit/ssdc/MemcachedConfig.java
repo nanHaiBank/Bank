@@ -1,4 +1,4 @@
-package com.example;
+package com.lxit.ssdc;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;

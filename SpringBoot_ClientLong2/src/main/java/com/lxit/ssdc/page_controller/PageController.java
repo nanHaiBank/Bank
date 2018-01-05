@@ -1,4 +1,4 @@
-package com.example;
+package com.lxit.ssdc.page_controller;
 
 import javax.annotation.Resource;
 
@@ -7,18 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.whalin.MemCached.MemCachedClient;
 
-
 @Controller
-public class User {
+public class PageController {
 
-	@Resource
-	MemCachedClient  memCachedClient;
 	
-	@RequestMapping("/add")
+	@RequestMapping("/index")
 	public String add(){
-		memCachedClient.set("123", 321);
-		Integer str = (Integer) memCachedClient.get("123");
-		System.out.println(str);
 		return "首页";
 	}
 
