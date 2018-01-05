@@ -18,7 +18,9 @@ public class Plan {
 	int exploitPeriod;// 开发周期
 
 	String securitDate;// 摘牌日
-
+    
+	int planStateId;//计划状态
+	
 	String CommercialDate;// 开工日
 
 	String saleDate;// 开售日
@@ -36,6 +38,16 @@ public class Plan {
 	String lastUpdateDate;// 最后修改日期
 
 	String remark;// 备注
+
+	
+    
+	public int getPlanStateId() {
+		return planStateId;
+	}
+
+	public void setPlanStateId(int planStateId) {
+		this.planStateId = planStateId;
+	}
 
 	public int getId() {
 		return id;
