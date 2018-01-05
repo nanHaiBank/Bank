@@ -31,6 +31,9 @@ public class Project {
 	int lastUpdatedBy;// 最后修改人
 	String lastUpdateDate;// 最后修改日期
 	String remark;// 备注
+	
+	String completeDate; //实际完成时间
+	
 
 	public int getId() {
 		return id;
@@ -190,6 +193,14 @@ public class Project {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+	
+	public String getCompleteDate() {
+		return completeDate;
+	}
+
+	public void setCompleteDate(String completeDate) {
+		this.completeDate = completeDate;
 	}
 
 	public Project() {
