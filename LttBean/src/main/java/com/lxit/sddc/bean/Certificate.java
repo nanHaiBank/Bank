@@ -1,5 +1,5 @@
 package com.lxit.sddc.bean;
-
+     
 /**
  * Ö¤¼þ±í
  * 
