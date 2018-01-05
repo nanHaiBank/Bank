@@ -1,31 +1,31 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ¼Æ»®½Úµã¸ÚÎ»ÖĞ¼ä±í
+ * è®¡åˆ’èŠ‚ç‚¹å²—ä½ä¸­é—´è¡¨
  * 
  * @author LongShao
  *
  */
 public class PlanNodePost {
-	int id;// Ö÷¼ü
+	int id;// ä¸»é”®
 
-	int nodeId;// ¼Æ»®½ÚµãId
+	int nodeId;// è®¡åˆ’èŠ‚ç‚¹Id
 
-	int deptPostId;// ¸ÚÎ»²¿ÃÅÖĞ¼ä±íId
+	int deptPostId;// å²—ä½éƒ¨é—¨ä¸­é—´è¡¨Id
 
-	String d_key;// ¸ÚÎ»ÀàĞÍ(ÒıÓÃÊı¾İ×ÖµäµÄkey)
+	String d_key;// å²—ä½ç±»å‹(å¼•ç”¨æ•°æ®å­—å…¸çš„key)
 
-	int userId;// ¸ÚÎ»ÈË
+	int userId;// å²—ä½äºº
 
-	int createUser;// ´´½¨ÈË
+	int createUser;// åˆ›å»ºäºº
 
-	String createTime;// ´´½¨Ê±¼ä
+	String createTime;// åˆ›å»ºæ—¶é—´
 
-	int lastName;// ×îºóĞŞ¸ÄÈË
+	int lastName;// æœ€åä¿®æ”¹äºº
 
-	String lastTime;// ×îºóĞŞ¸ÄÊ±¼ä
+	String lastTime;// æœ€åä¿®æ”¹æ—¶é—´
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

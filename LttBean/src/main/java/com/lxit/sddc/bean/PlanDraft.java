@@ -1,30 +1,30 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ¼Æ»®²İ¸å±í
+ * è®¡åˆ’è‰ç¨¿è¡¨
  * 
  * @author LongShao
  *
  */
 public class PlanDraft {
-	int id;// ¼Æ»®Id
+	int id;// è®¡åˆ’Id
 
-	String name;// ¼Æ»®Ãû³Æ
-	int templateId;// Ä£°åId
-	int planCommercial;// ¼Æ»®ÒµÌ¬
-	int exploitPeriod;// ¿ª·¢ÖÜÆÚ
-	String securitDate;// ÕªÅÆÈÕ
-	String CommercialDate;// ¿ª¹¤ÈÕ
+	String name;// è®¡åˆ’åç§°
+	int templateId;// æ¨¡æ¿Id
+	int planCommercial;// è®¡åˆ’ä¸šæ€
+	int exploitPeriod;// å¼€å‘å‘¨æœŸ
+	String securitDate;// æ‘˜ç‰Œæ—¥
+	String CommercialDate;// å¼€å·¥æ—¥
 
-	String saleDate;// ¿ªÊÛÈÕ
-	String buildingDate;// ½»Â¥ÈÕ
-	int clusterId;// ×éÍÅId
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String saleDate;// å¼€å”®æ—¥
+	String buildingDate;// äº¤æ¥¼æ—¥
+	int clusterId;// ç»„å›¢Id
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

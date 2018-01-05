@@ -1,22 +1,22 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * È¨ÏŞ±í
+ * æƒé™è¡¨
  * 
  * @author LongShao
  *
  */
 public class Jurisdiction {
-	int id;// È¨ÏŞId
+	int id;// æƒé™Id
 
-	String name;// È¨ÏŞÃû
-	int commandId;// ËùÊô¸¸²Ëµ¥
-	String url;// Á´½Óµ½µÄurl
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	String name;// æƒé™å
+	int commandId;// æ‰€å±çˆ¶èœå•
+	String url;// é“¾æ¥åˆ°çš„url
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

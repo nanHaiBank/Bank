@@ -1,36 +1,36 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ÏîÄ¿±í
+ * é¡¹ç›®è¡¨
  * 
  * @author LongShao
  *
  */
 public class Project {
-	int id;// ÏîÄ¿Id
+	int id;// é¡¹ç›®Id
 
-	String name;// ÏîÄ¿Ãû³Æ
-	int companyId;// ¹«Ë¾Id
-	String projectPhoto;// ÏîÄ¿Í¼Æ¬
-	int exploitPeriod;// ¿ª·¢ÖÜÆÚ
-	String landArea;// ÓÃµØÃæ»ı£¨m2£©
-	String city;// ³ÇÊĞ
+	String name;// é¡¹ç›®åç§°
+	int companyId;// å…¬å¸Id
+	String projectPhoto;// é¡¹ç›®å›¾ç‰‡
+	int exploitPeriod;// å¼€å‘å‘¨æœŸ
+	String landArea;// ç”¨åœ°é¢ç§¯ï¼ˆm2ï¼‰
+	String city;// åŸå¸‚
 
-	String ratio;// Èİ»ıÂÊ
-	String landareamu;// ÓÃµØÃæ»ı£¨Ä¶£©
-	String tolerancearea;// ¼ÆÈİÃæ»ı
-	String floorArea;// µØÉÏ½¨ÖşÃæ»ı
+	String ratio;// å®¹ç§¯ç‡
+	String landareamu;// ç”¨åœ°é¢ç§¯ï¼ˆäº©ï¼‰
+	String tolerancearea;// è®¡å®¹é¢ç§¯
+	String floorArea;// åœ°ä¸Šå»ºç­‘é¢ç§¯
 
-	String mayArea;// ¿ÉÊÛ¼ÆÈİÃæ»ı
-	String notManyArea;// ²»ÊÛ¼ÆÈİÃæ»ı
+	String mayArea;// å¯å”®è®¡å®¹é¢ç§¯
+	String notManyArea;// ä¸å”®è®¡å®¹é¢ç§¯
 
-	int parking;// Í£³µÎ»
-	String registerDate;// µÇ¼ÇÈÕÆÚ
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	int parking;// åœè½¦ä½
+	String registerDate;// ç™»è®°æ—¥æœŸ
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

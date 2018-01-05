@@ -1,7 +1,7 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ¸ÚÎ»½ÚµãÄ£°åÖĞ¼ä±í
+ * å²—ä½èŠ‚ç‚¹æ¨¡æ¿ä¸­é—´è¡¨
  * 
  * @author LongShao
  *

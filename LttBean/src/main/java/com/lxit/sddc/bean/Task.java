@@ -1,35 +1,35 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ÈÎÎñ±í
+ * ä»»åŠ¡è¡¨
  * 
  * @author LongShao
  *
  */
 public class Task {
-	int taskId;// ÈÎÎñ±íId
+	int taskId;// ä»»åŠ¡è¡¨Id
 
-	int nodeType;// ÈÎÎñÀàĞÍ(Êı¾İ×Öµäkey)ÖĞÆÚ¡¢µ½ÆÚ¡¢ÉóºË
+	int nodeType;// ä»»åŠ¡ç±»å‹(æ•°æ®å­—å…¸key)ä¸­æœŸã€åˆ°æœŸã€å®¡æ ¸
 
-	String businessMatter;// ÒµÎñÊÂÏî
+	String businessMatter;// ä¸šåŠ¡äº‹é¡¹
 
-	int taskState;// ÈÎÎñ×´Ì¬(Êı¾İ×Öµäkey)´ıÌî±¨¡¢ÉóÅúÖĞ¡¢ÒÑÍê³É
+	int taskState;// ä»»åŠ¡çŠ¶æ€(æ•°æ®å­—å…¸key)å¾…å¡«æŠ¥ã€å®¡æ‰¹ä¸­ã€å·²å®Œæˆ
 
-	int nodeState;// ½Úµã×´Ì¬(Êı¾İ×Öµäkey)ºìµÆ¡¢»ÆµÆ¡¢ÂÌµÆ
+	int nodeState;// èŠ‚ç‚¹çŠ¶æ€(æ•°æ®å­—å…¸key)çº¢ç¯ã€é»„ç¯ã€ç»¿ç¯
 
-	int warning;// ½ÚµãÔ¤¾¯¼¶±ğ£¨Êı¾İ×Öµäkey£©Ò»¼¶¡¢¶ş¼¶¡¢Èı¼¶Ô¤¾¯
+	int warning;// èŠ‚ç‚¹é¢„è­¦çº§åˆ«ï¼ˆæ•°æ®å­—å…¸keyï¼‰ä¸€çº§ã€äºŒçº§ã€ä¸‰çº§é¢„è­¦
 
-	String adjunct;// ¸½¼ş
+	String adjunct;// é™„ä»¶
 
-	int createdBy;// ´´½¨ÈË
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
 
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getTaskId() {
 		return taskId;

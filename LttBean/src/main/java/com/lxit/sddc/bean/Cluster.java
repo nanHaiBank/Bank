@@ -1,47 +1,47 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ×éÍÅ±í
+ * ç»„å›¢è¡¨
  * 
  * @author LongShao
  *
  */
 public class Cluster {
-	int id;// ×éÍÅId
+	int id;// ç»„å›¢Id
 
-	String name;// ×éÍÅÃû³Æ
+	String name;// ç»„å›¢åç§°
 
-	int landId;// ËùÊôµØ¿éÃû³Æ
+	int landId;// æ‰€å±åœ°å—åç§°
 
-	String landArea;// ÓÃµØÃæ»ı£¨Íò©O£©
+	String landArea;// ç”¨åœ°é¢ç§¯ï¼ˆä¸‡ã¡ï¼‰
 
-	String landareamu;// ÓÃµØÃæ»ı£¨Ä¶£©
+	String landareamu;// ç”¨åœ°é¢ç§¯ï¼ˆäº©ï¼‰
 
-	String overgArea;// µØÉÏ½¨ÖşÃæ»ı£¨Íò©O£©
+	String overgArea;// åœ°ä¸Šå»ºç­‘é¢ç§¯ï¼ˆä¸‡ã¡ï¼‰
 
-	String floorArea;// µØÏÂ½¨ÖşÃæ»ı£¨Íò©O£©
+	String floorArea;// åœ°ä¸‹å»ºç­‘é¢ç§¯ï¼ˆä¸‡ã¡ï¼‰
 
-	String mayArea;// ¿ÉÊÛ¼ÆÈİÃæ»ı£¨Íò©O£©
+	String mayArea;// å¯å”®è®¡å®¹é¢ç§¯ï¼ˆä¸‡ã¡ï¼‰
 
-	String notMayArea;// ²»¿ÉÊÛ¼ÆÈİÃæ»ı£¨Íò©O£©
+	String notMayArea;// ä¸å¯å”®è®¡å®¹é¢ç§¯ï¼ˆä¸‡ã¡ï¼‰
 
-	int equityStall;// ²úÈ¨³µÎ»£¨¸ö£©
+	int equityStall;// äº§æƒè½¦ä½ï¼ˆä¸ªï¼‰
 
-	int useEquityStall;// Ê¹ÓÃÈ¨³µÎ»£¨¸ö£©
+	int useEquityStall;// ä½¿ç”¨æƒè½¦ä½ï¼ˆä¸ªï¼‰
 
-	String clusterMessage;// ×éÍÅÌØÊâĞÅÏ¢
+	String clusterMessage;// ç»„å›¢ç‰¹æ®Šä¿¡æ¯
 
-	int towerNumber;// Â¥¶°Êı
+	int towerNumber;// æ¥¼æ ‹æ•°
 
-	int createdBy;// ´´½¨ÈË
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
 
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

@@ -1,47 +1,47 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ½Úµã±í
+ * èŠ‚ç‚¹è¡¨
  * 
  * @author LongShao
  *
  */
 public class Node {
-	int id;// Ö÷¼ü
+	int id;// ä¸»é”®
 
-	int planId;// ¼Æ»®Id
+	int planId;// è®¡åˆ’Id
 
-	int number;// ĞòºÅ
+	int number;// åºå·
 
-	int rank;// ¼¶±ğ
+	int rank;// çº§åˆ«
 
-	String stage;// ½×¶Î
+	String stage;// é˜¶æ®µ
 
-	String businessMatter;// ÒµÎñÊÂÏî
+	String businessMatter;// ä¸šåŠ¡äº‹é¡¹
 
-	String nodeDate;// ½ÚµãÈÕÆÚ
+	String nodeDate;// èŠ‚ç‚¹æ—¥æœŸ
 
-	int period;// ÖÜÆÚ
+	int period;// å‘¨æœŸ
 
-	String planIdOk;// ¼Æ»®Íê³ÉÈÕÆÚ
+	String planIdOk;// è®¡åˆ’å®Œæˆæ—¥æœŸ
 
-	int sponsorDeptId;// ¿ª·¢²¿ÃÅ(¹«Ë¾²¿ÃÅÖĞ¼ä±íId)
+	int sponsorDeptId;// å¼€å‘éƒ¨é—¨(å…¬å¸éƒ¨é—¨ä¸­é—´è¡¨Id)
 
-	int receptionDeptId;// ½ÓÊÕ²¿ÃÅ(¹«Ë¾²¿ÃÅÖĞ¼ä±íId)
+	int receptionDeptId;// æ¥æ”¶éƒ¨é—¨(å…¬å¸éƒ¨é—¨ä¸­é—´è¡¨Id)
 
-	int assessState;// ¿¼ºË×´Ì¬,ÊÇ·ñ¿¼ºË£¨Êı¾İ×ÖµäId£©
+	int assessState;// è€ƒæ ¸çŠ¶æ€,æ˜¯å¦è€ƒæ ¸ï¼ˆæ•°æ®å­—å…¸Idï¼‰
 
-	int assessStop;// ÊÇ·ñÆôÓÃ
+	int assessStop;// æ˜¯å¦å¯ç”¨
 
-	int createdBy;// ´´½¨ÈË
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
 
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

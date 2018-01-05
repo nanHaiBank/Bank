@@ -1,24 +1,24 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ÓÃ»§±í
+ * ç”¨æˆ·è¡¨
  * 
  * @author LongShao
  *
  */
 public class User {
-	int id;// ÓÃ»§Id
+	int id;// ç”¨æˆ·Id
 
-	String userName;// ÓÃ»§Ãû
-	String pass;// ÓÃ»§ÃÜÂë
-	int deptPostId;// ²¿ÃÅ¸ÚÎ»ÖĞ¼ä±íId
-	String name;// ĞÕÃû
-	int createdBy;// ´´½¨ÈË
+	String userName;// ç”¨æˆ·å
+	String pass;// ç”¨æˆ·å¯†ç 
+	int deptPostId;// éƒ¨é—¨å²—ä½ä¸­é—´è¡¨Id
+	String name;// å§“å
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

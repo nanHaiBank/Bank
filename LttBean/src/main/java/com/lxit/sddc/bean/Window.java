@@ -1,31 +1,31 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ´°¿ÚÆÚ±í
+ * çª—å£æœŸè¡¨
  * 
  * @author LongShao
  *
  */
 public class Window {
-	int id;// ´°¿ÚÆÚId
+	int id;// çª—å£æœŸId
 
-	int Number;// ĞòºÅ
+	int Number;// åºå·
 
-	int datePeriod;// Ê±¼äÖÜÆÚ
+	int datePeriod;// æ—¶é—´å‘¨æœŸ
 
-	String startTime;// ¿ªÊ¼Ê±¼ä
+	String startTime;// å¼€å§‹æ—¶é—´
 
-	String overTime;// ½áÊøÊ±¼ä
+	String overTime;// ç»“æŸæ—¶é—´
 
-	int lastName;// ×îºó²Ù×÷ÈË
+	int lastName;// æœ€åæ“ä½œäºº
 
-	String lastTime;// ×îºó²Ù×÷Ê±¼ä
+	String lastTime;// æœ€åæ“ä½œæ—¶é—´
 
-	int createUser;// ´´½¨ÈË
+	int createUser;// åˆ›å»ºäºº
 
-	String createTime;// ´´½¨Ê±¼ä
+	String createTime;// åˆ›å»ºæ—¶é—´
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

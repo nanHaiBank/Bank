@@ -1,33 +1,33 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * Ä£°å±í
+ * æ¨¡æ¿è¡¨
  * 
  * @author LongShao
  *
  */
 public class Template {
-	int id;// Ä£°åId
+	int id;// æ¨¡æ¿Id
 
-	int templateType;// Ä£°åÀàĞÍ
+	int templateType;// æ¨¡æ¿ç±»å‹
 
-	int templatecial;// Ä£°åÒµÌ¬
+	int templatecial;// æ¨¡æ¿ä¸šæ€
 
-	String templateName;// Ä£°åÃû³Æ
+	String templateName;// æ¨¡æ¿åç§°
 
-	String file;// ÎÄ¼ş
+	String file;// æ–‡ä»¶
 
-	int templateState;// Ä£°å×´Ì¬£¨·¢²¼¡¢Î´·¢²¼¡¢ÒÑÏÂÏß£©
+	int templateState;// æ¨¡æ¿çŠ¶æ€ï¼ˆå‘å¸ƒã€æœªå‘å¸ƒã€å·²ä¸‹çº¿ï¼‰
 
-	int createdBy;// ´´½¨ÈË
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
 
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

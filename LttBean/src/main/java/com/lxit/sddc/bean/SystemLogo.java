@@ -1,23 +1,23 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ÏµÍ³ÈÕÖ¾±í
+ * ç³»ç»Ÿæ—¥å¿—è¡¨
  * 
  * @author LongShao
  *
  */
 public class SystemLogo {
-	int id;// ÈÕÖ¾id
+	int id;// æ—¥å¿—id
 
-	String operation;// ²Ù×÷·½·¨
-	String content;// ²ÎÊı
-	String returnValue;// ·µ»ØÖµ
-	String state;// ÊÇ·ñ³É¹¦
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	String operation;// æ“ä½œæ–¹æ³•
+	String content;// å‚æ•°
+	String returnValue;// è¿”å›å€¼
+	String state;// æ˜¯å¦æˆåŠŸ
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

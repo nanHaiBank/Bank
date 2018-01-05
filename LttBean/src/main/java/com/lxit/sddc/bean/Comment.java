@@ -1,35 +1,35 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ÆÀÂÛ±í
+ * è¯„è®ºè¡¨
  * 
  * @author LongShao
  *
  */
 public class Comment {
-	int id;// ÆÀÂÛId
+	int id;// è¯„è®ºId
 
-	String Content;// ÆÀÂÛÄÚÈİ
+	String Content;// è¯„è®ºå†…å®¹
 
-	int taskId;// ÈÎÎñId
+	int taskId;// ä»»åŠ¡Id
 
-	int UserId;// ÆÀÂÛÈË
+	int UserId;// è¯„è®ºäºº
 
-	String time;// ÆÀÂÛÊ±¼ä
+	String time;// è¯„è®ºæ—¶é—´
 
-	String d_key;// ²Ù×÷(Êı¾İ×ÖµäÖĞµÄkey)
+	String d_key;// æ“ä½œ(æ•°æ®å­—å…¸ä¸­çš„key)
 
-	String accessory;// ¸½¼ş
+	String accessory;// é™„ä»¶
 
-	int createUser;// ´´½¨ÈË
+	int createUser;// åˆ›å»ºäºº
 
-	String createTime;// ´´½¨Ê±¼ä
+	String createTime;// åˆ›å»ºæ—¶é—´
 
-	int lastName;// ×îºóĞŞ¸ÄÈË
+	int lastName;// æœ€åä¿®æ”¹äºº
 
-	String lastTime;// ×îºóĞŞ¸ÄÊ±¼ä
+	String lastTime;// æœ€åä¿®æ”¹æ—¶é—´
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

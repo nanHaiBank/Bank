@@ -1,7 +1,7 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ½ÇÉ«È¨ÏŞÖĞ¼ä±í
+ * è§’è‰²æƒé™ä¸­é—´è¡¨
  * 
  * @author LongShao
  *
@@ -9,13 +9,13 @@ package com.lxit.sddc.bean;
 public class RoleJurisdicton {
 	int id;// Id
 
-	int jurisdictionId;// È¨ÏŞId
-	int roleId;// ½ÇÉ«Id
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	int jurisdictionId;// æƒé™Id
+	int roleId;// è§’è‰²Id
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

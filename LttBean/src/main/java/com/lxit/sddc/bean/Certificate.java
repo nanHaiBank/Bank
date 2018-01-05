@@ -1,35 +1,35 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
      
 /**
- * Ö¤¼ş±í
+ * è¯ä»¶è¡¨
  * 
  * @author LongShao
  *
  */
 public class Certificate {
-	int id;// Ö¤¼şId
+	int id;// è¯ä»¶Id
 
-	String numxber;// Ö¤¼şºÅ
+	String numxber;// è¯ä»¶å·
 
-	int clusterId;// ËùÊô×éÍÅ
+	int clusterId;// æ‰€å±ç»„å›¢
 
-	int dictionariesId;// Ö¤¼şÀàĞÍ
+	int dictionariesId;// è¯ä»¶ç±»å‹
 
-	String landArea;// ÓÃµØÃæ»ı
+	String landArea;// ç”¨åœ°é¢ç§¯
 
-	String acquireDate;// È¡µÃÊ±¼ä
+	String acquireDate;// å–å¾—æ—¶é—´
 
-	String uploadingFile;// ÉÏ´«ÎÄ¼ş
+	String uploadingFile;// ä¸Šä¼ æ–‡ä»¶
 
-	int createdBy;// ´´½¨ÈË
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
 
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

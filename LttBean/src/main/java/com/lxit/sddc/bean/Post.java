@@ -1,21 +1,21 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ¸ÚÎ»±í
+ * å²—ä½è¡¨
  * 
  * @author LongShao
  *
  */
 public class Post {
-	int id;// ¸ÚÎ»Id
+	int id;// å²—ä½Id
 
-	String name;// ¸ÚÎ»Ãû
-	String des;// ¸ÚÎ»ÃèÊö
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	String name;// å²—ä½å
+	String des;// å²—ä½æè¿°
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

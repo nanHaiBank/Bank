@@ -1,21 +1,21 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ½ÇÉ«±í
+ * è§’è‰²è¡¨
  * 
  * @author LongShao
  *
  */
 public class Role {
-	int id;// ½ÇÉ«Id
+	int id;// è§’è‰²Id
 
-	String name;// ½ÇÉ«Ãû
-	String roleDes;// ½ÇÉ«ÃèÊö
-	int createdBy;// ´´½¨ÈË
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	String name;// è§’è‰²å
+	String roleDes;// è§’è‰²æè¿°
+	int createdBy;// åˆ›å»ºäºº
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

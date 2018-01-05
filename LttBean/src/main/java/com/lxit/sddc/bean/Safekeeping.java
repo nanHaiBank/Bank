@@ -1,49 +1,49 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ¿¼ºË·â´æ±í
+ * è€ƒæ ¸å°å­˜è¡¨
  * 
  * @author LongShao
  *
  */
 public class Safekeeping {
-	int id;// ¿¼ºË·â´æId
+	int id;// è€ƒæ ¸å°å­˜Id
 
-	int clusterId;// ×éÍÅId
+	int clusterId;// ç»„å›¢Id
 
-	String oneNumber;// Ò»¼¶½ÚµãÍê³ÉÂÊ
+	String oneNumber;// ä¸€çº§èŠ‚ç‚¹å®Œæˆç‡
 
-	String oneReadNumber;// Ò»¼¶½ÚµãÑÓÆÚÍê³ÉÊı
+	String oneReadNumber;// ä¸€çº§èŠ‚ç‚¹å»¶æœŸå®Œæˆæ•°
 
-	String twoNumber;// ¶ş¼¶½ÚµãÍê³ÉÊı
+	String twoNumber;// äºŒçº§èŠ‚ç‚¹å®Œæˆæ•°
 
-	String twoReadNumber;// ¶ş¼¶½ÚµãÑÓÆÚÍê³ÉÊı
+	String twoReadNumber;// äºŒçº§èŠ‚ç‚¹å»¶æœŸå®Œæˆæ•°
 
-	String oneRate;// Ò»¼¶Ô¤¾¯
+	String oneRate;// ä¸€çº§é¢„è­¦
 
-	String twoRate;// ¶ş¼¶Ô¤¾¯
+	String twoRate;// äºŒçº§é¢„è­¦
 
-	String threeRate;// Èı¼¶Ô¤¾¯
+	String threeRate;// ä¸‰çº§é¢„è­¦
 
-	String accomplish;// ×ÜÍê³ÉÂÊ
+	String accomplish;// æ€»å®Œæˆç‡
 
-	String operationTime;// ²Ù×÷Ê±¼ä
+	String operationTime;// æ“ä½œæ—¶é—´
 
-	int operationUser;// ²Ù×÷ÈË
+	int operationUser;// æ“ä½œäºº
 
-	int lastName;// ×îºóĞŞ¸ÄÈË
+	int lastName;// æœ€åä¿®æ”¹äºº
 
-	String lastTime;// ×îºóĞŞ¸ÄÊ±¼ä
+	String lastTime;// æœ€åä¿®æ”¹æ—¶é—´
 
-	int createdBy;// ´´½¨ÈË
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
 
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
 
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

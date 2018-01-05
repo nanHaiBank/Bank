@@ -1,33 +1,33 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * Êı¾İ×Öµä
+ * æ•°æ®å­—å…¸
  * 
  * @author LongShao
  *
  */
 public class Dictionaries {
-	int id;// ×ÖµäId
+	int id;// å­—å…¸Id
 
-	String key;// ²ÎÊıkey
+	String key;// å‚æ•°key
 
-	String value;// ²ÎÊıÖµ
+	String value;// å‚æ•°å€¼
 
-	String type;// ²ÎÊıÀàĞÍ
+	String type;// å‚æ•°ç±»å‹
 
-	String des;// ÃèÊö
+	String des;// æè¿°
 
-	int switchs;// Êı¾İ¿ª¹Ø(0,1)
+	int switchs;// æ•°æ®å¼€å…³(0,1)
 
-	int createUser;// ´´½¨ÈË
+	int createUser;// åˆ›å»ºäºº
 
-	String createTime;// ´´½¨Ê±¼ä
+	String createTime;// åˆ›å»ºæ—¶é—´
 
-	int lastName;// ×îºóĞŞ¸ÄÈË
+	int lastName;// æœ€åä¿®æ”¹äºº
 
-	String lastTime;// ×îºóĞŞ¸ÄÊ¹Ê±¼ä
+	String lastTime;// æœ€åä¿®æ”¹ä½¿æ—¶é—´
 
-	String remark;// ±¸×¢
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;

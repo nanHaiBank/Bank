@@ -1,28 +1,28 @@
-package com.lxit.sddc.bean;
+ï»¿package com.lxit.sddc.bean;
 
 /**
- * ÍÁµØ±í
+ * åœŸåœ°è¡¨
  * 
  * @author LongShao
  *
  */
 public class Land {
-	int id;// ÍÁµØId
-	String name;// ÍÁµØÃû³Æ
-	String landproJect;// ÍÁµØ¹æ»®Çé¿ö
-	String landCurrent;// ÍÁµØ¿ª·¢ÏÖ×´
-	String landArea;// ÓÃµØÃæ»ı£¨Íò©O£©
-	String landAreamu;// ÓÃµØÃæ»ı£¨Ä¶£©
+	int id;// åœŸåœ°Id
+	String name;// åœŸåœ°åç§°
+	String landproJect;// åœŸåœ°è§„åˆ’æƒ…å†µ
+	String landCurrent;// åœŸåœ°å¼€å‘ç°çŠ¶
+	String landArea;// ç”¨åœ°é¢ç§¯ï¼ˆä¸‡ã¡ï¼‰
+	String landAreamu;// ç”¨åœ°é¢ç§¯ï¼ˆäº©ï¼‰
 
-	String toleranceArea;// ¼ÆÈİÃæ»ı
-	String ratio;// Èİ»ıÂÊ
-	String landDownIssue;// ÍÁµØÒÅÁôÎÊÌâ
-	int createdBy;// ´´½¨ÈË
+	String toleranceArea;// è®¡å®¹é¢ç§¯
+	String ratio;// å®¹ç§¯ç‡
+	String landDownIssue;// åœŸåœ°é—ç•™é—®é¢˜
+	int createdBy;// åˆ›å»ºäºº
 
-	String createdDate;// ´´½¨ÈÕÆÚ
-	int lastUpdatedBy;// ×îºóĞŞ¸ÄÈË
-	String lastUpdateDate;// ×îºóĞŞ¸ÄÈÕÆÚ
-	String remark;// ±¸×¢
+	String createdDate;// åˆ›å»ºæ—¥æœŸ
+	int lastUpdatedBy;// æœ€åä¿®æ”¹äºº
+	String lastUpdateDate;// æœ€åä¿®æ”¹æ—¥æœŸ
+	String remark;// å¤‡æ³¨
 
 	public int getId() {
 		return id;
