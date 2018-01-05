@@ -1,1 +1,6 @@
 /target/
+/.project
+/.classpath
+/pom.xml
+/.gitignore
+/.settings/
