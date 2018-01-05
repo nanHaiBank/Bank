@@ -10,7 +10,6 @@ import com.whalin.MemCached.MemCachedClient;
 @Controller
 public class PageController {
 
-	
 	@RequestMapping("/index")
 	public String add(){
 		return "首页";
