@@ -42,6 +42,10 @@ public class Cluster {
 	String lastUpdateDate;// 最后修改日期
 
 	String remark;// 备注
+	
+	String projectName;//项目名称
+	
+	String landName;//组团名称
 
 	public int getId() {
 		return id;
@@ -214,6 +218,23 @@ public class Cluster {
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
+	}
+
+	
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+
+	public String getLandName() {
+		return landName;
+	}
+
+	public void setLandName(String landName) {
+		this.landName = landName;
 	}
 
 	@Override
