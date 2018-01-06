@@ -47,11 +47,19 @@ body, html, #allmap {
 	//创建标注点并添加到地图中
 	 function addMarker(points) {
 		//循环建立标注点
+		var myIcon = new BMap.Icon("images/u3931.png", new BMap.Size(90,53));
 		/* <![CDATA[ */
 		for (var i=0,pointsLen=points.length;i<pointsLen;i++) {
 			var point = new BMap.Point(points[i].lng, points[i].lat); //将标注点转化成地图上的点
-			var marker = new BMap.Marker(point); //将点转化成标注点
+			var marker = new BMap.Marker(point,{icon:myIcon}); //将点转化成标注点
 			map.addOverlay(marker); //将标注点添加到地图上
+			var label = new window.BMap.Label("lxitaaa", { offset: new window.BMap.Size(29,4) });
+			label.setStyle({                                   //给label设置样式，任意的CSS都是可以的
+			    color:"red",                   //颜色
+			    fontSize:"14px",               //字号
+			    border:"0",                    //边
+			});
+			marker.setLabel(label);
 			//添加监听事件
 			(function() {
 				var thePoint = points[i];
