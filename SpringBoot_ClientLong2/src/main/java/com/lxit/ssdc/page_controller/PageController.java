@@ -12,5 +12,8 @@ public class PageController {
 	public String add(){
 		return "index";
 	}
+	
+	@RequestMapping("/projectPandect")
+	public void projectPandect(){};
 
 }
