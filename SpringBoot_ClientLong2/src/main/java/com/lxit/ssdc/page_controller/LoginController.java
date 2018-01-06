@@ -17,12 +17,6 @@ public class LoginController {
 	@Autowired
 	LoginService loginService;
 
-	@RequestMapping("/")
-	public String index() {
-		System.out.println("进入到index");
-		return "index";
-	}
-
 	@RequestMapping("/login")
 	@ResponseBody
 	public User login(User user) {
