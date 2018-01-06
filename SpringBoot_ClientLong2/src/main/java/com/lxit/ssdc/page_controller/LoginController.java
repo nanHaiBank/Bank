@@ -13,13 +13,33 @@ import com.lxit.sddc.bean.User;
 @ComponentScan(basePackages = { "com.lxit.ssdc" })
 @Controller
 public class LoginController {
-	
+
 	@Autowired
 	LoginService loginService;
-	
+
 	@RequestMapping("/")
 	public String index() {
 		return "index";
+	}
+
+	/**
+	 * 进入项目页面
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/project")
+	public String project() {
+		return "project";
+	}
+
+	/**
+	 * 进入项目列表页面
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/projectList")
+	public String projectList() {
+		return "projectList";
 	}
 
 	@RequestMapping("/login")

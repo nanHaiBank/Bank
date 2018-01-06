@@ -21,8 +21,8 @@ public class PageController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping("/homePage")
-	public String homePage() {
-		return "homePage";
+	@RequestMapping("/home")
+	public String home() {
+		return "home";
 	}
 }
