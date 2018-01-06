@@ -1,5 +1,7 @@
 ﻿package com.lxit.sddc.bean;
 
+import java.util.List;
+
 /**
  * 组团表
  * 
@@ -46,6 +48,18 @@ public class Cluster {
 	String projectName;//项目名称
 	
 	String landName;//组团名称
+
+	List<Plan> Plans;//组团中的计划
+	
+	String images;//项目图片
+	
+	public List<Plan> getPlans() {
+		return Plans;
+	}
+
+	public void setPlans(List<Plan> plans) {
+		Plans = plans;
+	}
 
 	public int getId() {
 		return id;

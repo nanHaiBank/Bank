@@ -10,7 +10,7 @@ public class Land {
 	int id;// 土地Id
 	String name;// 土地名称
 	String landproJect;// 土地规划情况
-	String landCurrent;// 土地开发现状
+	String key;// 土地开发现状
 	String landArea;// 用地面积（万㎡）
 	String landAreamu;// 用地面积（亩）
 
@@ -47,13 +47,15 @@ public class Land {
 	public void setLandproJect(String landproJect) {
 		this.landproJect = landproJect;
 	}
+	
+	
 
-	public String getLandCurrent() {
-		return landCurrent;
+	public String getKey() {
+		return key;
 	}
 
-	public void setLandCurrent(String landCurrent) {
-		this.landCurrent = landCurrent;
+	public void setKey(String key) {
+		this.key = key;
 	}
 
 	public String getLandArea() {
@@ -140,32 +142,14 @@ public class Land {
 		super();
 	}
 
-	public Land(int id, String name, String landproJect, String landCurrent, String landArea, String landAreamu,
-			String toleranceArea, String ratio, String landDownIssue, int createdBy, String createdDate,
-			int lastUpdatedBy, String lastUpdateDate, String remark) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.landproJect = landproJect;
-		this.landCurrent = landCurrent;
-		this.landArea = landArea;
-		this.landAreamu = landAreamu;
-		this.toleranceArea = toleranceArea;
-		this.ratio = ratio;
-		this.landDownIssue = landDownIssue;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-		this.lastUpdatedBy = lastUpdatedBy;
-		this.lastUpdateDate = lastUpdateDate;
-		this.remark = remark;
-	}
-
 	@Override
 	public String toString() {
-		return "Land [id=" + id + ", name=" + name + ", landproJect=" + landproJect + ", landCurrent=" + landCurrent
-				+ ", landArea=" + landArea + ", landAreamu=" + landAreamu + ", toleranceArea=" + toleranceArea
-				+ ", ratio=" + ratio + ", landDownIssue=" + landDownIssue + ", createdBy=" + createdBy
-				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
-				+ lastUpdateDate + ", remark=" + remark + "]";
+		return "Land [id=" + id + ", name=" + name + ", landproJect=" + landproJect + ", key=" + key + ", landArea="
+				+ landArea + ", landAreamu=" + landAreamu + ", toleranceArea=" + toleranceArea + ", ratio=" + ratio
+				+ ", landDownIssue=" + landDownIssue + ", createdBy=" + createdBy + ", createdDate=" + createdDate
+				+ ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark
+				+ "]";
 	}
+
+	
 }
