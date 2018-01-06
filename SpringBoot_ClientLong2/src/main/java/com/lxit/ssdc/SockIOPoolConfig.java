@@ -3,25 +3,25 @@ package com.lxit.ssdc;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Component  
-@ConfigurationProperties(prefix = "memcache") 
+@Component
+@ConfigurationProperties(prefix = "memcache")
 public class SockIOPoolConfig {
 
 	private String[] servers;
 
-    private Integer[] weights;
+	private Integer[] weights;
 
-    private int initConn;
+	private int initConn;
 
-    private int minConn;
+	private int minConn;
 
-    private int maxConn;
+	private int maxConn;
 
-    private long maintSleep;
+	private long maintSleep;
 
-    private boolean nagle;
+	private boolean nagle;
 
-    private int socketTO;
+	private int socketTO;
 
 	public String[] getServers() {
 		return servers;
@@ -86,7 +86,5 @@ public class SockIOPoolConfig {
 	public void setSocketTO(int socketTO) {
 		this.socketTO = socketTO;
 	}
-    
-    
 
 }

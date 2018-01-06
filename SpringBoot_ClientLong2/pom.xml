@@ -86,7 +86,11 @@
 			<version>1.8.4</version>
 		</dependency>
 
-
+		<dependency>
+			<groupId>com.lxit.sddc.bean</groupId>
+			<artifactId>LttBean</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -11,7 +11,6 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 @EnableAutoConfiguration
 public class FeignApplication {
 
-		
 	public static void main(String[] args) {
 		new SpringApplicationBuilder(FeignApplication.class).web(true).run(args);
 	}
