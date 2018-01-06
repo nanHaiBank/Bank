@@ -1,5 +1,7 @@
 ﻿package com.lxit.sddc.bean;
 
+import java.util.List;
+
 /**
  * 项目表
  * 
@@ -34,6 +36,9 @@ public class Project {
 	
 	String completeDate; //实际完成时间
 	
+	String coordinate;//项目坐标
+	
+	List<Cluster> clusters;
 
 	public int getId() {
 		return id;
@@ -233,6 +238,24 @@ public class Project {
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
 	}
+	
+	
+	
+	public String getCoordinate() {
+		return coordinate;
+	}
+
+	public void setCoordinate(String coordinate) {
+		this.coordinate = coordinate;
+	}
+
+	public List<Cluster> getClusters() {
+		return clusters;
+	}
+
+	public void setClusters(List<Cluster> clusters) {
+		this.clusters = clusters;
+	}
 
 	@Override
 	public String toString() {
@@ -241,6 +264,9 @@ public class Project {
 				+ ", landareamu=" + landareamu + ", tolerancearea=" + tolerancearea + ", floorArea=" + floorArea
 				+ ", mayArea=" + mayArea + ", notManyArea=" + notManyArea + ", parking=" + parking + ", registerDate="
 				+ registerDate + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy="
-				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + ", completeDate="
+				+ completeDate + ", coordinate=" + coordinate + ", clusters=" + clusters + "]";
 	}
+
+	
 }
