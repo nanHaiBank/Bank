@@ -16,10 +16,26 @@ public class LoginController {
 	
 	@Autowired
 	LoginService loginService;
+	
+	@RequestMapping("/")
+	public String index() {
+		return "index";
+	}
 
 	@RequestMapping("/login")
 	@ResponseBody
 	public User login(User user) {
+		System.out.println("123123");
 		return loginService.logins(user);
+	}
+	
+	/**
+	 * 跳转到首页
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/home")
+	public String homes() {
+		return "home";
 	}
 }
