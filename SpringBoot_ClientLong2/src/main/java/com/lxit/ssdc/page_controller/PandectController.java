@@ -20,7 +20,8 @@ public class PandectController {
 	@ResponseBody
 	@RequestMapping("/getPandect")
 	public Map<String,Object> getPandect(@RequestParam(name="conditing",required=false) String contiding){
-		return pandectService.getProjects( contiding);
+		System.out.println(contiding);
+		return pandectService.getProjects(contiding);
 	}
 
 }

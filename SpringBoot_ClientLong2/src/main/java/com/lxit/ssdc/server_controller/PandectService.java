@@ -15,5 +15,5 @@ public interface PandectService {
 	
 	@RequestMapping("/getProjects")
 	@ResponseBody
-	public Map<String,Object> getProjects(String contiding);
+	public Map<String,Object> getProjects(@RequestParam(name="contiding",required=false)String contiding);
 }
