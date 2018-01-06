@@ -17,6 +17,7 @@ public class DatasourceConfiguration {
 	@Primary
 	@ConfigurationProperties(prefix = "c3p0")
 	public DataSource dataSource() {
+		System.out.println();
 		return DataSourceBuilder.create().type(com.mchange.v2.c3p0.ComboPooledDataSource.class).build();
 	}
 }

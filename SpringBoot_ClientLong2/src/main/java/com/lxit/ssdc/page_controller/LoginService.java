@@ -16,5 +16,5 @@ public interface LoginService {
 	// 获取上方指定服务器名的地址加请求地址如：/long/say
 	@RequestMapping(value = "LttController/logins", method = RequestMethod.POST)
 	@ResponseBody
-	public User logins(@RequestBody User user);
+	public User logins(@RequestBody() User user);
 }

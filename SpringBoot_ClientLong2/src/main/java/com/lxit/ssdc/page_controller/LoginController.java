@@ -16,6 +16,11 @@ public class LoginController {
 	
 	@Autowired
 	LoginService loginService;
+	
+	@RequestMapping("/")
+	public String index() {
+		return "index";
+	}
 
 	@RequestMapping("/login")
 	@ResponseBody
