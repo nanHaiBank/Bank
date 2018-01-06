@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>项目列表页面</title>
+</head>
+<body>
+	<img id="u6246_img" class="img " src="images/u6.jpg" />
+	<div style="width: 800px; height: 30px;">项目信息</div>
+	<table class="easyui-datagrid" title="节点预警（点击预警可查看更多）"
+		style="width: 700px; height: 250px"
+		data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+		<thead>
+			<tr>
+				<th data-options="field:'itemid',width:80">项目名称</th>
+				<th data-options="field:'productid',width:80" id="asdf">省份</th>
+				<th data-options="field:'listprice',width:80">级别</th>
+				<th data-options="field:'unitcost',width:80">类型</th>
+				<th data-options="field:'attr1',width:250">计划完成日期</th>
+			</tr>
+		</thead>
+	</table>
+</body>
+</html>
