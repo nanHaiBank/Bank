@@ -92,5 +92,13 @@ body, html, #allmap {
 	map.setCurrentCity("中国"); //设置为衡阳
 	map.addControl(new BMap.MapTypeControl());
 	map.enableScrollWheelZoom(true);
-	addMarker(points);
+	$.ajax({
+		url:"getPandect",
+		dataType:"post",
+		type:"json",
+		success:function(result){
+			addMarker(result.data);
+		}
+	})
+	//addMarker(points);
 </script>
