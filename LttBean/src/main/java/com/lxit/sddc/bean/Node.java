@@ -42,6 +42,10 @@ public class Node {
 	String lastUpdateDate;// 最后修改日期
 
 	String remark;// 备注
+	
+	String companyName;//发起公司名称
+	
+	String deptName;//发起岗位名称
 
 	public int getId() {
 		return id;
@@ -191,6 +195,23 @@ public class Node {
 	public void setAssessStop(String assessStop) {
 		this.assessStop = assessStop;
 	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+	
 
 	
 }
