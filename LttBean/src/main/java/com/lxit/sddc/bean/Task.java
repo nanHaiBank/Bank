@@ -19,8 +19,10 @@ public class Task {
 
 	int warning;// 节点预警级别（数据字典key）一级、二级、三级预警
 
-	String adjunct;// 附件
-
+	String predictCompTime;//预计完成时间
+	
+	String faceCompTime;//实际完成时间
+	
 	int createdBy;// 创建人
 
 	String createdDate;// 创建日期
@@ -79,13 +81,6 @@ public class Task {
 		this.warning = warning;
 	}
 
-	public String getAdjunct() {
-		return adjunct;
-	}
-
-	public void setAdjunct(String adjunct) {
-		this.adjunct = adjunct;
-	}
 
 	public int getCreatedBy() {
 		return createdBy;
@@ -131,29 +126,30 @@ public class Task {
 		super();
 	}
 
-	public Task(int taskId, int nodeType, String businessMatter, int taskState, int nodeState, int warning,
-			String adjunct, int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate,
-			String remark) {
-		super();
-		this.taskId = taskId;
-		this.nodeType = nodeType;
-		this.businessMatter = businessMatter;
-		this.taskState = taskState;
-		this.nodeState = nodeState;
-		this.warning = warning;
-		this.adjunct = adjunct;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-		this.lastUpdatedBy = lastUpdatedBy;
-		this.lastUpdateDate = lastUpdateDate;
-		this.remark = remark;
+	public String getPredictCompTime() {
+		return predictCompTime;
+	}
+
+	public void setPredictCompTime(String predictCompTime) {
+		this.predictCompTime = predictCompTime;
+	}
+
+	public String getFaceCompTime() {
+		return faceCompTime;
+	}
+
+	public void setFaceCompTime(String faceCompTime) {
+		this.faceCompTime = faceCompTime;
 	}
 
 	@Override
 	public String toString() {
 		return "Task [taskId=" + taskId + ", nodeType=" + nodeType + ", businessMatter=" + businessMatter
-				+ ", taskState=" + taskState + ", nodeState=" + nodeState + ", warning=" + warning + ", adjunct="
-				+ adjunct + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy="
-				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+				+ ", taskState=" + taskState + ", nodeState=" + nodeState + ", warning=" + warning
+				+ ", predictCompTime=" + predictCompTime + ", faceCompTime=" + faceCompTime + ", createdBy=" + createdBy
+				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
+				+ lastUpdateDate + ", remark=" + remark + "]";
 	}
+
+	
 }
