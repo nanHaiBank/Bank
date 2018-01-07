@@ -29,9 +29,9 @@ public class Node {
 
 	int receptionDeptId;// 接收部门(公司部门中间表Id)
 
-	int assessState;// 考核状态,是否考核（数据字典Id）
+	String assessState;// 考核状态,是否考核（数据字典Id）
 
-	int assessStop;// 是否启用
+	String assessStop;// 是否启用 
 
 	int createdBy;// 创建人
 
@@ -131,21 +131,6 @@ public class Node {
 		this.receptionDeptId = receptionDeptId;
 	}
 
-	public int getAssessState() {
-		return assessState;
-	}
-
-	public void setAssessState(int assessState) {
-		this.assessState = assessState;
-	}
-
-	public int getAssessStop() {
-		return assessStop;
-	}
-
-	public void setAssessStop(int assessStop) {
-		this.assessStop = assessStop;
-	}
 
 	public int getCreatedBy() {
 		return createdBy;
@@ -191,37 +176,21 @@ public class Node {
 		super();
 	}
 
-	public Node(int id, int planId, int number, int rank, String stage, String businessMatter, String nodeDate,
-			int period, String planIdOk, int sponsorDeptId, int receptionDeptId, int assessState, int assessStop,
-			int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark) {
-		super();
-		this.id = id;
-		this.planId = planId;
-		this.number = number;
-		this.rank = rank;
-		this.stage = stage;
-		this.businessMatter = businessMatter;
-		this.nodeDate = nodeDate;
-		this.period = period;
-		this.planIdOk = planIdOk;
-		this.sponsorDeptId = sponsorDeptId;
-		this.receptionDeptId = receptionDeptId;
-		this.assessState = assessState;
-		this.assessStop = assessStop;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-		this.lastUpdatedBy = lastUpdatedBy;
-		this.lastUpdateDate = lastUpdateDate;
-		this.remark = remark;
+	public String getAssessState() {
+		return assessState;
 	}
 
-	@Override
-	public String toString() {
-		return "Node [id=" + id + ", planId=" + planId + ", number=" + number + ", rank=" + rank + ", stage=" + stage
-				+ ", businessMatter=" + businessMatter + ", nodeDate=" + nodeDate + ", period=" + period + ", planIdOk="
-				+ planIdOk + ", sponsorDeptId=" + sponsorDeptId + ", receptionDeptId=" + receptionDeptId
-				+ ", assessState=" + assessState + ", assessStop=" + assessStop + ", createdBy=" + createdBy
-				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
-				+ lastUpdateDate + ", remark=" + remark + "]";
+	public void setAssessState(String assessState) {
+		this.assessState = assessState;
 	}
+
+	public String getAssessStop() {
+		return assessStop;
+	}
+
+	public void setAssessStop(String assessStop) {
+		this.assessStop = assessStop;
+	}
+
+	
 }
