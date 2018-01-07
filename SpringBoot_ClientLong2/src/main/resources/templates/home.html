@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<script type="text/javascript" src="easyui/jquery.min.js"></script>
+	<!--easyui核心文件-->
+	<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+	<!--对应的语言包-->
+	<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+	<!--皮肤文件-->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+	<!--图标文件-->
+	<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title></title>
+	</head>
+
+	<body>
+		<div id="cc" class="easyui-layout" style="width:1200px;height:800px;">
+			<div region="west" split="true" title="树形" style="width:150px;"></div>
+			<div region="north" title="模块点" split="true" style="height:100px;"></div>
+			32
+			<!--
+        	作者：offline
+        	时间：2018-01-05
+        	描述：<div region="south" title="节点动态" split="true" style="height:200px;"></div>
+        -->
+
+			<div region="east" iconCls="icon-reload" style="width:450px;">
+				<div>
+                      <table class="easyui-datagrid" title="节点预警（点击预警可查看更多）" style="width:700px;height:250px" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+					<thead>
+						<tr>
+							<th data-options="field:'itemid',width:80">计划名称</th>
+							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+							<th data-options="field:'listprice',width:80">级别</th>
+							<th data-options="field:'unitcost',width:80">类型</th>
+							<th data-options="field:'attr1',width:250">计划完成日期</th>
+						</tr>
+					</thead>
+				</table>					
+				</div>
+				<div>
+					<table class="easyui-datagrid" title="节点动态（点击节点动态可查看更多）" style="width:700px;height:250px" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+					<thead>
+						<tr>
+							<th data-options="field:'itemid',width:80">计划名称</th>
+							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+							<th data-options="field:'listprice',width:80">级别</th>
+							<th data-options="field:'unitcost',width:80">类型</th>
+							<th data-options="field:'attr1',width:250">计划完成日期</th>
+						</tr>
+					</thead>
+				</table>
+				</div>
+				<div>
+					<table class="easyui-datagrid" title="本周任务（点击本周任务可查看更多）" style="width:700px;height:250px" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+						<thead>
+							<tr>
+								<th data-options="field:'itemid',width:80">计划名称</th>
+								<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+								<th data-options="field:'listprice',width:80">级别</th>
+								<th data-options="field:'unitcost',width:80">类型</th>
+								<th data-options="field:'attr1',width:250">计划完成日期</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+
+			<div region="center" title="我的任务（点击我的任务可查看更多）" split="true" style="padding:5px;background:#eee;">
+				<div>
+					<table class="easyui-datagrid" title="代办" style="width:700px;height:315px" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+						<thead>
+							<tr>
+								<th data-options="field:'itemid',width:80">计划名称</th>
+								<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+								<th data-options="field:'listprice',width:80">级别</th>
+								<th data-options="field:'unitcost',width:80">类型</th>
+								<th data-options="field:'attr1',width:250">计划完成日期</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<div>
+					<table class="easyui-datagrid" title="关注" style="width:700px;height:315px" data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+						<thead>
+							<tr>
+								<th data-options="field:'itemid',width:80">计划名称</th>
+								<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+								<th data-options="field:'listprice',width:80">级别</th>
+								<th data-options="field:'unitcost',width:80">类型</th>
+								<th data-options="field:'attr1',width:250">计划完成日期</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+			</div>
+			</div>
+	</body>
+</html>

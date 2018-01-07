@@ -42,6 +42,16 @@ public class LoginController {
 		return "projectList";
 	}
 
+	/**
+	 * 进入土地详情页面
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/landparticulars")
+	public String landparticulars() {
+		return "landparticulars";
+	}
+
 	@RequestMapping("/login")
 	@ResponseBody
 	public User login(User user) {
