@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>模板列表</title>
+</head>
+<body>
+	<div style="height: 30px;">查询条件</div>
+	<table>
+		<tr>
+			<!-- 类型分为：一、二级项目计划 、总控计划、专项计划 -->
+			<td>计划类型：<select id="jihualeix">
+					<option value="#">全部</option>
+			</select></td>
+			<!-- 业态分为：住宅、别墅、酒店 -->
+			<td>计划业态:<select id="jihuatype">
+					<option value="#">全部</option>
+			</select></td>
+			<!-- 状态：未发布、已发布、已下线 -->
+			<td>状态：<select id="mobanzhuangtai">
+					<option value="#">全部</option>
+			</select></td>
+			<td>模板名称：<input type="text" id="mobanname" /></td>
+			<td><input type="button" value="查询" id="mobanselect" /></td>
+		</tr>
+	</table>
+	<div style="height: 30px;">模板列表</div>
+	<table>
+		<tr>
+			<td>序号</td>
+			<!-- 数据拿出来之后点击计划类型，可查询该计划类型的相关信息,-->
+			<td>计划类型</td>
+			<td>模板名称</td>
+			<td>创建人</td>
+			<td>创建日期</td>
+			<td>状态</td>
+			<!-- 操作分为：已发布的模板只有模板下线、下载模板，未发布的模板拥有发布、删除、模板下载这几种操作 -->
+			<td>操作</td>
+		</tr>
+	</table>
+</body>
+</html>

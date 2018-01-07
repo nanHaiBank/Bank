@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>证件页面</title>
+</head>
+<body>
+	<div>证件信息</div>
+	<div>
+		<input type="button" value="新增证照" />
+	</div>
+	<table border="1">
+		<tr>
+			<td>土地成交确认书</td>
+			<td>建设用地规划许可证</td>
+			<td>土地出让合同</td>
+			<td>国有土地使用证</td>
+			<td>建设工程规划许可证</td>
+			<td>建设工程施工许可证</td>
+			<td>商品房预售许可证</td>
+			<td>工程竣工验收备案表</td>
+			<td>操作</td>
+		</tr>
+		<tr>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>未取得</td>
+			<td>详情</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</table>
+	<div class="easyui-datagrid" title="组团详情"
+		style="width: 600px; height: 450px">
+		<table>
+			<tr>
+				<td>组团名称:</td>
+				<td><input type="text" id="zutuanmingc" /></td>
+			</tr>
+			<tr>
+				<td>所属地块名称:</td>
+				<td><select id="suoshudikuainame">
+						<option value="#">请选择</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>用地面积（万㎡）:</td>
+				<td><input type="text" id="yongdimianjim" /></td>
+			</tr>
+			<tr>
+				<td>用地面积（亩）:</td>
+				<td><input type="text" id="yongdimianjimu" /></td>
+			</tr>
+			<tr>
+				<td>地上建筑面积（万㎡）:</td>
+				<td><input type="text" id="dishangjianzhumj" /></td>
+			</tr>
+			<tr>
+				<td>证照类型:</td>
+				<td><select id="zhengjianleixin">
+						<option value="#">土地成交确认书</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>证件号:</td>
+				<td><input type="text" id="zhenjianhao" /></td>
+			</tr>
+			<tr>
+				<td>对应地块:</td>
+				<td><select id="duiyingdikuai">
+						<option value="#">请选择</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>对应组团:</td>
+				<td><select id="duiyingzutuan">
+						<option value="#">请选择</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td>用地面积:</td>
+				<td><input type="text" id='yongdimianji' /></td>
+			</tr>
+			<tr>
+				<td>取得时间:</td>
+				<td><input type="text" id='qudeshijian' /></td>
+			</tr>
+			<tr>
+				<td>上传附件:</td>
+				<td><input type="button" id='shangchuanfuj' /></td>
+				<td>附件1</td>
+			</tr>
+
+			<tr>
+				<td></td>
+				<td><input type="button" value="确定" id="crertifcateqd" /> <input
+					type="button" value="取消" /></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>

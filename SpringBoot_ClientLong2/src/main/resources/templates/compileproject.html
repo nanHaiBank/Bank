@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>编辑项目</title>
+
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<!--easyui核心文件-->
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<!--对应的语言包-->
+<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<!--皮肤文件-->
+<link rel="stylesheet" type="text/css"
+	href="easyui/themes/default/easyui.css" />
+<!--图标文件-->
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+
+</head>
+<body>
+	<img id="u6246_img" class="img " src="images/u6.jpg" />
+	<div style="width: 800px; height: 30px;">项目信息</div>
+	<table>
+		<tr>
+			<td>项目名称：</td>
+			<td><input type="text" id="projectName" /></td>
+			<td>公司名称：</td>
+			<td><input type="text" id="centerName" /></td>
+			<td>项目图片：</td>
+			<td><input type="button" value="上传图片" /></td>
+			<td>开发周期：</td>
+			<td><input type="text" id="kaifa" /></td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>区域：</td>
+			<td><select>
+					<option id="quyu">青岛</option>
+			</select></td>
+			<td>城市：</td>
+			<td><select>
+					<option id="city">青岛</option>
+			</select></td>
+			<td>用地面积：</td>
+			<td><input type="text" id="yongdimianji" /></td>
+			<td>容积率：</td>
+			<td><input type="text" id="rongjilv" /></td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>用地面积（亩）：</td>
+			<td><input type="text" id="yongdimianjimu" /></td>
+			<td>计容面积：</td>
+			<td><input type="text" id="jirongmianji" /></td>
+			<td>地上建筑面积：</td>
+			<td><input type="text" id="dishangjianzhumj" /></td>
+			<td>可售计容面积：</td>
+			<td><input type="text" id="keshoujirongmj" /></td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td>不售计容面积：</td>
+			<td><input type="text" id="bukeshoujrmj" /></td>
+			<td>停车位：</td>
+			<td><input type="text" id="tingchewei" /></td>
+			<td>登记日期：</td>
+			<td><input type="text" id="dengjiriqi" /></td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td><a href="#"><h1>地块</h1></a></td>
+			<td><a href="#"><h1>组团</h1></a></td>
+			<td><a href="#"><h1>证照</h1></a></td>
+		</tr>
+	</table>
+	<div style="width: 800px; height: 30px;">地块信息</div>
+	<div style="width: 800px; height: 300px;">
+		<div style="margin-left: 700px;">
+			<input type="button" value="新增地块" id="adddikuai" />
+		</div>
+		<table border="1">
+			<tr>
+				<td>地块名称</td>
+				<td>地块规划情况</td>
+				<td>土地开发现状</td>
+				<td>用地面积（万㎡）</td>
+				<td>用地面积（亩）</td>
+				<td>容积率</td>
+				<td>计容面积（万㎡）</td>
+				<td>土地遗留问题</td>
+				<td>包含组团</td>
+				<td>操作</td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 800px; height: 30px;">组团信息</div>
+	<div style="width: 800px; height: 300px;">
+		<div style="margin-left: 700px;">
+			<input type="button" value="新增组团" id="addzutuan" />
+		</div>
+		<table border="1">
+			<tr>
+				<td>组团名称</td>
+				<td>所属地块</td>
+				<td>用地面积（万㎡）</td>
+				<td>用地面积（亩）</td>
+				<td>地上建筑面积（万㎡）</td>
+				<td>地下建筑面积（万㎡）</td>
+				<td>可售计容面积（万㎡）</td>
+				<td>不可售计容面积（万㎡）</td>
+				<td>产权车位（个）</td>
+				<td>使用权车位（个）</td>
+				<td>组团特殊信息</td>
+				<td>楼栋数</td>
+				<td>操作</td>
+			</tr>
+		</table>
+	</div>
+	<div style="width: 800px; height: 30px;">证照信息</div>
+	<div style="width: 800px; height: 300px;">
+		<div style="margin-left: 700px;">
+			<input type="button" value="新增证照" id="addzhenzhao" />
+		</div>
+		<table border="1">
+			<tr>
+				<td>土地成交确认书</td>
+				<td>建设用地规划许可证</td>
+				<td>土地出让合同</td>
+				<td>国有土地使用证</td>
+				<td>建设工程规划许可证</td>
+				<td>建设工程施工许可证</td>
+				<td>商品房预售许可证</td>
+				<td>工程竣工验收备案表</td>
+				<td>操作</td>
+			</tr>
+		</table>
+	</div>
+	<div style="margin-left: 700px;">
+		<a href="projectList"><input type="button" value="创建项目"
+			id="chuangjianxm" /></a>
+	</div>
+</body>
+</html>

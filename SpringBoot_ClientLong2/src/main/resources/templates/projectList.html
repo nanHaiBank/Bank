@@ -16,6 +16,17 @@
 </head>
 <body>
 	<img id="u6246_img" class="img " src="images/u6.jpg" />
+	<div>查询条件</div>
+	<table>
+		<tr>
+			<td>项目名称：<input type="text" id="xiangmuname" /></td>
+			<td>公司名称：<input type="text" id="gognsiname" /></td>
+			<td>项目状态：<select id="xinamgustate">
+					<option value="#">全部</option>
+			</select></td>
+			<td><input type="button" value="查询" id="projechaxun" /></td>
+		</tr>
+	</table>
 	<table class="easyui-datagrid" title="项目列表"
 		style="width: 1200px; height: 450px" pagination="true"
 		pageList="[2,4,6,8,10,12,14,16,18,20]" pageSize="5"
