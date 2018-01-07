@@ -9,9 +9,11 @@
 public class Jurisdiction {
 	int id;// 权限Id
 
-	String name;// 权限名
+	String text;// 权限名
 	int commandId;// 所属父菜单
 	String url;// 链接到的url
+	String state;// 导航图标
+	String iconCls;// 图标
 	int createdBy;// 创建人
 	String createdDate;// 创建日期
 	int lastUpdatedBy;// 最后修改人
@@ -26,12 +28,28 @@ public class Jurisdiction {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getText() {
+		return text;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getIconCls() {
+		return iconCls;
+	}
+
+	public void setIconCls(String iconCls) {
+		this.iconCls = iconCls;
 	}
 
 	public int getCommandId() {
@@ -90,13 +108,15 @@ public class Jurisdiction {
 		this.remark = remark;
 	}
 
-	public Jurisdiction(int id, String name, int commandId, String url, int createdBy, String createdDate,
-			int lastUpdatedBy, String lastUpdateDate, String remark) {
+	public Jurisdiction(int id, String text, int commandId, String url, String state, String iconCls, int createdBy,
+			String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.text = text;
 		this.commandId = commandId;
 		this.url = url;
+		this.state = state;
+		this.iconCls = iconCls;
 		this.createdBy = createdBy;
 		this.createdDate = createdDate;
 		this.lastUpdatedBy = lastUpdatedBy;
@@ -110,8 +130,10 @@ public class Jurisdiction {
 
 	@Override
 	public String toString() {
-		return "Jurisdiction [id=" + id + ", name=" + name + ", commandId=" + commandId + ", url=" + url
-				+ ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy
-				+ ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+		return "Jurisdiction [id=" + id + ", text=" + text + ", commandId=" + commandId + ", url=" + url + ", state="
+				+ state + ", iconCls=" + iconCls + ", createdBy=" + createdBy + ", createdDate=" + createdDate
+				+ ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark
+				+ "]";
 	}
+
 }
