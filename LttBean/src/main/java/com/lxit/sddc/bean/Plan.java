@@ -17,11 +17,13 @@ public class Plan {
 
 	int exploitPeriod;// 开发周期
 
-	String securitDate;
+	String securitDate;//摘牌日
 	
-	String CommercialDate;
+	String CommercialDate;//开工日
+	
+	String planType;//计划类型
 		
-	int planStateId;
+	String planStateKey;//计划状态
 
 	String saleDate;// 开售日
 
@@ -40,13 +42,13 @@ public class Plan {
 	String remark;// 备注
 
 	
-    
-	public int getPlanStateId() {
-		return planStateId;
+	
+	public String getPlanStateKey() {
+		return planStateKey;
 	}
 
-	public void setPlanStateId(int planStateId) {
-		this.planStateId = planStateId;
+	public void setPlanStateKey(String planStateKey) {
+		this.planStateKey = planStateKey;
 	}
 
 	public int getId() {
