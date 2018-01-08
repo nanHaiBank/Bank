@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <title>Insert title here</title>
-<script type="text/javascript" src="jquery/jquery.js"></script>
 <style type="text/css">
 body, html, #allmap {
 	width: 100%;
@@ -13,15 +12,31 @@ body, html, #allmap {
 	font-family: "微软雅黑";
 }
 </style>
+<script type="text/javascript" src="jquery/jquery.js"></script>
 <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=67jMQ5DmYTe1TLMBKFUTcZAR"></script>
-<body>
 
+<body>
+<input type="radio" value="3" name="project" checked="checked" onclick="clicks(3);"/> 全部 <input type="radio" value="2" name="project" onclick="clicks(2);" /> 正常 <input type="radio" value="1" name="project" onclick="clicks(1);" /> 延期
 	<div id="allmap"></div>
-</body>
-</head>
-</html>
-<script type="text/javascript">
-	
+	<script type="text/javascript">
+	function clicks(parameter){
+		//创建地图
+		map = new BMap.Map("allmap");
+		map.centerAndZoom(new BMap.Point(100.33, 33.333), 11); // 设置中心点
+		map.centerAndZoom("中国");
+		map.setCurrentCity("中国"); //设置为衡阳
+		map.addControl(new BMap.MapTypeControl());
+		map.enableScrollWheelZoom(true);
+		$.ajax({
+			url:"getPandect",
+			dataType:"json",
+			data:"contiding="+parameter,
+			type:"post",
+			success:function(result){
+				addMarker(result.data);
+			}
+		})
+	}
 	//创建标注点并添加到地图中
 	 function addMarker(points) {
 		//循环建立标注点
@@ -48,14 +63,20 @@ body, html, #allmap {
 		}
 		/* ]]> */
 	}
+	
+	function plot(parameter){
+			alert(parameter);
+			sessionStorage["par1"]=parameter;
+			location = "clusterPandect";
+		}
 	function showInfo(thisMarker, point) {
 		//获取点的信息
 		/* <![CDATA[ */
 		    var sContent = '<ul style="margin:0 0 5px 0;padding:0.2em 0">'
 		  	for (var i = 0; i < point.clusters.length; i++) {
 		  		sContent+='<li style="line-height: 26px;font-size: 15px;">'
-		  			+'<span style="width: 50px;display: inline-block;">组团：</span>'
-					+ '<a href="#">'+point.projectName+'-'+point.landName+'-'+point.clusters[i].name+'</a>'
+		  			+'<span  style="width: 50px;display: inline-block;">组团：</span>'
+					+ '<a href="#" onclick="plot('+point.clusters[i].id+')">'+point.clusters[i].projectName+'项目-'+point.clusters[i].landName+'地块-'+point.clusters[i].name+'组团</a>'
 					+'</li>'
 			}
 		    sContent+='</ul>'      
@@ -63,6 +84,8 @@ body, html, #allmap {
 		var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
 		thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
 	}
+	
+	
 	//创建地图
 	var map = new BMap.Map("allmap");
 	map.centerAndZoom(new BMap.Point(100.33, 33.333), 11); // 设置中心点
@@ -80,3 +103,6 @@ body, html, #allmap {
 	})
 	//addMarker(points);
 </script>
+</body>
+</head>
+</html>

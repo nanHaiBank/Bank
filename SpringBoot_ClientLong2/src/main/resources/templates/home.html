@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <title>实地地产计划系统</title>
-<!--JQuery核心文件-->
-<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
 <!--JQuery核心文件-->
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
 <!--对应的语言包-->
@@ -139,12 +139,16 @@ a:hower {
 					if ($('#tabs').tabs('exists', node.text)) {//判断文本是否存在
 						$('#tabs').tabs('select', node.text)//选中他
 					} else {
-						$('#tabs').tabs('add', {// 增加选项卡
-							title : node.text,// 对象名字
-							iconCls : node.iconCls,// 对象图标等于新图标
-							closable : true,// 设置关闭按钮
-							href : node.url + '.html',
-						});
+						if(node.text!='项目总览'){
+							$('#tabs').tabs('add', {// 增加选项卡
+								title : node.text,// 对象名字
+								iconCls : node.iconCls,// 对象图标等于新图标
+								closable : true,// 设置关闭按钮
+								href : node.url,
+							});
+						 }else{
+							window.open("projectPandect");
+						} 
 					}
 				}
 			}

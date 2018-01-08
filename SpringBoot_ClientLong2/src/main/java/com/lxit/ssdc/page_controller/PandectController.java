@@ -5,7 +5,9 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -18,10 +20,13 @@ public class PandectController {
 	PandectService pandectService;
 	
 	@ResponseBody
-	@RequestMapping("/getPandect")
-	public Map<String,Object> getPandect(@RequestParam(name="conditing",required=false) String contiding){
+	@RequestMapping(value="/getPandect")
+	public Map<String,Object> getPandect(@RequestParam(name="contiding",required=false) String contiding){
 		System.out.println(contiding);
 		return pandectService.getProjects(contiding);
 	}
+	
+	@RequestMapping("/clusterPandect")
+	public void clusterPandect(){};
 
 }
