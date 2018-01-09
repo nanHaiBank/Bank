@@ -88,72 +88,169 @@ a:hower {
 	<input type="hidden" id='inputIds_userid' value="${user.userId}" />
 
 	<!-- 中间 -->
-	<div data-options="region:'center'," style="overflow: hidden;">
-		<div id="tabs">
-			<div title="起始页" iconCls="icon-house"
-				style="padding: 0 10px; display: block; background: #F3F3F3;">
-				
-				<h2>欢迎来到实地地产系统！</h2>
-				
-			</div>
+	<div region="center" title="我的任务（点击我的任务可查看更多）" split="true"
+		style="padding: 5px; background: #eee;">
+		<div>
+			<form action="" method="post">
+				<center>
+					<input type="button" id="daiban" value="代办" />
+				</center>
+			</form>
+			<table id="daibantable" class="easyui-datagrid" title="代办"
+				style="width: 700px; height: 315px"
+				data-options="singleSelect:true,collapsible:true,url:'backLogBy',method:'post'">
+				<thead>
+					<tr>
+						<th data-options="field:'taskId',checkbox : true"></th>
+						<th data-options="field:'name',width:80">计划名称</th>
+						<th data-options="field:'businessMatter',width:80">业务事项</th>
+						<th data-options="field:'rank',width:80">级别</th>
+						<th data-options="field:'nodeType',width:80">类型</th>
+						<th data-options="field:'planIdOk',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<div>
+
+			<table class="easyui-datagrid" title="关注"
+				style="width: 700px; height: 315px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
 		</div>
 	</div>
 
+	<!-- 右边 -->
+	<div region="east" iconCls="icon-reload" style="width: 450px;">
+		<div>
+			<table class="easyui-datagrid" title="节点预警（点击预警可查看更多）"
+				style="width: 700px; height: 250px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div>
+
+			<table class="easyui-datagrid" title="节点动态（点击节点动态可查看更多）"
+				style="width: 700px; height: 250px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div>
+
+			<table class="easyui-datagrid" title="本周任务（点击本周任务可查看更多）"
+				style="width: 700px; height: 250px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
 	<!-- 自定义的js -->
 	<script type="text/javascript">
-	$(function() {
-		/* $("#nav").tree({
-			url : "JurTree",
-			lines : true,
-			onClick : function(none) {
-				if (none.url != "") {
-					if ($("#tabs").tabs('exists', none.text)) {
-						$("#tabs").tabs('select', none.text);
-					} else {
-						$("#tabs").tabs('add', {
-							title : none.text,
-							closable : true,
-							href : none.url,
-						});
-					}
-				}
-			},
-		}); */
+		$('#daiban').click(function() {
+			var row = $("#daibantable").datagrid('getSelections');// 单行
+			
+				location = "metaphase?"+row[0].taskId;
 		
-		$('#nav').tree({
-			url : 'JurTree',
-			lines : true,
-			onLoadSuccess : function(node, data) {// 在数据加载成功以后触发。
-				console.log(node);
-				console.log(data);
-				if (data) {
-					$(data).each(function(index, value) {
-						if (this.state == 'closed') {
-							$('#nav').tree('expandAll');// 全部展开
+			/* $.ajax({
+				url : "metaphaseid",
+				type : "",
+				data : {
+					taskId : row[0].taskId
+				},
+				
+			}); */
+
+		})
+
+		$(function() {
+			/* $("#nav").tree({
+				url : "JurTree",
+				lines : true,
+				onClick : function(none) {
+					if (none.url != "") {
+						if ($("#tabs").tabs('exists', none.text)) {
+							$("#tabs").tabs('select', none.text);
+						} else {
+							$("#tabs").tabs('add', {
+								title : none.text,
+								closable : true,
+								href : none.url,
+							});
 						}
-					});
-				}
-			},
-			onClick : function(node) {// node:对象
-				if (node.url) {
-					if ($('#tabs').tabs('exists', node.text)) {//判断文本是否存在
-						$('#tabs').tabs('select', node.text)//选中他
-					} else {
-						$('#tabs').tabs('add', {// 增加选项卡
-							title : node.text,// 对象名字
-							iconCls : node.iconCls,// 对象图标等于新图标
-							closable : true,// 设置关闭按钮
-							href : node.url + '.html',
+					}
+				},
+			}); */
+
+			$('#na').tree({
+				url : 'JurTree',
+				lines : true,
+				onLoadSuccess : function(node, data) {// 在数据加载成功以后触发。
+					console.log(node);
+					console.log(data);
+					if (data) {
+						$(data).each(function(index, value) {
+							if (this.state == 'closed') {
+								$('#nav').tree('expandAll');// 全部展开
+							}
 						});
 					}
+				},
+				onClick : function(node) {// node:对象
+					if (node.url) {
+						if ($('#tabs').tabs('exists', node.text)) {//判断文本是否存在
+							$('#tabs').tabs('select', node.text)//选中他
+						} else {
+							$('#tabs').tabs('add', {// 增加选项卡
+								title : node.text,// 对象名字
+								iconCls : node.iconCls,// 对象图标等于新图标
+								closable : true,// 设置关闭按钮
+								href : node.url + '.html',
+							});
+						}
+					}
 				}
-			}
+			});
+			$('#tabs').tabs({// 选项卡
+				fit : true,// 自适应
+				border : false,// 无边框
+			});
 		});
-		$('#tabs').tabs({// 选项卡
-			fit : true,// 自适应
-			border : false,// 无边框
-		});
-	});
-</script>
+	</script>
 </body>
 </html>
