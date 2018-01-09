@@ -167,14 +167,13 @@ a:hower {
 
 			<table class="easyui-datagrid" title="本周任务（点击本周任务可查看更多）"
 				style="width: 700px; height: 250px"
-				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				data-options="singleSelect:true,collapsible:true,url:'backLogBy',method:'get'">
 				<thead>
 					<tr>
-						<th data-options="field:'itemid',width:80">计划名称</th>
-						<th data-options="field:'productid',width:80">业务事项</th>
-						<th data-options="field:'listprice',width:80">级别</th>
-						<th data-options="field:'unitcost',width:80">类型</th>
-						<th data-options="field:'attr1',width:250">计划完成日期</th>
+						<th data-options="field:'name',width:80">计划名称</th>
+						<th data-options="field:'businessMatter',width:80">业务事项</th>
+						<th data-options="field:'rank',width:80">级别</th>
+						<th data-options="field:'planIdOk',width:250">计划完成日期</th>
 					</tr>
 				</thead>
 			</table>
