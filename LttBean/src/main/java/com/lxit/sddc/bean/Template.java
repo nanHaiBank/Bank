@@ -9,15 +9,15 @@ package com.lxit.sddc.bean;
 public class Template {
 	int id;// 模板Id
 
-	int templateType;// 模板类型
+	String templateType;// 模板类型
 
-	int templatecial;// 模板业态
+	String templatecial;// 模板业态
 
 	String templateName;// 模板名称
 
 	String file;// 文件
 
-	int templateState;// 模板状态（发布、未发布、已下线）
+	String templateState;// 模板状态（发布、未发布、已下线）
 
 	int createdBy;// 创建人
 
@@ -37,19 +37,19 @@ public class Template {
 		this.id = id;
 	}
 
-	public int getTemplateType() {
+	public String getTemplateType() {
 		return templateType;
 	}
 
-	public void setTemplateType(int templateType) {
+	public void setTemplateType(String templateType) {
 		this.templateType = templateType;
 	}
 
-	public int getTemplatecial() {
+	public String getTemplatecial() {
 		return templatecial;
 	}
 
-	public void setTemplatecial(int templatecial) {
+	public void setTemplatecial(String templatecial) {
 		this.templatecial = templatecial;
 	}
 
@@ -69,11 +69,11 @@ public class Template {
 		this.file = file;
 	}
 
-	public int getTemplateState() {
+	public String getTemplateState() {
 		return templateState;
 	}
 
-	public void setTemplateState(int templateState) {
+	public void setTemplateState(String templateState) {
 		this.templateState = templateState;
 	}
 
@@ -117,12 +117,9 @@ public class Template {
 		this.remark = remark;
 	}
 
-	public Template() {
-		super();
-	}
-
-	public Template(int id, int templateType, int templatecial, String templateName, String file, int templateState,
-			int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark) {
+	public Template(int id, String templateType, String templatecial, String templateName, String file,
+			String templateState, int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate,
+			String remark) {
 		super();
 		this.id = id;
 		this.templateType = templateType;
@@ -135,6 +132,10 @@ public class Template {
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
+	}
+
+	public Template() {
+		super();
 	}
 
 	@Override

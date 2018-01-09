@@ -21,15 +21,17 @@ public class TemplateNode {
 
 	String planId;// 计划Id
 
+	String stateDate;// 开始日期
+
 	int period;// 周期
 
-	String planIdOk;// 计划完成日期
+	String planIdOk;// 节点完成日期
 
-	int sponDeptId;// 开发部门(公司部门中间表Id)
+	int sponDeptId;// 发起部门(公司部门中间表Id)
 
 	int recepDeptId;// 接收部门(公司部门中间表Id)
 
-	int assessState;// 考核状态,是否考核（数据字典Id）
+	String assessState;// 考核状态,是否考核（数据字典key）
 
 	int assessStop;// 是否启用
 
@@ -99,6 +101,14 @@ public class TemplateNode {
 		this.planId = planId;
 	}
 
+	public String getStateDate() {
+		return stateDate;
+	}
+
+	public void setStateDate(String stateDate) {
+		this.stateDate = stateDate;
+	}
+
 	public int getPeriod() {
 		return period;
 	}
@@ -131,11 +141,11 @@ public class TemplateNode {
 		this.recepDeptId = recepDeptId;
 	}
 
-	public int getAssessState() {
+	public String getAssessState() {
 		return assessState;
 	}
 
-	public void setAssessState(int assessState) {
+	public void setAssessState(String assessState) {
 		this.assessState = assessState;
 	}
 
@@ -187,14 +197,10 @@ public class TemplateNode {
 		this.remark = remark;
 	}
 
-	public TemplateNode() {
-		super();
-	}
-
 	public TemplateNode(int id, int tempateId, int nodeNumber, int rank, String stage, String businessMatter,
-			String planId, int period, String planIdOk, int sponDeptId, int recepDeptId, int assessState,
-			int assessStop, int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate,
-			String remark) {
+			String planId, String stateDate, int period, String planIdOk, int sponDeptId, int recepDeptId,
+			String assessState, int assessStop, int createdBy, String createdDate, int lastUpdatedBy,
+			String lastUpdateDate, String remark) {
 		super();
 		this.id = id;
 		this.tempateId = tempateId;
@@ -203,6 +209,7 @@ public class TemplateNode {
 		this.stage = stage;
 		this.businessMatter = businessMatter;
 		this.planId = planId;
+		this.stateDate = stateDate;
 		this.period = period;
 		this.planIdOk = planIdOk;
 		this.sponDeptId = sponDeptId;
@@ -216,13 +223,17 @@ public class TemplateNode {
 		this.remark = remark;
 	}
 
+	public TemplateNode() {
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "TemplateNode [id=" + id + ", tempateId=" + tempateId + ", nodeNumber=" + nodeNumber + ", rank=" + rank
-				+ ", stage=" + stage + ", businessMatter=" + businessMatter + ", planId=" + planId + ", period="
-				+ period + ", planIdOk=" + planIdOk + ", sponDeptId=" + sponDeptId + ", recepDeptId=" + recepDeptId
-				+ ", assessState=" + assessState + ", assessStop=" + assessStop + ", createdBy=" + createdBy
-				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
-				+ lastUpdateDate + ", remark=" + remark + "]";
+				+ ", stage=" + stage + ", businessMatter=" + businessMatter + ", planId=" + planId + ", stateDate="
+				+ stateDate + ", period=" + period + ", planIdOk=" + planIdOk + ", sponDeptId=" + sponDeptId
+				+ ", recepDeptId=" + recepDeptId + ", assessState=" + assessState + ", assessStop=" + assessStop
+				+ ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy
+				+ ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
 	}
 }

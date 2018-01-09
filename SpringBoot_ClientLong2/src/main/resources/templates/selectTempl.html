@@ -2,19 +2,88 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<title>查询模板</title>
+<title>查看模板</title>
+
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var urlInfo = window.location.href; //获取当前页面的url  
+		var intLen = urlInfo.length; //获取url的长度  
+		var offset = urlInfo.indexOf("?"); //设置参数字符串开始的位置  
+		var strKeyValue = urlInfo.substr(offset, intLen); //取出参数字符串 这里会获得类似“id=1”这样的字符串  
+		var arrParam = strKeyValue.split("?"); //对获得的参数字符串按照“=”进行分割  
+		var strParamValue = arrParam[1]; //得到参数值  
+
+		//查询指定模板信息
+		$.ajax({
+			url : 'showingmb',
+			type : 'post',
+			data : {
+				id : strParamValue
+			},
+			success : function(result) {
+				$("#td_1").text(result.templateName);
+				$("#td_2").text(result.templateType);
+				$("#td_3").text(result.createdBy);
+				$("#td_4").text(result.createdDate);
+			}
+		});
+
+		//查询模板节点信息
+		$.ajax({
+			url : 'mbnodemessage',
+			type : 'post',
+			data:{
+				id:strParamValue
+			},
+			success : function(result) {
+				/* <![CDATA[ */
+				var html;
+				for (var i = 0; i < result.length; i++) {
+					html += "<tr><td>" + result[i].nodeNumber + "</td><td>"
+							+ result[i].rank + "</td><td>"
+							+ result[i].stage + "</td><td>"
+							+ result[i].businessMatter + "</td><td>"
+							+ result[i].stateDate + "</td><td>"
+							+ result[i].period + "</td><td>"
+							+ result[i].planIdOk + "</td><td>"
+							+ result[i].sponDeptId + "</td><td>"
+							+ result[i].recepDeptId + "</td><td><a href='#'  disable＝'true' onclick='chaknmb("+ result[i].id + ");'>查看</a></td></tr>";
+						}
+						/* ]]> */
+						$("#tblosId").html(html);
+					}
+				});
+
+		$("#mobanxiax").click(function() {
+			$.ajax({
+				url : 'showing',
+				type : 'post',
+				data : {
+					id : strParamValue
+				},
+				success : function(result) {
+					alert("查询模板错误！原因是该模板已下线！");
+					location = "templeimList";
+				}
+			});
+		});
+	});
+</script>
+
 </head>
 <body>
+	<img id="u6246_img" class="img " src="images/u6.jpg" />
 	<div style="height: 30px;">模板信息</div>
 	<table>
 		<tr>
-			<td>模板名称：</td>
+			<td>模板名称：<span id="td_1"></span></td>
 			<td></td>
-			<td>计划类型：</td>
-			<td>创建人：</td>
+			<td>模板类型：<span id="td_2"></span></td>
+			<td>创建人：<span id="td_3"></span></td>
 		</tr>
 		<tr>
-			<td>创建时间：</td>
+			<td>创建时间：<span id="td_4"></span></td>
 			<td></td>
 			<td></td>
 			<td><input type="button" value="模板下线" id="mobanxiax" /><input
@@ -23,19 +92,24 @@
 	</table>
 	<div style="height: 30px;">模板节点信息</div>
 	<table>
-		<tr>
-			<td>序号</td>
-			<td>级别</td>
-			<td>阶段</td>
-			<td>业务事项</td>
-			<td>开始日期</td>
-			<td>周期</td>
-			<td>完成日期</td>
-			<td>发起部门</td>
-			<td>接收部门</td>
-			<!-- 操作中有查看，点击查看可以对该节点的相关信息以及岗位设置 -->
-			<td>操作</td>
-		</tr>
+		<thead>
+			<tr>
+				<td>序号</td>
+				<td>级别</td>
+				<td>阶段</td>
+				<td>业务事项</td>
+				<td>开始日期</td>
+				<td>周期</td>
+				<td>完成日期</td>
+				<td>发起部门</td>
+				<td>接收部门</td>
+				<!-- 操作中有查看，点击查看可以对该节点的相关信息以及岗位设置 -->
+				<td>操作</td>
+			</tr>
+		</thead>
+		<tbody id="tblosId">
+
+		</tbody>
 	</table>
 </body>
 </html>
