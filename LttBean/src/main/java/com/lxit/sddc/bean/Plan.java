@@ -7,6 +7,10 @@
  *
  */
 public class Plan {
+	public Plan() {
+
+	}
+
 	int id;// 计划Id
 
 	String name;// 计划名称
@@ -17,13 +21,13 @@ public class Plan {
 
 	int exploitPeriod;// 开发周期
 
-	String securitDate;//摘牌日
-	
-	String CommercialDate;//开工日
-	
-	String planType;//计划类型
-		
-	String planStateKey;//计划状态
+	String securitDate;// 摘牌日
+
+	String CommercialDate;// 开工日
+
+	String planType;// 计划类型
+
+	String planStateKey;// 计划状态
 
 	String saleDate;// 开售日
 
@@ -41,15 +45,18 @@ public class Plan {
 
 	String remark;// 备注
 
-	
-	
-	public String getPlanStateKey() {
-		return planStateKey;
-	}
+	private String businessMatter;// 业务事项
 
-	public void setPlanStateKey(String planStateKey) {
-		this.planStateKey = planStateKey;
-	}
+	private int rank;// 节点级别
+
+	private String nodeType;// 类别
+
+	private String planIdOk;// 完成日期
+	
+	private int nid;//节点id
+	
+	private int taskId;//任务id
+	
 
 	public int getId() {
 		return id;
@@ -105,6 +112,22 @@ public class Plan {
 
 	public void setCommercialDate(String commercialDate) {
 		CommercialDate = commercialDate;
+	}
+
+	public String getPlanType() {
+		return planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+	}
+
+	public String getPlanStateKey() {
+		return planStateKey;
+	}
+
+	public void setPlanStateKey(String planStateKey) {
+		this.planStateKey = planStateKey;
 	}
 
 	public String getSaleDate() {
@@ -171,13 +194,53 @@ public class Plan {
 		this.remark = remark;
 	}
 
-	public Plan() {
-		super();
+	public String getBusinessMatter() {
+		return businessMatter;
+	}
+
+	public void setBusinessMatter(String businessMatter) {
+		this.businessMatter = businessMatter;
+	}
+
+	public int getRank() {
+		return rank;
+	}
+
+	public void setRank(int rank) {
+		this.rank = rank;
+	}
+
+	public String getNodeType() {
+		return nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+	}
+
+	public String getPlanIdOk() {
+		return planIdOk;
+	}
+
+	public void setPlanIdOk(String planIdOk) {
+		this.planIdOk = planIdOk;
+	}
+
+	@Override
+	public String toString() {
+		return "Plan [id=" + id + ", name=" + name + ", templateId=" + templateId + ", planCommercial=" + planCommercial
+				+ ", exploitPeriod=" + exploitPeriod + ", securitDate=" + securitDate + ", CommercialDate="
+				+ CommercialDate + ", planType=" + planType + ", planStateKey=" + planStateKey + ", saleDate="
+				+ saleDate + ", buildingDate=" + buildingDate + ", clusterId=" + clusterId + ", createdBy=" + createdBy
+				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
+				+ lastUpdateDate + ", remark=" + remark + ", businessMatter=" + businessMatter + ", rank=" + rank
+				+ ", nodeType=" + nodeType + ", planIdOk=" + planIdOk + ", nid=" + nid + ", taskId=" + taskId + "]";
 	}
 
 	public Plan(int id, String name, int templateId, int planCommercial, int exploitPeriod, String securitDate,
-			String commercialDate, String saleDate, String buildingDate, int clusterId, int createdBy,
-			String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark) {
+			String commercialDate, String planType, String planStateKey, String saleDate, String buildingDate,
+			int clusterId, int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark,
+			String businessMatter, int rank, String nodeType, String planIdOk) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -186,6 +249,8 @@ public class Plan {
 		this.exploitPeriod = exploitPeriod;
 		this.securitDate = securitDate;
 		CommercialDate = commercialDate;
+		this.planType = planType;
+		this.planStateKey = planStateKey;
 		this.saleDate = saleDate;
 		this.buildingDate = buildingDate;
 		this.clusterId = clusterId;
@@ -194,14 +259,57 @@ public class Plan {
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
+		this.businessMatter = businessMatter;
+		this.rank = rank;
+		this.nodeType = nodeType;
+		this.planIdOk = planIdOk;
 	}
 
-	@Override
-	public String toString() {
-		return "Plan [id=" + id + ", name=" + name + ", templateId=" + templateId + ", planCommercial=" + planCommercial
-				+ ", exploitPeriod=" + exploitPeriod + ", securitDate=" + securitDate + ", CommercialDate="
-				+ CommercialDate + ", saleDate=" + saleDate + ", buildingDate=" + buildingDate + ", clusterId="
-				+ clusterId + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy="
-				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+	public int getNid() {
+		return nid;
 	}
+
+	public void setNid(int nid) {
+		this.nid = nid;
+	}
+
+	public int getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
+	}
+
+	public Plan(int id, String name, int templateId, int planCommercial, int exploitPeriod, String securitDate,
+			String commercialDate, String planType, String planStateKey, String saleDate, String buildingDate,
+			int clusterId, int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark,
+			String businessMatter, int rank, String nodeType, String planIdOk, int nid, int taskId) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.templateId = templateId;
+		this.planCommercial = planCommercial;
+		this.exploitPeriod = exploitPeriod;
+		this.securitDate = securitDate;
+		CommercialDate = commercialDate;
+		this.planType = planType;
+		this.planStateKey = planStateKey;
+		this.saleDate = saleDate;
+		this.buildingDate = buildingDate;
+		this.clusterId = clusterId;
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+		this.lastUpdatedBy = lastUpdatedBy;
+		this.lastUpdateDate = lastUpdateDate;
+		this.remark = remark;
+		this.businessMatter = businessMatter;
+		this.rank = rank;
+		this.nodeType = nodeType;
+		this.planIdOk = planIdOk;
+		this.nid = nid;
+		this.taskId = taskId;
+	}
+	
+
 }

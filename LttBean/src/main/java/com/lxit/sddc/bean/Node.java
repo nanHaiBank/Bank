@@ -7,6 +7,9 @@
  *
  */
 public class Node {
+	public Node() {
+		
+	}
 	int id;// 主键
 
 	int planId;// 计划Id
@@ -46,6 +49,14 @@ public class Node {
 	String companyName;//发起公司名称
 	
 	String deptName;//发起岗位名称
+	
+	private int taskId;//任务id
+	
+	private String sendname;//发生部门
+	
+	private String takename;//接受部门
+
+	private String planIDate;//计划完成日期
 
 	public int getId() {
 		return id;
@@ -135,6 +146,21 @@ public class Node {
 		this.receptionDeptId = receptionDeptId;
 	}
 
+	public String getAssessState() {
+		return assessState;
+	}
+
+	public void setAssessState(String assessState) {
+		this.assessState = assessState;
+	}
+
+	public String getAssessStop() {
+		return assessStop;
+	}
+
+	public void setAssessStop(String assessStop) {
+		this.assessStop = assessStop;
+	}
 
 	public int getCreatedBy() {
 		return createdBy;
@@ -176,26 +202,6 @@ public class Node {
 		this.remark = remark;
 	}
 
-	public Node() {
-		super();
-	}
-
-	public String getAssessState() {
-		return assessState;
-	}
-
-	public void setAssessState(String assessState) {
-		this.assessState = assessState;
-	}
-
-	public String getAssessStop() {
-		return assessStop;
-	}
-
-	public void setAssessStop(String assessStop) {
-		this.assessStop = assessStop;
-	}
-
 	public String getCompanyName() {
 		return companyName;
 	}
@@ -211,7 +217,82 @@ public class Node {
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}
-	
 
+	public int getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getSendname() {
+		return sendname;
+	}
+
+	public void setSendname(String sendname) {
+		this.sendname = sendname;
+	}
+
+	public String getTakename() {
+		return takename;
+	}
+
+	public void setTakename(String takename) {
+		this.takename = takename;
+	}
+
+	public String getPlanIDate() {
+		return planIDate;
+	}
+
+	public void setPlanIDate(String planIDate) {
+		this.planIDate = planIDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Node [id=" + id + ", planId=" + planId + ", number=" + number + ", rank=" + rank + ", stage=" + stage
+				+ ", businessMatter=" + businessMatter + ", nodeDate=" + nodeDate + ", period=" + period + ", planIdOk="
+				+ planIdOk + ", sponsorDeptId=" + sponsorDeptId + ", receptionDeptId=" + receptionDeptId
+				+ ", assessState=" + assessState + ", assessStop=" + assessStop + ", createdBy=" + createdBy
+				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
+				+ lastUpdateDate + ", remark=" + remark + ", companyName=" + companyName + ", deptName=" + deptName
+				+ ", taskId=" + taskId + ", sendname=" + sendname + ", takename=" + takename + ", planIDate="
+				+ planIDate + "]";
+	}
+
+	public Node(int id, int planId, int number, int rank, String stage, String businessMatter, String nodeDate,
+			int period, String planIdOk, int sponsorDeptId, int receptionDeptId, String assessState, String assessStop,
+			int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark,
+			String companyName, String deptName, int taskId, String sendname, String takename, String planIDate) {
+		super();
+		this.id = id;
+		this.planId = planId;
+		this.number = number;
+		this.rank = rank;
+		this.stage = stage;
+		this.businessMatter = businessMatter;
+		this.nodeDate = nodeDate;
+		this.period = period;
+		this.planIdOk = planIdOk;
+		this.sponsorDeptId = sponsorDeptId;
+		this.receptionDeptId = receptionDeptId;
+		this.assessState = assessState;
+		this.assessStop = assessStop;
+		this.createdBy = createdBy;
+		this.createdDate = createdDate;
+		this.lastUpdatedBy = lastUpdatedBy;
+		this.lastUpdateDate = lastUpdateDate;
+		this.remark = remark;
+		this.companyName = companyName;
+		this.deptName = deptName;
+		this.taskId = taskId;
+		this.sendname = sendname;
+		this.takename = takename;
+		this.planIDate = planIDate;
+	}
+	
+	
 	
 }
