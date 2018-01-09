@@ -8,16 +8,15 @@ package com.lxit.sddc.bean;
  */
 public class Project {
 	int id;// 项目Id
-
 	String name;// 项目名称
 	int companyId;// 公司Id
 	String projectPhoto;// 项目图片
 	int exploitPeriod;// 开发周期
 	String landArea;// 用地面积（m2）
 	String city;// 城市
-
 	String ratio;// 容积率
 	String landareamu;// 用地面积（亩）
+	String projectState;// 项目状态
 	String tolerancearea;// 计容面积
 	String floorArea;// 地上建筑面积
 
@@ -102,6 +101,14 @@ public class Project {
 
 	public void setLandareamu(String landareamu) {
 		this.landareamu = landareamu;
+	}
+
+	public String getProjectState() {
+		return projectState;
+	}
+
+	public void setProjectState(String projectState) {
+		this.projectState = projectState;
 	}
 
 	public String getTolerancearea() {
@@ -192,14 +199,10 @@ public class Project {
 		this.remark = remark;
 	}
 
-	public Project() {
-		super();
-	}
-
 	public Project(int id, String name, int companyId, String projectPhoto, int exploitPeriod, String landArea,
-			String city, String ratio, String landareamu, String tolerancearea, String floorArea, String mayArea,
-			String notManyArea, int parking, String registerDate, int createdBy, String createdDate, int lastUpdatedBy,
-			String lastUpdateDate, String remark) {
+			String city, String ratio, String landareamu, String projectState, String tolerancearea, String floorArea,
+			String mayArea, String notManyArea, int parking, String registerDate, int createdBy, String createdDate,
+			int lastUpdatedBy, String lastUpdateDate, String remark) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -210,6 +213,7 @@ public class Project {
 		this.city = city;
 		this.ratio = ratio;
 		this.landareamu = landareamu;
+		this.projectState = projectState;
 		this.tolerancearea = tolerancearea;
 		this.floorArea = floorArea;
 		this.mayArea = mayArea;
@@ -223,13 +227,18 @@ public class Project {
 		this.remark = remark;
 	}
 
+	public Project() {
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Project [id=" + id + ", name=" + name + ", companyId=" + companyId + ", projectPhoto=" + projectPhoto
 				+ ", exploitPeriod=" + exploitPeriod + ", landArea=" + landArea + ", city=" + city + ", ratio=" + ratio
-				+ ", landareamu=" + landareamu + ", tolerancearea=" + tolerancearea + ", floorArea=" + floorArea
-				+ ", mayArea=" + mayArea + ", notManyArea=" + notManyArea + ", parking=" + parking + ", registerDate="
-				+ registerDate + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy="
-				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+				+ ", landareamu=" + landareamu + ", projectState=" + projectState + ", tolerancearea=" + tolerancearea
+				+ ", floorArea=" + floorArea + ", mayArea=" + mayArea + ", notManyArea=" + notManyArea + ", parking="
+				+ parking + ", registerDate=" + registerDate + ", createdBy=" + createdBy + ", createdDate="
+				+ createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark="
+				+ remark + "]";
 	}
 }

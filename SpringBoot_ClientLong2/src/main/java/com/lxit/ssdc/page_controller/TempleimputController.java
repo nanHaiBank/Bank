@@ -162,6 +162,7 @@ public class TempleimputController {
 	@RequestMapping("/mbnodemessage")
 	@ResponseBody
 	public List<TemplateNode> mbnodemessage( Integer id) {
+		System.out.println("======================"+id);
 		return templCountService.mbnodemessage(id);
 	}
 }

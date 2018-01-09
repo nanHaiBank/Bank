@@ -22,51 +22,51 @@
 	<table>
 		<tr>
 			<td>项目名称：</td>
-			<td><input type="text" id="projectName" /></td>
+			<td><input type="text" name="name" id="name" /></td>
 			<td>公司名称：</td>
-			<td><input type="text" id="centerName" /></td>
+			<td><input type="text" name="companyId" id="companyId" /></td>
 			<td>项目图片：</td>
 			<td><input type="button" value="上传图片" /></td>
 			<td>开发周期：</td>
-			<td><input type="text" id="kaifa" /></td>
+			<td><input type="text" name="exploitPeriod" id="exploitPeriod" /></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
 		<tr>
 			<td>区域：</td>
-			<td><select>
-					<option id="quyu">青岛</option>
+			<td><select id="area">
+					<option value="青岛">青岛</option>
 			</select></td>
 			<td>城市：</td>
-			<td><select>
-					<option id="city">青岛</option>
+			<td><select id="city">
+					<option value="青岛">青岛</option>
 			</select></td>
 			<td>用地面积：</td>
-			<td><input type="text" id="yongdimianji" /></td>
+			<td><input type="text" name="landArea" id="landArea" /></td>
 			<td>容积率：</td>
-			<td><input type="text" id="rongjilv" /></td>
+			<td><input type="text" name="ratio" id="ratio" /></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
 		<tr>
 			<td>用地面积（亩）：</td>
-			<td><input type="text" id="yongdimianjimu" /></td>
+			<td><input type="text" name="landareamu" id="landareamu" /></td>
 			<td>计容面积：</td>
-			<td><input type="text" id="jirongmianji" /></td>
+			<td><input type="text" name="tolerancearea" id="tolerancearea" /></td>
 			<td>地上建筑面积：</td>
-			<td><input type="text" id="dishangjianzhumj" /></td>
+			<td><input type="text" name="floorArea" id="floorArea" /></td>
 			<td>可售计容面积：</td>
-			<td><input type="text" id="keshoujirongmj" /></td>
+			<td><input type="text" name="mayArea" id="mayArea" /></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
 		<tr>
 			<td>不售计容面积：</td>
-			<td><input type="text" id="bukeshoujrmj" /></td>
+			<td><input type="text" name="notManyArea" id="notManyArea" /></td>
 			<td>停车位：</td>
-			<td><input type="text" id="tingchewei" /></td>
+			<td><input type="text" name="parking" id="parking" /></td>
 			<td>登记日期：</td>
-			<td><input type="text" id="dengjiriqi" /></td>
+			<td><input type="text" name="registerDate" id="registerDate" /></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
@@ -86,5 +86,36 @@
 		<a href="projectList"><input type="button" value="创建项目"
 			id="chuangjianxm" /></a>
 	</div>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$("#chuangjianxm").click(function(){
+				$.ajax({
+					url : 'insertProject',
+					type : 'post',
+					data : {
+						name : $("#name").val(),
+						companyId : $("#companyId").val(),
+						exploitPeriod : $("#exploitPeriod").val(),
+						city : $("#city").val(),
+						area : $("#area").val(),
+						landArea : $("#landArea").val(),
+						ratio : $("#ratio").val(),
+						landareamu : $("#landareamu").val(),
+						tolerancearea : $("#tolerancearea").val(),
+						floorArea : $("#floorArea").val(),
+						mayArea : $("#mayArea").val(),
+						notManyArea : $("#notManyArea").val(),
+						parking : $("#parking").val(),
+						registerDate : $("#registerDate").val()
+					},
+					success : function(result) {
+						alert(result);
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>

@@ -22,36 +22,6 @@ public class LoginController {
 		return "index";
 	}
 
-	/**
-	 * 进入项目页面
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/project")
-	public String project() {
-		return "project";
-	}
-
-	/**
-	 * 进入项目列表页面
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/projectList")
-	public String projectList() {
-		return "projectList";
-	}
-
-	/**
-	 * 进入土地详情页面
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/landparticulars")
-	public String landparticulars() {
-		return "landparticulars";
-	}
-
 	@RequestMapping("/login")
 	@ResponseBody
 	public User login(User user) {

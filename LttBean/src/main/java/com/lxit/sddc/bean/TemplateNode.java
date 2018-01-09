@@ -7,7 +7,7 @@ package com.lxit.sddc.bean;
  *
  */
 public class TemplateNode {
-	int id;// 模板节点Id
+	int nodsid;// 模板节点Id
 
 	int tempateId;// 模板Id
 
@@ -45,12 +45,12 @@ public class TemplateNode {
 
 	String remark;// 备注
 
-	public int getId() {
-		return id;
+	public int getNodsid() {
+		return nodsid;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setNodsid(int nodsid) {
+		this.nodsid = nodsid;
 	}
 
 	public int getTempateId() {
@@ -197,12 +197,12 @@ public class TemplateNode {
 		this.remark = remark;
 	}
 
-	public TemplateNode(int id, int tempateId, int nodeNumber, int rank, String stage, String businessMatter,
+	public TemplateNode(int nodsid, int tempateId, int nodeNumber, int rank, String stage, String businessMatter,
 			String planId, String stateDate, int period, String planIdOk, int sponDeptId, int recepDeptId,
 			String assessState, int assessStop, int createdBy, String createdDate, int lastUpdatedBy,
 			String lastUpdateDate, String remark) {
 		super();
-		this.id = id;
+		this.nodsid = nodsid;
 		this.tempateId = tempateId;
 		this.nodeNumber = nodeNumber;
 		this.rank = rank;
@@ -229,11 +229,11 @@ public class TemplateNode {
 
 	@Override
 	public String toString() {
-		return "TemplateNode [id=" + id + ", tempateId=" + tempateId + ", nodeNumber=" + nodeNumber + ", rank=" + rank
-				+ ", stage=" + stage + ", businessMatter=" + businessMatter + ", planId=" + planId + ", stateDate="
-				+ stateDate + ", period=" + period + ", planIdOk=" + planIdOk + ", sponDeptId=" + sponDeptId
-				+ ", recepDeptId=" + recepDeptId + ", assessState=" + assessState + ", assessStop=" + assessStop
-				+ ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy
-				+ ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+		return "TemplateNode [nodsid=" + nodsid + ", tempateId=" + tempateId + ", nodeNumber=" + nodeNumber + ", rank="
+				+ rank + ", stage=" + stage + ", businessMatter=" + businessMatter + ", planId=" + planId
+				+ ", stateDate=" + stateDate + ", period=" + period + ", planIdOk=" + planIdOk + ", sponDeptId="
+				+ sponDeptId + ", recepDeptId=" + recepDeptId + ", assessState=" + assessState + ", assessStop="
+				+ assessStop + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy="
+				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
 	}
 }

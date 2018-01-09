@@ -19,12 +19,12 @@
 	<div>查询条件</div>
 	<table>
 		<tr>
-			<td>项目名称：<input type="text" id="xiangmuname" /></td>
-			<td>公司名称：<input type="text" id="gognsiname" /></td>
-			<td>项目状态：<select id="xinamgustate">
-					<option value="#">全部</option>
+			<td>项目名称：<input type="text" name="name" id="names" /></td>
+			<td>公司名称：<input type="text" name="companyId" id="companyIds" /></td>
+			<td>项目状态：<select name="projectState" id="projectStates">
 			</select></td>
-			<td><input type="button" value="查询" id="projechaxun" /></td>
+			<td><input type="button" value="查询" id="projechaxun"
+				onclick="lists();" /></td>
 		</tr>
 	</table>
 	<table class="easyui-datagrid" title="项目列表"
@@ -34,7 +34,6 @@
 		<thead>
 			<tr>
 				<th data-options="field:'itemid',width:200">项目名称</th>
-				<th data-options="field:'productid',width:200">省份</th>
 				<th data-options="field:'listprice',width:200">城市</th>
 				<th data-options="field:'unitcost',width:200">公司名称</th>
 				<th data-options="field:'attr1',width:250">开发周期</th>
@@ -42,6 +41,58 @@
 				<th data-options="field:'attr1',width:250">操作</th>
 			</tr>
 		</thead>
+		<tbody id="tbody_id">
+		</tbody>
 	</table>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			//项目状态查询
+			$.ajax({
+				url : 'projectState',
+				type : 'post',
+				success : function(result) {
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#projectStates").html(html);
+				}
+			});
+			lists();
+		});
+
+		function lists() {
+			$.ajax({
+				url : 'projectLists',
+				type : 'post',
+				success : function(result) {
+					alert(result);
+					/* <![CDATA[ */
+					var html;
+					for (var i = 0; i < result.length; i++) {
+						html += "<tr><td><a href='#'  disable＝'true' onclick='xiangmu("+result[i].id+");'>"
+							+ result[i].name
+							+ "</a></td><td>"
+							+ result[i].city
+							+ "</td><td>"
+							+ result[i].companyId
+							+ "</td><td>"
+							+ result[i].exploitPeriod
+							+ "</td><td>"
+							+ result[i].createdBy
+							+ "</td><td><a href = '#' disable＝'true' onclick='bjxm("+result[i].id+");'	>编辑项目</a>|<a href='#'   disable＝'true' onclick='cjjihua("+result[i].id+");'>创建计划</a></td></tr>";
+					}
+					/* ]]> */
+					$("#tbody_id").html(html);
+				}
+			});
+		}
+	</script>
 </body>
 </html>
