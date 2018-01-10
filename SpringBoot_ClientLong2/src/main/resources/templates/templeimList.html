@@ -28,13 +28,11 @@
 
 	<script type="text/javascript">
 		$(function() {
-			alert(1);
 			//模板类型
 			$.ajax({
 				url : 'disType',
 				type : 'post',
 				success : function(result) {
-					alert(result);
 					/* <![CDATA[ */
 					var html;
 					html += "<option value=''>全部</option>";
@@ -52,7 +50,6 @@
 				url : 'disCommercial',
 				type : 'post',
 				success : function(result) {
-					alert(result);
 					/* <![CDATA[ */
 					var html;
 					html += "<option value=''>全部</option>";
@@ -70,7 +67,6 @@
 				url : 'disStart',
 				type : 'post',
 				success : function(result) {
-					alert(result);
 					/* <![CDATA[ */
 					var html;
 					html += "<option value=''>全部</option>";
@@ -85,6 +81,12 @@
 			//查询模板列表数据
 			$('#templTableId').datagrid({
 				url : 'templ',
+				queryParams:{
+					templateType:$("#templateType").val(),
+					templatecial:$("#templatecial").val(),
+					templateState:$("#templateState").val(),
+					templateName:$("#templateName").val()
+				},
 				border : true,
 				fitColumns : true,
 				pagination : true,
@@ -119,7 +121,18 @@
 				}, {
 					field : 'caozuo',
 					title : '操作',
-					width : 60
+					width : 60,
+					formatter: function(value,row,index){
+						var one;
+						if (row.templateState == 'J1'){
+							one = '<span onclick="fabu('+row.id+');">发布</span>|<span onclick="shanchu('+row.id+');">删除</span>|<span onclick="xiazaimb('+row.id+');">下载模板</span>';
+						}else if(row.templateState == 'J3'){
+							one = '<span onclick="mbshangxian('+row.id+');">模板上线</span>|<span onclick="xiazaimb('+row.id+');">下载模板</span>';
+						}else {
+						 	one = '<span onclick="mbxiaxian('+row.id+');">模板下线</span>|<span onclick="xiazaimb('+row.id+');">下载模板</span>';
+						}
+						return one;
+					}
 				} ] ]
 			});
 		});
