@@ -3,235 +3,182 @@
 <head>
 <meta charset="UTF-8" />
 <title>模板列表</title>
-
-<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		//模板类型
-		$.ajax({
-			url : 'disType',
-			type : 'post',
-			success : function(result) {
-				/* <![CDATA[ */
-				var html;
-				html += "<option value=''>全部</option>";
-				for (var i = 0; i < result.length; i++) {
-					html += "<option value="+result[i].key+">"
-							+ result[i].value + "</option>";
-				}
-				/* ]]> */
-				$("#templateType").html(html);
-			}
-		});
-
-		//模板业态
-		$.ajax({
-			url : 'disCommercial',
-			type : 'post',
-			success : function(result) {
-				/* <![CDATA[ */
-				var html;
-				html += "<option value=''>全部</option>";
-				for (var i = 0; i < result.length; i++) {
-					html += "<option value="+result[i].key+">"
-							+ result[i].value + "</option>";
-				}
-				/* ]]> */
-				$("#templatecial").html(html);
-			}
-		});
-
-		//查询模板状态
-		$.ajax({
-			url : 'disStart',
-			type : 'post',
-			success : function(result) {
-				/* <![CDATA[ */
-				var html;
-				html += "<option value=''>全部</option>";
-				for (var i = 0; i < result.length; i++) {
-					html += "<option value="+result[i].key+">"
-							+ result[i].value + "</option>";
-				}
-				/* ]]> */
-				$("#templateState").html(html);
-			}
-		});
-		//查询模板列表数据
-		list();
-	});
-
-	function list() {
-		$.ajax({
-			url : 'templ',
-			type : 'post',
-			data : {
-				templateType : $("#templateType").val(),
-				templatecial : $("#templatecial").val(),
-				templateState : $("#templateState").val(),
-				templateName : $("#templateName").val()
-			},
-			success : function(result) {
-				/* <![CDATA[ */
-				var html;
-				for (var i = 0; i < result.length; i++) {
-					if (result[i].templateState == 'J1') {
-						html += "<tr><td>"
-								+ result[i].id
-								+ "</td><td></td><td><a href='#'  disable＝'true' onclick='tiaozhuan("+result[i].id+");'>"
-								+ result[i].templateType
-								+ "</a></td><td></td><td>"
-								+ result[i].templateName
-								+ "</td><td></td><td>"
-								+ result[i].createdBy
-								+ "</td><td></td><td>"
-								+ result[i].createdDate
-								+ "</td><td></td><td>"
-								+ result[i].templateState
-								+ "</td><td></td><td><a href = '#' disable＝'true' onclick='fabu("+result[i].id+");'	>发布</a>|<a href='#'   disable＝'true' onclick='shanchu("+result[i].id+");'>删除</a>|<a href='#'>下载模板</a></td></tr>";
-					} else if (result[i].templateState == 'J3') {
-						html += "<tr><td>"
-							+ result[i].id
-							+ "</td><td></td><td><a href='#'  disable＝'true' onclick='tiaozhuan("+result[i].id+");'>"
-							+ result[i].templateType
-							+ "</a></td><td></td><td>"
-							+ result[i].templateName
-							+ "</td><td></td><td>"
-							+ result[i].createdBy
-							+ "</td><td></td><td>"
-							+ result[i].createdDate
-							+ "</td><td></td><td>"
-							+ result[i].templateState
-							+ "</td><td></td><td><a href='#'  disable＝'true' onclick='mbshangxian("+result[i].id+");'>模板上线</a>|<a href='#'>下载模板</a></td></tr>";
-					}else {
-						html += "<tr><td>"
-								+ result[i].id
-								+ "</td><td></td><td><a href='#'  disable＝'true' onclick='tiaozhuan("+result[i].id+");'>"
-								+ result[i].templateType
-								+ "</a></td><td></td><td>"
-								+ result[i].templateName
-								+ "</td><td></td><td>"
-								+ result[i].createdBy
-								+ "</td><td></td><td>"
-								+ result[i].createdDate
-								+ "</td><td></td><td>"
-								+ result[i].templateState
-								+ "</td><td></td><td><a href='#'  disable＝'true' onclick='mbxiaxian("+result[i].id+");'>模板下线</a>|<a href='#'>下载模板</a></td></tr>";
-					}
-				}
-				/* ]]> */
-				$("#trIdWord").html(html);
-			}
-		});
-	}
-	
-	function fabu(id){
-		$.ajax({
-			url:'isses',
-			type:'post',
-			data:{
-				id:id
-			},
-			success :function(result){
-				location="templeimList";
-			}
-		});
-	}
-	
-	function mbxiaxian(id){
-		$.ajax({
-			url:'showing',
-			type:'post',
-			data:{
-				id:id
-			},
-			success :function(result){
-				location="templeimList";
-			}
-		});
-	}
-	
-	
-	function mbshangxian(id){
-		$.ajax({
-			url:'theaters',
-			type:'post',
-			data:{
-				id:id
-			},
-			success :function(result){
-				location="templeimList";
-			}
-		});
-	}
-	
-	function tiaozhuan(id){
-		$.ajax({
-			url : 'showingmb',
-			type : 'post',
-			data : {
-				id : id
-			},
-			success : function(result) {
-				if (result.templateState == "J2"){
-					location="selectTempl?"+id;
-				}else{
-					alert("该模板已下线,请先上线再查看！");
-				}
-			}
-		});
-		
-	}
-</script>
-
 </head>
 <body>
-	<img id="u6246_img" class="img " src="images/u6.jpg" />
 	<div style="height: 30px;">查询条件</div>
 	<table>
 		<tr>
 			<!-- 类型分为：一、二级项目计划 、总控计划、专项计划 -->
 			<td>模板类型：<select name="templateType" id="templateType">
 			</select></td>
-			<td></td>
 			<!-- 业态分为：住宅、别墅、酒店 -->
 			<td>模板业态:<select name="templatecial" id="templatecial">
 			</select></td>
-			<td></td>
 			<!-- 状态：未发布、已发布、已下线 -->
 			<td>状态：<select name="templateState" id="templateState">
-
 			</select></td>
-			<td></td>
 			<td>模板名称：<input type="text" name="templateName"
 				id="templateName" /></td>
-			<td><input type="button" value="查询" id="mobanselect"
-				onclick="list();" /></td>
+			<td><input type="button" value="查询" id="mobanselect" /></td>
 		</tr>
 	</table>
 	<div style="height: 30px;">模板列表</div>
-	<table>
-		<thead>
-			<tr>
-				<td>序号</td>
-				<td></td>
-				<!-- 数据拿出来之后点击计划类型，可查询该计划类型的相关信息,-->
-				<td>模板类型</td>
-				<td></td>
-				<td>模板名称</td>
-				<td></td>
-				<td>创建人</td>
-				<td></td>
-				<td>创建日期</td>
-				<td></td>
-				<td>状态</td>
-				<td></td>
-				<!-- 操作分为：已发布的模板只有模板下线、下载模板，未发布的模板拥有发布、删除、模板下载这几种操作 -->
-				<td>操作</td>
-			</tr>
-		</thead>
-		<tbody id="trIdWord">
-		</tbody>
+	<table id="templTableId">
 	</table>
+
+	<script type="text/javascript">
+		$(function() {
+			alert(1);
+			//模板类型
+			$.ajax({
+				url : 'disType',
+				type : 'post',
+				success : function(result) {
+					alert(result);
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#templateType").html(html);
+				}
+			});
+
+			//模板业态
+			$.ajax({
+				url : 'disCommercial',
+				type : 'post',
+				success : function(result) {
+					alert(result);
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#templatecial").html(html);
+				}
+			});
+
+			//查询模板状态
+			$.ajax({
+				url : 'disStart',
+				type : 'post',
+				success : function(result) {
+					alert(result);
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#templateState").html(html);
+				}
+			});
+			//查询模板列表数据
+			$('#templTableId').datagrid({
+				url : 'templ',
+				border : true,
+				fitColumns : true,
+				pagination : true,
+				pageSize : 5,
+				pageList : [ 2, 4, 6, 8, 10 ],
+				pageNumber : 1,
+				columns : [ [ {
+					field : 'id',
+					title : '序号',
+					width : 60
+
+				}, {
+					field : 'templateType',
+					title : '模板类型',
+					width : 60
+				}, {
+					field : 'templateName',
+					title : '模板名称',
+					width : 60
+				}, {
+					field : 'createdBy',
+					title : '创建人',
+					width : 60
+				}, {
+					field : 'createdDate',
+					title : '创建日期',
+					width : 60
+				}, {
+					field : 'templateState',
+					title : '状态',
+					width : 60
+				}, {
+					field : 'caozuo',
+					title : '操作',
+					width : 60
+				} ] ]
+			});
+		});
+
+		function fabu(id) {
+			$.ajax({
+				url : 'isses',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					location = "templeimList";
+				}
+			});
+		}
+
+		function mbxiaxian(id) {
+			$.ajax({
+				url : 'showing',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					location = "templeimList";
+				}
+			});
+		}
+
+		function mbshangxian(id) {
+			$.ajax({
+				url : 'theaters',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					location = "templeimList";
+				}
+			});
+		}
+
+		function tiaozhuan(id) {
+			$.ajax({
+				url : 'showingmb',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					if (result.templateState == "J2") {
+						location = "selectTempl?" + id;
+					} else {
+						alert("该模板已下线,请先上线再查看！");
+					}
+				}
+			});
+		}
+	</script>
 </body>
 </html>
