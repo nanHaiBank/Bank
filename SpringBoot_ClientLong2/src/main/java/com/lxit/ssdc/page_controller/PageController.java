@@ -6,26 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class PageController {
 
-	/**
-	 * 跳转到登陆页面
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/index")
-	public String index() {
-		return "index";
-	}
-
-	/**
-	 * 跳转到首页
-	 * 
-	 * @return
-	 */
-	@RequestMapping("/home")
-	public String home() {
-		return "home";
-	}
-
 	@RequestMapping("/projectPandect")
 	public void projectPandect() {
 	};

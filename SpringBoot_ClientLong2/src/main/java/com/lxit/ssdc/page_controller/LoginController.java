@@ -17,24 +17,29 @@ public class LoginController {
 	@Autowired
 	LoginService loginService;
 
+	/**
+	 * 跳转到登陆页面
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/")
 	public String index() {
 		return "index";
 	}
-
-	@RequestMapping("/login")
-	@ResponseBody
-	public User login(User user) {
-		return loginService.logins(user);
-	}
-
+	
 	/**
 	 * 跳转到首页
 	 * 
 	 * @return
 	 */
 	@RequestMapping("/home")
-	public String homes() {
+	public String home() {
 		return "home";
+	}
+
+	@RequestMapping("/login")
+	@ResponseBody
+	public User login(User user) {
+		return loginService.logins(user);
 	}
 }
