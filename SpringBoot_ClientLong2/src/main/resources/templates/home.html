@@ -1,115 +1,5 @@
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="easyui/jquery.min.js"></script>
-<!--easyui核心文件-->
-<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-<!--对应的语言包-->
-<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
-<!--皮肤文件-->
-<link rel="stylesheet" type="text/css"
-	href="easyui/themes/default/easyui.css" />
-<!--图标文件-->
-<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
-
-<head>
-<meta charset="UTF-8" />
-<title></title>
-</head>
-
-<body>
-	<div id="cc" class="easyui-layout"
-		style="width: 1200px; height: 800px;">
-		<div region="west" split="true" title="树形" style="width: 150px;"></div>
-		<div region="north" title="模块点" split="true" style="height: 100px;"></div>
-		32
-		<!--
-        	作者：offline
-        	时间：2018-01-05
-        	描述：<div region="south" title="节点动态" split="true" style="height:200px;"></div>
-        -->
-
-		<div region="east" iconCls="icon-reload" style="width: 450px;">
-			<div>
-				<table class="easyui-datagrid" title="节点预警（点击预警可查看更多）"
-					style="width: 700px; height: 250px"
-					data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-					<thead>
-						<tr>
-							<th data-options="field:'itemid',width:80">计划名称</th>
-							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-							<th data-options="field:'listprice',width:80">级别</th>
-							<th data-options="field:'unitcost',width:80">类型</th>
-							<th data-options="field:'attr1',width:250">计划完成日期</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-			<div>
-				<table class="easyui-datagrid" title="节点动态（点击节点动态可查看更多）"
-					style="width: 700px; height: 250px"
-					data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-					<thead>
-						<tr>
-							<th data-options="field:'itemid',width:80">计划名称</th>
-							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-							<th data-options="field:'listprice',width:80">级别</th>
-							<th data-options="field:'unitcost',width:80">类型</th>
-							<th data-options="field:'attr1',width:250">计划完成日期</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-			<div>
-				<table class="easyui-datagrid" title="本周任务（点击本周任务可查看更多）"
-					style="width: 700px; height: 250px"
-					data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-					<thead>
-						<tr>
-							<th data-options="field:'itemid',width:80">计划名称</th>
-							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-							<th data-options="field:'listprice',width:80">级别</th>
-							<th data-options="field:'unitcost',width:80">类型</th>
-							<th data-options="field:'attr1',width:250">计划完成日期</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-
-		<div region="center" title="我的任务（点击我的任务可查看更多）" split="true"
-			style="padding: 5px; background: #eee;">
-			<div>
-				<table class="easyui-datagrid" title="代办"
-					style="width: 700px; height: 315px"
-					data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-					<thead>
-						<tr>
-							<th data-options="field:'itemid',width:80">计划名称</th>
-							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-							<th data-options="field:'listprice',width:80">级别</th>
-							<th data-options="field:'unitcost',width:80">类型</th>
-							<th data-options="field:'attr1',width:250">计划完成日期</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-			<div>
-				<table class="easyui-datagrid" title="关注"
-					style="width: 700px; height: 315px"
-					data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-					<thead>
-						<tr>
-							<th data-options="field:'itemid',width:80">计划名称</th>
-							<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-							<th data-options="field:'listprice',width:80">级别</th>
-							<th data-options="field:'unitcost',width:80">类型</th>
-							<th data-options="field:'attr1',width:250">计划完成日期</th>
-						</tr>
-					</thead>
-				</table>
-			</div>
-		</div>
-	</div>
 <head>
 <meta charset="UTF-8" />
 <title>实地地产计划系统</title>
@@ -126,6 +16,7 @@
 <link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 <!-- 自定义的js -->
 <!-- <script type="text/javascript" src="js/homepage.js"></script> -->
+
 
 <style type="text/css">
 /* A {
@@ -167,6 +58,7 @@ a:hower {
 </style>
 </head>
 
+
 <body class="easyui-layout">
 	<!-- 上面部分 -->
 	<div
@@ -177,6 +69,7 @@ a:hower {
 			您好，${user.name} | <a href="">退出</a>
 		</div>
 	</div>
+
 
 	<!-- 下面 -->
 	<div
@@ -189,6 +82,7 @@ a:hower {
 		</p>
 	</div>
 
+
 	<!-- 左侧 -->
 	<div
 		data-options="region:'west',title:'导 航',split:true,iconCls:'icon-world'"
@@ -197,116 +91,22 @@ a:hower {
 	</div>
 	<input type="hidden" id='inputIds_userid' value="${user.userId}" />
 
+
 	<!-- 中间 -->
-	<div region="center" title="我的任务（点击我的任务可查看更多）" split="true"
-		style="padding: 5px; background: #eee;">
-		<div>
-			<form action="" method="post">
-				<center>
-					<input type="button" id="daiban" value="代办" />
-				</center>
-			</form>
-			<table id="daibantable" class="easyui-datagrid" title="代办"
-				style="width: 700px; height: 315px"
-				data-options="singleSelect:true,collapsible:true,url:'backLogBy',method:'post'">
-				<thead>
-					<tr>
-						<th data-options="field:'taskId',checkbox : true"></th>
-						<th data-options="field:'name',width:80">计划名称</th>
-						<th data-options="field:'businessMatter',width:80">业务事项</th>
-						<th data-options="field:'rank',width:80">级别</th>
-						<th data-options="field:'nodeType',width:80">类型</th>
-						<th data-options="field:'planIdOk',width:250">计划完成日期</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
+	<div data-options="region:'center'," style="overflow: hidden;">
+		<div id="tabs">
+			<div title="起始页" iconCls="icon-house"
+				style="padding: 0 10px; display: block; background: #F3F3F3;">
 
-		<div>
+				<h2>欢迎来到实地地产系统！</h2>
 
-			<table class="easyui-datagrid" title="关注"
-				style="width: 700px; height: 315px"
-				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-				<thead>
-					<tr>
-						<th data-options="field:'itemid',width:80">计划名称</th>
-						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-						<th data-options="field:'listprice',width:80">级别</th>
-						<th data-options="field:'unitcost',width:80">类型</th>
-						<th data-options="field:'attr1',width:250">计划完成日期</th>
-					</tr>
-				</thead>
-			</table>
+			</div>
 		</div>
 	</div>
 
-	<!-- 右边 -->
-	<div region="east" iconCls="icon-reload" style="width: 450px;">
-		<div>
-			<table class="easyui-datagrid" title="节点预警（点击预警可查看更多）"
-				style="width: 700px; height: 250px"
-				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-				<thead>
-					<tr>
-						<th data-options="field:'itemid',width:80">计划名称</th>
-						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-						<th data-options="field:'listprice',width:80">级别</th>
-						<th data-options="field:'unitcost',width:80">类型</th>
-						<th data-options="field:'attr1',width:250">计划完成日期</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-		<div>
 
-			<table class="easyui-datagrid" title="节点动态（点击节点动态可查看更多）"
-				style="width: 700px; height: 250px"
-				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-				<thead>
-					<tr>
-						<th data-options="field:'itemid',width:80">计划名称</th>
-						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
-						<th data-options="field:'listprice',width:80">级别</th>
-						<th data-options="field:'unitcost',width:80">类型</th>
-						<th data-options="field:'attr1',width:250">计划完成日期</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-		<div>
-
-			<table class="easyui-datagrid" title="本周任务（点击本周任务可查看更多）"
-				style="width: 700px; height: 250px"
-				data-options="singleSelect:true,collapsible:true,url:'backLogBy',method:'get'">
-				<thead>
-					<tr>
-						<th data-options="field:'name',width:80">计划名称</th>
-						<th data-options="field:'businessMatter',width:80">业务事项</th>
-						<th data-options="field:'rank',width:80">级别</th>
-						<th data-options="field:'planIdOk',width:250">计划完成日期</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-	</div>
 	<!-- 自定义的js -->
 	<script type="text/javascript">
-		$('#daiban').click(function() {
-			var row = $("#daibantable").datagrid('getSelections');// 单行
-			
-				location = "metaphase?"+row[0].taskId;
-		
-			/* $.ajax({
-				url : "metaphaseid",
-				type : "",
-				data : {
-					taskId : row[0].taskId
-				},
-				
-			}); */
-
-		})
-
 		$(function() {
 			/* $("#nav").tree({
 				url : "JurTree",
@@ -326,12 +126,10 @@ a:hower {
 				},
 			}); */
 
-			$('#na').tree({
+			$('#nav').tree({
 				url : 'JurTree',
 				lines : true,
 				onLoadSuccess : function(node, data) {// 在数据加载成功以后触发。
-					console.log(node);
-					console.log(data);
 					if (data) {
 						$(data).each(function(index, value) {
 							if (this.state == 'closed') {
@@ -349,7 +147,7 @@ a:hower {
 								title : node.text,// 对象名字
 								iconCls : node.iconCls,// 对象图标等于新图标
 								closable : true,// 设置关闭按钮
-								href : node.url + '.html',
+								href : node.url,
 							});
 						}
 					}
