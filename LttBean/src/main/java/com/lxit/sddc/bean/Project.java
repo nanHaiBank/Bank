@@ -9,7 +9,7 @@ package com.lxit.sddc.bean;
 public class Project {
 	int id;// 项目Id
 	String name;// 项目名称
-	int companyId;// 公司Id
+	String companyId;// 公司Id
 	String projectPhoto;// 项目图片
 	int exploitPeriod;// 开发周期
 	String landArea;// 用地面积（m2）
@@ -47,11 +47,11 @@ public class Project {
 		this.name = name;
 	}
 
-	public int getCompanyId() {
+	public String getCompanyId() {
 		return companyId;
 	}
 
-	public void setCompanyId(int companyId) {
+	public void setCompanyId(String companyId) {
 		this.companyId = companyId;
 	}
 
@@ -199,7 +199,7 @@ public class Project {
 		this.remark = remark;
 	}
 
-	public Project(int id, String name, int companyId, String projectPhoto, int exploitPeriod, String landArea,
+	public Project(int id, String name, String companyId, String projectPhoto, int exploitPeriod, String landArea,
 			String city, String ratio, String landareamu, String projectState, String tolerancearea, String floorArea,
 			String mayArea, String notManyArea, int parking, String registerDate, int createdBy, String createdDate,
 			int lastUpdatedBy, String lastUpdateDate, String remark) {

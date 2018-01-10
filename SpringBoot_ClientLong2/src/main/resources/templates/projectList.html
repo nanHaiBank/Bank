@@ -5,7 +5,6 @@
 <title>项目列表页面</title>
 </head>
 <body>
-	<img id="u6246_img" class="img " src="images/u6.jpg" />
 	<div>查询条件</div>
 	<table>
 		<tr>
@@ -13,14 +12,13 @@
 			<td>公司名称：<input type="text" name="companyId" id="companyIds" /></td>
 			<td>项目状态：<select name="projectState" id="projectStates">
 			</select></td>
-			<td><input type="button" value="查询" id="projechaxun"
-				onclick="lists();" /></td>
+			<td><input type="button" value="查询" id="projechaxun"/></td>
 		</tr>
 	</table>
-	<table id="table_ids">
+	<div style="height: 30px;">项目列表</div>
+	<table id="projectTableId">
 	</table>
 
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
 			//项目状态查询
@@ -40,8 +38,18 @@
 				}
 			});
 
-			$('#table_ids').datagrid({
+			//查询模板列表数据
+			lists();
+		});
+		function lists(){
+			alert(1);
+			$('#projectTableId').datagrid({
 				url : 'projectLists',
+				queryParams:{
+					name:$('#names').val(),
+					companyId:$('#companyIds').val(),
+					projectState:$('#projectState').val()
+				},
 				border : true,
 				fitColumns : true,
 				pagination : true,
@@ -73,41 +81,21 @@
 					field : 'caozuo',
 					title : '操作',
 					width : 60
+					formatter: function(value,row,index){
+						var ones;
+							ones = '<span onclick="bjxianmu('+row.id+');">编辑项目</span>|<span onclick="cjjihua('+row.id+');">创建计划</span>';
+						return ones;
+					}
 				} ] ]
 			});
-		});
+		}
+		function bjxianmu(id){
+			location="projectxin?"+id;
+		}
 
-		// 		function lists() {
-		// 			$.ajax({
-		// 				url : 'projectLists',
-		// 				type : 'post',
-		// 				success : function(result) {
-		// 					/* <![CDATA[ */
-		// 					var html;
-		// 					for (var i = 0; i < result.length; i++) {
-		// 						html += "<tr><td><a href='#'  disable＝'true' onclick='xiangmu("
-		// 							+ result[i].id
-		// 							+ ");'>"
-		// 							+ result[i].name
-		// 							+ "</a></td><td>"
-		// 							+ result[i].city
-		// 							+ "</td><td>"
-		// 							+ result[i].companyId
-		// 							+ "</td><td>"
-		// 							+ result[i].exploitPeriod
-		// 							+ "</td><td>"
-		// 							+ result[i].createdBy
-		// 							+ "</td><td><a href = '#' disable＝'true' onclick='bjxm("
-		// 							+ result[i].id
-		// 							+ ");'	>编辑项目</a>|<a href='#'   disable＝'true' onclick='cjjihua("
-		// 							+ result[i].id
-		// 							+ ");'>创建计划</a></td></tr>";
-		// 					}
-		// 					/* ]]> */
-		// 					$("#tbody_id").html(html);
-		// 				}
-		// 			});
-		// 		}
+		function cjjihua(id){
+			location="changjianjihua?"+id;
+		}
 	</script>
 </body>
 </html>

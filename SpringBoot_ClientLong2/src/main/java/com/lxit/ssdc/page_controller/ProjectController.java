@@ -91,7 +91,7 @@ public class ProjectController {
 	@RequestMapping("/projectLists")
 	@ResponseBody
 	public List<Project> projectLists(Project project) {
-		System.out.println(project);
+		System.out.println("===============-=-=-=-=-="+project);
 		return projectServices.projectLists(project);
 	}
 }
