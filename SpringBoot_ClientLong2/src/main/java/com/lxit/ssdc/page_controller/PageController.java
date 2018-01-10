@@ -25,4 +25,8 @@ public class PageController {
 	public String home() {
 		return "home";
 	}
+
+	@RequestMapping("/projectPandect")
+	public void projectPandect() {
+	};
 }

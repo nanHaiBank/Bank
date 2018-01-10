@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8"/>
+		<title>计划列表</title>
+		<script type="text/javascript" src="easyui/jquery.min.js"></script>
+		<!--easyui核心文件-->
+		<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+		<!--对应的语言包-->
+		<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+		<!--皮肤文件-->
+		<link rel="stylesheet" type="text/css" href="easyui/themes/default/easyui.css" />
+		<!--图标文件-->
+		<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+	</head>
+
+	<body>
+		<script type="text/javascript" src="js/plamListQery.js"></script>
+		<div id="queryCondition" style="padding:10px;">
+			计划类型:
+			<select name="select1">
+				<option>--请选择--</option>
+				<option value="option1">下拉1</option>
+				
+				<option value="option3">下拉3</option>
+			</select>
+			计划业态:
+			<select name="select1">
+				<option>--请选择--</option>
+				<option value="option1">下拉1</option>
+				
+				<option value="option3">下拉3</option>
+			</select>
+			
+			 计划名称: 
+			  <input type="text" />
+			 项目名称:
+			  <input type="text" />
+			  <input type="button" value="查询"/>
+		</div>
+		<div id="PlanList" style="padding:10px;">
+			<table id="planListTable"></table>
+		</div>
+		<div id="planQueryInstrument">
+			
+			<input type="submit" value="查看" />
+		</div>
+	</body>
+
+</html>

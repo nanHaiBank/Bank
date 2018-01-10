@@ -27,4 +27,14 @@ public class LoginController {
 	public User login(User user) {
 		return loginService.logins(user);
 	}
+
+	/**
+	 * 跳转到首页
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/home")
+	public String homes() {
+		return "home";
+	}
 }

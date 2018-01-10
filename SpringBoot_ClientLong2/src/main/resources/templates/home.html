@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
 <script type="text/javascript" src="easyui/jquery.min.js"></script>
 <!--easyui核心文件-->
 <script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
@@ -110,5 +111,258 @@
 			</div>
 		</div>
 	</div>
+=======
+<head>
+<meta charset="UTF-8" />
+<title>实地地产计划系统</title>
+<!--JQuery核心文件-->
+<script type="text/javascript" src="easyui/jquery.min.js"></script>
+<!--JQuery核心文件-->
+<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
+<!--对应的语言包-->
+<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
+<!--对应的样式文件-->
+<link rel="stylesheet" type="text/css"
+	href="easyui/themes/default/easyui.css" />
+<!--对应的图标样式-->
+<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
+<!-- 自定义的js -->
+<!-- <script type="text/javascript" src="js/homepage.js"></script> -->
+
+<style type="text/css">
+/* A {
+	text-decoration: NONE
+} */
+td {
+	height: 30px;
+}
+
+.logo {
+	width: 180px;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	float: left;
+	color: saddlebrown;
+}
+
+.logout {
+	float: right;
+	padding: 30px 15px 0 0;
+	color: saddlebrown;
+}
+
+.dialog-button {
+	text-align: center;
+}
+
+a {
+	color: saddlebrown;
+	text-decoration: none;
+}
+
+a:hower {
+	text-decoration: underline;
+}
+</style>
+</head>
+
+<body class="easyui-layout">
+	<!-- 上面部分 -->
+	<div
+		data-options="region:'north',title:'header',split:true,noheader:true"
+		style="height: 60px; background: #F3F3F3;">
+		<div class="logo">实地地产</div>
+		<div class="logout">
+			您好，${user.name} | <a href="">退出</a>
+		</div>
+	</div>
+
+	<!-- 下面 -->
+	<div
+		data-options="region:'south',title:'版权声明',split:true,noheader:true"
+		style="height: 48px;">
+		<p>
+		<center>
+			<b style="color: saddlebrown;">&copy;天团boy版权所有</b>
+		</center>
+		</p>
+	</div>
+
+	<!-- 左侧 -->
+	<div
+		data-options="region:'west',title:'导 航',split:true,iconCls:'icon-world'"
+		style="width: 180px; padding: 10px; background: #F3F3F3;">
+		<ul id="nav"></ul>
+	</div>
+	<input type="hidden" id='inputIds_userid' value="${user.userId}" />
+
+	<!-- 中间 -->
+	<div region="center" title="我的任务（点击我的任务可查看更多）" split="true"
+		style="padding: 5px; background: #eee;">
+		<div>
+			<form action="" method="post">
+				<center>
+					<input type="button" id="daiban" value="代办" />
+				</center>
+			</form>
+			<table id="daibantable" class="easyui-datagrid" title="代办"
+				style="width: 700px; height: 315px"
+				data-options="singleSelect:true,collapsible:true,url:'backLogBy',method:'post'">
+				<thead>
+					<tr>
+						<th data-options="field:'taskId',checkbox : true"></th>
+						<th data-options="field:'name',width:80">计划名称</th>
+						<th data-options="field:'businessMatter',width:80">业务事项</th>
+						<th data-options="field:'rank',width:80">级别</th>
+						<th data-options="field:'nodeType',width:80">类型</th>
+						<th data-options="field:'planIdOk',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+
+		<div>
+
+			<table class="easyui-datagrid" title="关注"
+				style="width: 700px; height: 315px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+
+	<!-- 右边 -->
+	<div region="east" iconCls="icon-reload" style="width: 450px;">
+		<div>
+			<table class="easyui-datagrid" title="节点预警（点击预警可查看更多）"
+				style="width: 700px; height: 250px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div>
+
+			<table class="easyui-datagrid" title="节点动态（点击节点动态可查看更多）"
+				style="width: 700px; height: 250px"
+				data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'itemid',width:80">计划名称</th>
+						<th data-options="field:'productid',width:80" id="asdf">业务事项</th>
+						<th data-options="field:'listprice',width:80">级别</th>
+						<th data-options="field:'unitcost',width:80">类型</th>
+						<th data-options="field:'attr1',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		<div>
+
+			<table class="easyui-datagrid" title="本周任务（点击本周任务可查看更多）"
+				style="width: 700px; height: 250px"
+				data-options="singleSelect:true,collapsible:true,url:'backLogBy',method:'get'">
+				<thead>
+					<tr>
+						<th data-options="field:'name',width:80">计划名称</th>
+						<th data-options="field:'businessMatter',width:80">业务事项</th>
+						<th data-options="field:'rank',width:80">级别</th>
+						<th data-options="field:'planIdOk',width:250">计划完成日期</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+	<!-- 自定义的js -->
+	<script type="text/javascript">
+		$('#daiban').click(function() {
+			var row = $("#daibantable").datagrid('getSelections');// 单行
+			
+				location = "metaphase?"+row[0].taskId;
+		
+			/* $.ajax({
+				url : "metaphaseid",
+				type : "",
+				data : {
+					taskId : row[0].taskId
+				},
+				
+			}); */
+
+		})
+
+		$(function() {
+			/* $("#nav").tree({
+				url : "JurTree",
+				lines : true,
+				onClick : function(none) {
+					if (none.url != "") {
+						if ($("#tabs").tabs('exists', none.text)) {
+							$("#tabs").tabs('select', none.text);
+						} else {
+							$("#tabs").tabs('add', {
+								title : none.text,
+								closable : true,
+								href : none.url,
+							});
+						}
+					}
+				},
+			}); */
+
+			$('#na').tree({
+				url : 'JurTree',
+				lines : true,
+				onLoadSuccess : function(node, data) {// 在数据加载成功以后触发。
+					console.log(node);
+					console.log(data);
+					if (data) {
+						$(data).each(function(index, value) {
+							if (this.state == 'closed') {
+								$('#nav').tree('expandAll');// 全部展开
+							}
+						});
+					}
+				},
+				onClick : function(node) {// node:对象
+					if (node.url) {
+						if ($('#tabs').tabs('exists', node.text)) {//判断文本是否存在
+							$('#tabs').tabs('select', node.text)//选中他
+						} else {
+							$('#tabs').tabs('add', {// 增加选项卡
+								title : node.text,// 对象名字
+								iconCls : node.iconCls,// 对象图标等于新图标
+								closable : true,// 设置关闭按钮
+								href : node.url + '.html',
+							});
+						}
+					}
+				}
+			});
+			$('#tabs').tabs({// 选项卡
+				fit : true,// 自适应
+				border : false,// 无边框
+			});
+		});
+	</script>
+>>>>>>> branch 'master' of https://github.com/nanHaiBank/Bank.git
 </body>
 </html>
