@@ -1,5 +1,5 @@
 package com.lxit.sddc.bean;
-     
+
 /**
  * 证件表
  * 
@@ -13,7 +13,7 @@ public class Certificate {
 
 	int clusterId;// 所属组团
 
-	int dictionariesId;// 证件类型
+	String dictionariesId;// 证件类型
 
 	String landArea;// 用地面积
 
@@ -55,11 +55,11 @@ public class Certificate {
 		this.clusterId = clusterId;
 	}
 
-	public int getDictionariesId() {
+	public String getDictionariesId() {
 		return dictionariesId;
 	}
 
-	public void setDictionariesId(int dictionariesId) {
+	public void setDictionariesId(String dictionariesId) {
 		this.dictionariesId = dictionariesId;
 	}
 
@@ -127,13 +127,9 @@ public class Certificate {
 		this.remark = remark;
 	}
 
-	public Certificate() {
-		super();
-	}
-
-	public Certificate(int id, String numxber, int clusterId, int dictionariesId, String landArea, String acquireDate,
-			String uploadingFile, int createdBy, String createdDate, int lastUpdatedBy, String lastUpdateDate,
-			String remark) {
+	public Certificate(int id, String numxber, int clusterId, String dictionariesId, String landArea,
+			String acquireDate, String uploadingFile, int createdBy, String createdDate, int lastUpdatedBy,
+			String lastUpdateDate, String remark) {
 		super();
 		this.id = id;
 		this.numxber = numxber;
@@ -147,6 +143,10 @@ public class Certificate {
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
+	}
+
+	public Certificate() {
+		super();
 	}
 
 	@Override

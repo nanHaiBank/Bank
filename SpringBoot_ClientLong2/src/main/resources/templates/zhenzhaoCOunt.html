@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>证照详情</title>
+</head>
+<body>
+	<div style="width: 950px; height: 300px;">
+		<div style="margin-left: 750px;">
+			<input type="button" value="新增证照" id="addzhenzhao" />
+		</div>
+		<table border="1">
+			<tr id="zheznhaoTrId_1">
+				<td>土地成交确认书</td>
+				<td></td>
+				<td>建设用地规划许可证</td>
+				<td></wtd>
+				<td>土地出让合同</td>
+				<td></td>
+				<td>国有土地使用证</td>
+				<td></td>
+				<td>建设工程规划许可证</td>
+				<td></td>
+				<td>建设工程施工许可证</td>
+				<td></td>
+				<td>商品房预售许可证</td>
+				<td></td>
+				<td>工程竣工验收备案表</td>
+			</tr>
+			<tr id="zhenzhaoTrId_2"></tr>
+		</table>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			// 			$.ajax({
+			// 				url : 'zhenzhaoSelect',
+			// 				type : 'post',
+			// 				success : function(result) {
+			// 					alert(result);
+			// 				}
+			// 			});
+			$('#addzhenzhao').click(function() {
+				$('#addzhenzhao').dialog({
+					title : '新增证照',
+					width : 500,
+					height : 500,
+					closed : false,
+					cache : false,
+					href : '',
+					modal : true
+				});
+			});
+		});
+	</script>
+</body>
+</html>

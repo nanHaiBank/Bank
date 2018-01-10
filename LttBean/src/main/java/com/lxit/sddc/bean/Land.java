@@ -18,6 +18,7 @@ public class Land {
 	String ratio;// 容积率
 	String landDownIssue;// 土地遗留问题
 	int createdBy;// 创建人
+	String bhzutuan;// 包含组团
 
 	String createdDate;// 创建日期
 	int lastUpdatedBy;// 最后修改人
@@ -104,6 +105,14 @@ public class Land {
 		this.createdBy = createdBy;
 	}
 
+	public String getBhzutuan() {
+		return bhzutuan;
+	}
+
+	public void setBhzutuan(String bhzutuan) {
+		this.bhzutuan = bhzutuan;
+	}
+
 	public String getCreatedDate() {
 		return createdDate;
 	}
@@ -136,13 +145,9 @@ public class Land {
 		this.remark = remark;
 	}
 
-	public Land() {
-		super();
-	}
-
 	public Land(int id, String name, String landproJect, String landCurrent, String landArea, String landAreamu,
-			String toleranceArea, String ratio, String landDownIssue, int createdBy, String createdDate,
-			int lastUpdatedBy, String lastUpdateDate, String remark) {
+			String toleranceArea, String ratio, String landDownIssue, int createdBy, String bhzutuan,
+			String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -154,18 +159,23 @@ public class Land {
 		this.ratio = ratio;
 		this.landDownIssue = landDownIssue;
 		this.createdBy = createdBy;
+		this.bhzutuan = bhzutuan;
 		this.createdDate = createdDate;
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
 	}
 
+	public Land() {
+		super();
+	}
+
 	@Override
 	public String toString() {
 		return "Land [id=" + id + ", name=" + name + ", landproJect=" + landproJect + ", landCurrent=" + landCurrent
 				+ ", landArea=" + landArea + ", landAreamu=" + landAreamu + ", toleranceArea=" + toleranceArea
-				+ ", ratio=" + ratio + ", landDownIssue=" + landDownIssue + ", createdBy=" + createdBy
-				+ ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
+				+ ", ratio=" + ratio + ", landDownIssue=" + landDownIssue + ", createdBy=" + createdBy + ", bhzutuan="
+				+ bhzutuan + ", createdDate=" + createdDate + ", lastUpdatedBy=" + lastUpdatedBy + ", lastUpdateDate="
 				+ lastUpdateDate + ", remark=" + remark + "]";
 	}
 }

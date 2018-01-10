@@ -11,7 +11,7 @@ public class Cluster {
 
 	String name;// 组团名称
 
-	int landId;// 所属地块名称
+	String landId;// 所属地块名称
 
 	String landArea;// 用地面积（万㎡）
 
@@ -59,11 +59,11 @@ public class Cluster {
 		this.name = name;
 	}
 
-	public int getLandId() {
+	public String getLandId() {
 		return landId;
 	}
 
-	public void setLandId(int landId) {
+	public void setLandId(String landId) {
 		this.landId = landId;
 	}
 
@@ -187,11 +187,7 @@ public class Cluster {
 		this.remark = remark;
 	}
 
-	public Cluster() {
-		super();
-	}
-
-	public Cluster(int id, String name, int landId, String landArea, String landareamu, String overgArea,
+	public Cluster(int id, String name, String landId, String landArea, String landareamu, String overgArea,
 			String floorArea, String mayArea, String notMayArea, int equityStall, int useEquityStall,
 			String clusterMessage, int towerNumber, int createdBy, String createdDate, int lastUpdatedBy,
 			String lastUpdateDate, String remark) {
@@ -214,6 +210,10 @@ public class Cluster {
 		this.lastUpdatedBy = lastUpdatedBy;
 		this.lastUpdateDate = lastUpdateDate;
 		this.remark = remark;
+	}
+
+	public Cluster() {
+		super();
 	}
 
 	@Override

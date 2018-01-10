@@ -5,157 +5,122 @@
 <title>项目信息</title>
 </head>
 <body>
-	<img id="u6246_img" class="img " src="images/u6.jpg" />
 	<div style="width: 800px; height: 30px;">项目信息</div>
-	<table>
+	<table style="margin-left: 150px;">
 		<tr>
-			<td>公司名称：</td>
+			<td>公司名称：<span id="tsSpan_1"></span></td>
 			<td></td>
-			<td>项目名称：</td>
+			<td>项目名称：<span id="tsSpan_2"></span></td>
 			<td></td>
-			<td>城市：</td>
+			<td>城市：<span id="tsSpan_3"></span></td>
 			<td></td>
-			<td>用地面积：</td>
+			<td>用地面积：<span id="tsSpan_4"></span></td>
 			<td></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
 		<tr>
-			<td>用地面积（亩）：</td>
+			<td>用地面积（亩）：<span id="tsSpan_5"></span></td>
 			<td></td>
-			<td>计容面积（万㎡）：</td>
+			<td>计容面积（万㎡）：<span id="tsSpan_6"></span></td>
 			<td></td>
-			<td>容积率：</td>
+			<td>容积率：<span id="tsSpan_7"></span></td>
 			<td></td>
-			<td>地上建筑面积（万㎡）：</td>
-			<td></td>
-		</tr>
-		<tr></tr>
-		<tr></tr>
-		<tr>
-			<td>登记日期：</td>
-			<td></td>
-			<td>停车位（个）：</td>
-			<td></td>
-			<td>可售计容面积（万㎡）：</td>
-			<td></td>
-			<td>不售计容面积（万㎡）：</td>
+			<td>地上建筑面积（万㎡）：<span id="tsSpan_8"></span></td>
 			<td></td>
 		</tr>
 		<tr></tr>
 		<tr></tr>
 		<tr>
-			<td><a href="#"><h1>地块</h1></a></td>
-			<td><a href="#"><h1>组团</h1></a></td>
-			<td><a href="#"><h1>证照</h1></a></td>
+			<td>登记日期：<span id="tsSpan_9"></span></td>
+			<td></td>
+			<td>停车位（个）：<span id="tsSpan_10"></span></td>
+			<td></td>
+			<td>可售计容面积（万㎡）：<span id="tsSpan_11"></span></td>
+			<td></td>
+			<td>不售计容面积（万㎡）：<span id="tsSpan_12"></span></td>
+			<td></td>
 		</tr>
+		<tr></tr>
+		<tr></tr>
 	</table>
-	<div style="width: 800px; height: 30px;">地块信息</div>
-	<div style="width: 800px; height: 300px;">
-		<div style="margin-left: 700px;">
-			<input type="button" value="新增地块" id="adddikuai" />
+	<div id="projectxinDiv_Id1" class="easyui-tabs"
+		style="width: 1000px; height: 500px;">
+		<div title="地块信息" style="padding: 20px; display: none;">
+			<input type="button" value="查询" id="chaxunlandId" />
+			<div id="ejfkendedId"></div>
 		</div>
-		<table border="1">
-			<tr>
-				<td>地块名称</td>
-				<td>地块规划情况</td>
-				<td>土地开发现状</td>
-				<td>用地面积（万㎡）</td>
-				<td>用地面积（亩）</td>
-				<td>容积率</td>
-				<td>计容面积（万㎡）</td>
-				<td>土地遗留问题</td>
-				<td>包含组团</td>
-			</tr>
-		</table>
-	</div>
-	<div style="width: 800px; height: 30px;">组团信息</div>
-	<div style="width: 800px; height: 300px;">
-		<div style="margin-left: 700px;">
-			<input type="button" value="新增组团" id="addzutuan" />
+		<div title="组团信息" data-options="closable:true"
+			style="overflow: auto; padding: 20px; display: none;">
+			<input type="button" value="查询" id="zutanCountId" />
+			<div id="zutaunendedId"></div>
 		</div>
-		<table border="1">
-			<tr>
-				<td>组团名称</td>
-				<td>所属地块</td>
-				<td>用地面积（万㎡）</td>
-				<td>用地面积（亩）</td>
-				<td>地上建筑面积（万㎡）</td>
-				<td>地下建筑面积（万㎡）</td>
-				<td>可售计容面积（万㎡）</td>
-				<td>不可售计容面积（万㎡）</td>
-				<td>产权车位（个）</td>
-				<td>使用权车位（个）</td>
-				<td>组团特殊信息</td>
-				<td>楼栋数</td>
-			</tr>
-		</table>
-	</div>
-	<div style="width: 800px; height: 30px;">证照信息</div>
-	<div style="width: 800px; height: 300px;">
-		<div style="margin-left: 700px;">
-			<input type="button" value="新增证照" id="addzhenzhao" />
+		<div title="证照信息" data-options="iconCls:'icon-reload',closable:true"
+			style="padding: 20px; display: none;">
+			<input type="button" value="查询" id="zhenzhaoCountId" />
+			<div id="zhenzhaodId"></div>
 		</div>
-		<table border="1">
-			<tr>
-				<td>土地成交确认书</td>
-				<td>建设用地规划许可证</td>
-				<td>土地出让合同</td>
-				<td>国有土地使用证</td>
-				<td>建设工程规划许可证</td>
-				<td>建设工程施工许可证</td>
-				<td>商品房预售许可证</td>
-				<td>工程竣工验收备案表</td>
-			</tr>
-		</table>
 	</div>
-	<div style="margin-left: 700px;">
-		<a href="projectList"><input type="button" value="创建项目"
+	<div style="margin-left: 550px;">
+		<a href="projectList"><input type="button" value="保存项目"
 			id="chuangjianxm" /></a>
 	</div>
-	<table id="asdfwe">
-	</table>
-
-	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript">
 		$(function() {
-			$('#asdfwe').datagrid({
-				url : 'projectLists',
-				border : true,
-				fitColumns : true,
-				pagination : true,
-				pageSize : 5,
-				pageList : [ 2, 4, 6, 8, 10 ],
-				pageNumber : 1,
-				columns : [ [ 
-				{	field : 'name',
-					title : '项目名称',
-					width : 60}, 
-				{
-					field : 'city',
-					title : '城市',
-					width : 60
-				}, 
-				{
-					field : 'companyId',
-					title : '公司名称',
-					width : 60
-				}, 
-				{
-					field : 'exploitPeriod',
-					title : '开发周期',
-					width : 60
-				}, {
-					field : 'createdBy',
-					title : '创建人',
-					width : 60
-				}, 
-				{
-					field : 'caozuo',
-					title : '操作',
-					width : 60
-				} 
-				] ]
+			var ids = sessionStorage["id"];
+			$.ajax({
+				url : 'onlyProject',
+				type : 'post',
+				data : {
+					id : ids
+				},
+				success : function(result) {
+					$("#tsSpan_1").text(result.companyId);
+					$("#tsSpan_2").text(result.name);
+					$("#tsSpan_3").text(result.city);
+					$("#tsSpan_4").text(result.landArea);
+					$("#tsSpan_5").text(result.landareamu);
+					$("#tsSpan_6").text(result.tolerancearea);
+					$("#tsSpan_7").text(result.ratio);
+					$("#tsSpan_8").text(result.floorArea);
+					$("#tsSpan_9").text(result.registerDate);
+					$("#tsSpan_10").text(result.parking);
+					$("#tsSpan_11").text(result.mayArea);
+					$("#tsSpan_12").text(result.notManyArea);
+				}
+			});
+			$("#chaxunlandId").click(function() {
+				$('#ejfkendedId').dialog({
+					title : '土地详情',
+					width : 1200,
+					height : 710,
+					closed : false,
+					cache : false,
+					href : 'landCount',
+					modal : true
+				});
+			});
+			$("#zutanCountId").click(function() {
+				$('#zutaunendedId').dialog({
+					title : '组团详情',
+					width : 1200,
+					height : 710,
+					closed : false,
+					cache : false,
+					href : 'zutuanCount',
+					modal : true
+				});
+			});
+			$("#zhenzhaoCountId").click(function() {
+				$('#zhenzhaodId').dialog({
+					title : '证照详情',
+					width : 1200,
+					height : 710,
+					closed : false,
+					cache : false,
+					href : 'zhenzhaoCOunt',
+					modal : true
+				});
 			});
 		});
 	</script>

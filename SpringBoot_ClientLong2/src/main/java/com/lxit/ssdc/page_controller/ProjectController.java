@@ -9,7 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.lxit.sddc.bean.Certificate;
+import com.lxit.sddc.bean.Cluster;
 import com.lxit.sddc.bean.Dictionaries;
+import com.lxit.sddc.bean.Land;
 import com.lxit.sddc.bean.Project;
 
 @EnableAutoConfiguration
@@ -49,6 +52,7 @@ public class ProjectController {
 	public String landparticulars() {
 		return "landparticulars";
 	}
+
 	/**
 	 * 进入项目信息页面
 	 * 
@@ -56,6 +60,7 @@ public class ProjectController {
 	 */
 	@RequestMapping("/projectxin")
 	public String projectxin() {
+
 		return "projectxin";
 	}
 
@@ -91,7 +96,79 @@ public class ProjectController {
 	@RequestMapping("/projectLists")
 	@ResponseBody
 	public List<Project> projectLists(Project project) {
-		System.out.println("===============-=-=-=-=-="+project);
+		System.out.println("===============-=-=-=-=-=" + project);
 		return projectServices.projectLists(project);
+	}
+
+	/**
+	 * 查询指定项目信息
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/onlyProject")
+	@ResponseBody
+	public Project onlyProject(Integer id) {
+		System.out.println("===============-=-=-=-=-=" + id);
+		return projectServices.onlyProject(id);
+	}
+
+	/**
+	 * 查询项目下的土地
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/landSelect")
+	@ResponseBody
+	public Land landSelect(Integer id) {
+		return projectServices.landSelect(id);
+	}
+
+	/**
+	 * 查询土地下的组团
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/zutuanSelect")
+	@ResponseBody
+	public Cluster zutuanSelect() {
+		return projectServices.zutuanSelect();
+	}
+
+	/**
+	 * 查询组团下的证照
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/zhenzhaoSelect")
+	@ResponseBody
+	public Certificate zhenzhaoSelect() {
+		return projectServices.zhenzhaoSelect();
+	}
+
+	/**
+	 * 进入土地详情
+	 */
+	@RequestMapping("/landCount")
+	public String landCount() {
+		return "landCount";
+	}
+
+	/**
+	 * 进入组团详情
+	 */
+	@RequestMapping("/zutuanCount")
+	public String zutuanCount() {
+		return "zutuanCount";
+	}
+
+	/**
+	 * 进入证照详情
+	 */
+	@RequestMapping("/zhenzhaoCOunt")
+	public String zhenzhaoCOunt() {
+		return "zhenzhaoCOunt";
 	}
 }

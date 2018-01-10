@@ -18,6 +18,9 @@
 	<div style="height: 30px;">项目列表</div>
 	<table id="projectTableId">
 	</table>
+	<div id="projectDivId">
+		
+	</div>
 
 	<script type="text/javascript">
 		$(function() {
@@ -37,12 +40,10 @@
 					$("#projectStates").html(html);
 				}
 			});
-
 			//查询模板列表数据
 			lists();
 		});
 		function lists(){
-			alert(1);
 			$('#projectTableId').datagrid({
 				url : 'projectLists',
 				queryParams:{
@@ -80,7 +81,7 @@
 				}, {
 					field : 'caozuo',
 					title : '操作',
-					width : 60
+					width : 60,
 					formatter: function(value,row,index){
 						var ones;
 							ones = '<span onclick="bjxianmu('+row.id+');">编辑项目</span>|<span onclick="cjjihua('+row.id+');">创建计划</span>';
@@ -90,7 +91,16 @@
 			});
 		}
 		function bjxianmu(id){
-			location="projectxin?"+id;
+			sessionStorage["id"]=id;
+			$('#projectDivId').dialog({
+			    title: '编辑项目',
+			    width: 1200,
+			    height: 710,
+			    closed: false,
+			    cache: false,
+			    href: 'projectxin?id='+id,
+			    modal: true 
+			});
 		}
 
 		function cjjihua(id){

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>土地详情</title>
+</head>
+<body>
+	<div style="width: 700px; height: 300px;">
+		<div style="margin-left: 650px;">
+			<input type="button" value="新增地块" id="adddikuai" />
+		</div>
+		<table>
+			<thead>
+				<tr>
+					<td>地块名称</td>
+					<td>地块规划情况</td>
+					<td>土地开发现状</td>
+					<td>用地面积（万㎡）</td>
+					<td>用地面积（亩）</td>
+					<td>容积率</td>
+					<td>计容面积（万㎡）</td>
+					<td>土地遗留问题</td>
+					<td>包含组团</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody id="landTableId">
+
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			var idss = sessionStorage["id"];
+			$('#adddikuai').click(function() {
+				$('#adddikuai').dialog({
+					title : '新增土地',
+					width : 500,
+					height : 500,
+					closed : false,
+					cache : false,
+					href : '',
+					modal : true
+				});
+			});
+
+			$.ajax({
+				url : 'landSelect',
+				type : 'post',
+				data : {
+					id : idss
+				},
+				success : function(result) {
+					/* <![CDATA[ */
+					var html;
+					for (var i = 0; i < result.length; i++) {
+						html += '<tr><td>' + result[i].name + '</td><td>'
+								+ result[i].landproJect + '</td><td>'
+								+ result[i].landCurrent + '</td><td>'
+								+ result[i].landArea + '</td><td>'
+								+ result[i].landAreamu + '</td><td>'
+								+ result[i].ratio + '</td><td>'
+								+ result[i].toleranceArea + '</td><td>'
+								+ result[i].landDownIssue + '</td><td>'
+								+ result[i].bhzutuan
+								+ '</td><td><span onclick="bjland('
+								+ result[i].id + ');">编辑</span></td></tr>';
+					}
+					/* ]]> */
+					$("#landTableId").html(html);
+				}
+			});
+		});
+		function bjland(id) {
+			alert(id);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<title>组团详情</title>
+</head>
+<body>
+	<div style="width: 1200px; height: 300px;">
+		<div style="margin-left: 950px;">
+			<input type="button" value="新增组团" id="addzutuan" />
+		</div>
+		<table id="zutuanTableId">
+			<thead>
+				<tr>
+					<td>组团名称</td>
+					<td>所属地块</td>
+					<td>用地面积（万㎡）</td>
+					<td>用地面积（亩）</td>
+					<td>地上建筑面积（万㎡）</td>
+					<td>地下建筑面积（万㎡）</td>
+					<td>可售计容面积（万㎡）</td>
+					<td>不可售计容面积（万㎡）</td>
+					<td>产权车位（个）</td>
+					<td>使用权车位（个）</td>
+					<td>组团特殊信息</td>
+					<td>楼栋数</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody id="zutuanTboadId">
+
+			</tbody>
+		</table>
+	</div>
+	<script type="text/javascript">
+		$(function() {
+			//组团
+			$.ajax({
+				url : 'zutuanSelect',
+				type : 'post',
+				success : function(result) {
+					/* <![CDATA[ */
+					var html;
+					for (var i = 0; i < result.length; i++) {
+						html += '<tr><td>' + result[i].name + '</td><td>'
+								+ result[i].landId + '</td><td>'
+								+ result[i].landArea + '</td><td>'
+								+ result[i].landareamu + '</td><td>'
+								+ result[i].overgArea + '</td><td>'
+								+ result[i].floorArea + '</td><td>'
+								+ result[i].mayArea + '</td><td>'
+								+ result[i].notMayArea + '</td><td>'
+								+ result[i].equityStall + '</td><td>'
+								+ result[i].useEquityStall + '</td><td>'
+								+ result[i].clusterMessage + '</td><td>'
+								+ result[i].towerNumber
+								+ '</td><td><span onclick="bjzutuan('
+								+ result[i].id + ');">编辑</span></td></tr>';
+					}
+					/* ]]> */
+					$("#zutuanTboadId").html(html);
+				}
+			});
+			$('#addzutuan').click(function() {
+				$('#addzutuan').dialog({
+					title : '新增组团',
+					width : 500,
+					height : 500,
+					closed : false,
+					cache : false,
+					href : '',
+					modal : true
+				});
+			});
+		});
+		function bjzutuan(id) {
+			alert(id);
+		}
+	</script>
+</body>
+</html>
