@@ -3,16 +3,6 @@
 <head>
 <meta charset="UTF-8" />
 <title>项目列表页面</title>
-<script type="text/javascript" src="easyui/jquery.min.js"></script>
-<!--easyui核心文件-->
-<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-<!--对应的语言包-->
-<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
-<!--皮肤文件-->
-<link rel="stylesheet" type="text/css"
-	href="easyui/themes/default/easyui.css" />
-<!--图标文件-->
-<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
 </head>
 <body>
 	<img id="u6246_img" class="img " src="images/u6.jpg" />
@@ -27,22 +17,7 @@
 				onclick="lists();" /></td>
 		</tr>
 	</table>
-	<table class="easyui-datagrid" title="项目列表"
-		style="width: 1200px; height: 450px" pagination="true"
-		pageList="[2,4,6,8,10,12,14,16,18,20]" pageSize="5"
-		data-options="singleSelect:true,collapsible:true,url:'datagrid_data1.json',method:'get'">
-		<thead>
-			<tr>
-				<th data-options="field:'itemid',width:200">项目名称</th>
-				<th data-options="field:'listprice',width:200">城市</th>
-				<th data-options="field:'unitcost',width:200">公司名称</th>
-				<th data-options="field:'attr1',width:250">开发周期</th>
-				<th data-options="field:'attr1',width:250">创建人</th>
-				<th data-options="field:'attr1',width:250">操作</th>
-			</tr>
-		</thead>
-		<tbody id="tbody_id">
-		</tbody>
+	<table id="table_ids">
 	</table>
 
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
@@ -64,35 +39,75 @@
 					$("#projectStates").html(html);
 				}
 			});
-			lists();
+
+			$('#table_ids').datagrid({
+				url : 'projectLists',
+				border : true,
+				fitColumns : true,
+				pagination : true,
+				pageSize : 5,
+				pageList : [ 2, 4, 6, 8, 10 ],
+				pageNumber : 1,
+				columns : [ [ {
+					field : 'name',
+					title : '项目名称',
+					width : 60
+
+				}, {
+					field : 'city',
+					title : '城市',
+					width : 60
+				}, {
+					field : 'companyId',
+					title : '公司名称',
+					width : 60
+				}, {
+					field : 'exploitPeriod',
+					title : '开发周期',
+					width : 60
+				}, {
+					field : 'createdBy',
+					title : '创建人',
+					width : 60
+				}, {
+					field : 'caozuo',
+					title : '操作',
+					width : 60
+				} ] ]
+			});
 		});
 
-		function lists() {
-			$.ajax({
-				url : 'projectLists',
-				type : 'post',
-				success : function(result) {
-					alert(result);
-					/* <![CDATA[ */
-					var html;
-					for (var i = 0; i < result.length; i++) {
-						html += "<tr><td><a href='#'  disable＝'true' onclick='xiangmu("+result[i].id+");'>"
-							+ result[i].name
-							+ "</a></td><td>"
-							+ result[i].city
-							+ "</td><td>"
-							+ result[i].companyId
-							+ "</td><td>"
-							+ result[i].exploitPeriod
-							+ "</td><td>"
-							+ result[i].createdBy
-							+ "</td><td><a href = '#' disable＝'true' onclick='bjxm("+result[i].id+");'	>编辑项目</a>|<a href='#'   disable＝'true' onclick='cjjihua("+result[i].id+");'>创建计划</a></td></tr>";
-					}
-					/* ]]> */
-					$("#tbody_id").html(html);
-				}
-			});
-		}
+		// 		function lists() {
+		// 			$.ajax({
+		// 				url : 'projectLists',
+		// 				type : 'post',
+		// 				success : function(result) {
+		// 					/* <![CDATA[ */
+		// 					var html;
+		// 					for (var i = 0; i < result.length; i++) {
+		// 						html += "<tr><td><a href='#'  disable＝'true' onclick='xiangmu("
+		// 							+ result[i].id
+		// 							+ ");'>"
+		// 							+ result[i].name
+		// 							+ "</a></td><td>"
+		// 							+ result[i].city
+		// 							+ "</td><td>"
+		// 							+ result[i].companyId
+		// 							+ "</td><td>"
+		// 							+ result[i].exploitPeriod
+		// 							+ "</td><td>"
+		// 							+ result[i].createdBy
+		// 							+ "</td><td><a href = '#' disable＝'true' onclick='bjxm("
+		// 							+ result[i].id
+		// 							+ ");'	>编辑项目</a>|<a href='#'   disable＝'true' onclick='cjjihua("
+		// 							+ result[i].id
+		// 							+ ");'>创建计划</a></td></tr>";
+		// 					}
+		// 					/* ]]> */
+		// 					$("#tbody_id").html(html);
+		// 				}
+		// 			});
+		// 		}
 	</script>
 </body>
 </html>

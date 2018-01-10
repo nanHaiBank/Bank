@@ -49,6 +49,15 @@ public class ProjectController {
 	public String landparticulars() {
 		return "landparticulars";
 	}
+	/**
+	 * 进入项目信息页面
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/projectxin")
+	public String projectxin() {
+		return "projectxin";
+	}
 
 	/**
 	 * 创建项目

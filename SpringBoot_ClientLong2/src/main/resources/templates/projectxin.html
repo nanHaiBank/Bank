@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <title>项目信息</title>
-<script type="text/javascript" src="easyui/jquery.min.js"></script>
-<!--easyui核心文件-->
-<script type="text/javascript" src="easyui/jquery.easyui.min.js"></script>
-<!--对应的语言包-->
-<script type="text/javascript" src="easyui/locale/easyui-lang-zh_CN.js"></script>
-<!--皮肤文件-->
-<link rel="stylesheet" type="text/css"
-	href="easyui/themes/default/easyui.css" />
-<!--图标文件-->
-<link rel="stylesheet" type="text/css" href="easyui/themes/icon.css" />
-
 </head>
 <body>
 	<img id="u6246_img" class="img " src="images/u6.jpg" />
@@ -124,5 +113,51 @@
 		<a href="projectList"><input type="button" value="创建项目"
 			id="chuangjianxm" /></a>
 	</div>
+	<table id="asdfwe">
+	</table>
+
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$('#asdfwe').datagrid({
+				url : 'projectLists',
+				border : true,
+				fitColumns : true,
+				pagination : true,
+				pageSize : 5,
+				pageList : [ 2, 4, 6, 8, 10 ],
+				pageNumber : 1,
+				columns : [ [ 
+				{	field : 'name',
+					title : '项目名称',
+					width : 60}, 
+				{
+					field : 'city',
+					title : '城市',
+					width : 60
+				}, 
+				{
+					field : 'companyId',
+					title : '公司名称',
+					width : 60
+				}, 
+				{
+					field : 'exploitPeriod',
+					title : '开发周期',
+					width : 60
+				}, {
+					field : 'createdBy',
+					title : '创建人',
+					width : 60
+				}, 
+				{
+					field : 'caozuo',
+					title : '操作',
+					width : 60
+				} 
+				] ]
+			});
+		});
+	</script>
 </body>
 </html>
