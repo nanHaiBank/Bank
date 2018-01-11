@@ -1,5 +1,7 @@
 ﻿package com.lxit.sddc.bean;
 
+import java.util.List;
+
 /**
  * 任务表
  * 
@@ -9,20 +11,20 @@
 public class Task {
 	int taskId;// 任务表Id
 
-	int nodeType;// 任务类型(数据字典key)中期、到期、审核
+	String nodeType;// 任务类型(数据字典key)中期、到期、审核
 
 	String businessMatter;// 业务事项
 
-	int taskState;// 任务状态(数据字典key)待填报、审批中、已完成
+	String taskState;// 任务状态(数据字典key)待填报、审批中、已完成
 
-	int nodeState;// 节点状态(数据字典key)红灯、黄灯、绿灯
+	String nodeState;// 节点状态(数据字典key)红灯、黄灯、绿灯
 
-	int warning;// 节点预警级别（数据字典key）一级、二级、三级预警
+	String warning;// 节点预警级别（数据字典key）一级、二级、三级预警
 
-	String predictCompTime;//预计完成时间
-	
-	String faceCompTime;//实际完成时间
-	
+	String predictCompTime;// 预计完成时间
+
+	String faceCompTime;// 实际完成时间
+
 	int createdBy;// 创建人
 
 	String createdDate;// 创建日期
@@ -33,6 +35,31 @@ public class Task {
 
 	String remark;// 备注
 
+	String companyName;// 发起公司名称
+
+	String deptName;// 发起岗位名称
+	
+	String rdeptName;//接收部门
+	
+	String rcompanyName;//接收公司
+
+
+	public String getRdeptName() {
+		return rdeptName;
+	}
+
+	public void setRdeptName(String rdeptName) {
+		this.rdeptName = rdeptName;
+	}
+
+	public String getRcompanyName() {
+		return rcompanyName;
+	}
+
+	public void setRcompanyName(String rcompanyName) {
+		this.rcompanyName = rcompanyName;
+	}
+
 	public int getTaskId() {
 		return taskId;
 	}
@@ -41,12 +68,54 @@ public class Task {
 		this.taskId = taskId;
 	}
 
-	public int getNodeType() {
+	
+
+	public String getNodeType() {
 		return nodeType;
 	}
 
-	public void setNodeType(int nodeType) {
+	public void setNodeType(String nodeType) {
 		this.nodeType = nodeType;
+	}
+
+	public String getTaskState() {
+		return taskState;
+	}
+
+	public void setTaskState(String taskState) {
+		this.taskState = taskState;
+	}
+
+	public String getNodeState() {
+		return nodeState;
+	}
+
+	public void setNodeState(String nodeState) {
+		this.nodeState = nodeState;
+	}
+
+	public String getWarning() {
+		return warning;
+	}
+
+	public void setWarning(String warning) {
+		this.warning = warning;
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
+	}
+
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
 	}
 
 	public String getBusinessMatter() {
@@ -57,30 +126,7 @@ public class Task {
 		this.businessMatter = businessMatter;
 	}
 
-	public int getTaskState() {
-		return taskState;
-	}
-
-	public void setTaskState(int taskState) {
-		this.taskState = taskState;
-	}
-
-	public int getNodeState() {
-		return nodeState;
-	}
-
-	public void setNodeState(int nodeState) {
-		this.nodeState = nodeState;
-	}
-
-	public int getWarning() {
-		return warning;
-	}
-
-	public void setWarning(int warning) {
-		this.warning = warning;
-	}
-
+	
 
 	public int getCreatedBy() {
 		return createdBy;
@@ -151,5 +197,4 @@ public class Task {
 				+ lastUpdateDate + ", remark=" + remark + "]";
 	}
 
-	
 }

@@ -19,7 +19,7 @@ public class Plan {
 
 	String securitDate;//摘牌日
 	
-	String CommercialDate;//开工日
+	String commercialDate;//开工日
 	
 	String planType;//计划类型
 		
@@ -41,8 +41,35 @@ public class Plan {
 
 	String remark;// 备注
 
+	int green;//计划中绿灯
+	int red;//计划中的红灯
 	
+	String projectName;//项目名称
 	
+	public String getPlanType() {
+		return planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+	}
+
+	public int getGreen() {
+		return green;
+	}
+
+	public void setGreen(int green) {
+		this.green = green;
+	}
+
+	public int getRed() {
+		return red;
+	}
+
+	public void setRed(int red) {
+		this.red = red;
+	}
+
 	public String getPlanStateKey() {
 		return planStateKey;
 	}
@@ -99,13 +126,6 @@ public class Plan {
 		this.securitDate = securitDate;
 	}
 
-	public String getCommercialDate() {
-		return CommercialDate;
-	}
-
-	public void setCommercialDate(String commercialDate) {
-		CommercialDate = commercialDate;
-	}
 
 	public String getSaleDate() {
 		return saleDate;
@@ -175,33 +195,22 @@ public class Plan {
 		super();
 	}
 
-	public Plan(int id, String name, int templateId, int planCommercial, int exploitPeriod, String securitDate,
-			String commercialDate, String saleDate, String buildingDate, int clusterId, int createdBy,
-			String createdDate, int lastUpdatedBy, String lastUpdateDate, String remark) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.templateId = templateId;
-		this.planCommercial = planCommercial;
-		this.exploitPeriod = exploitPeriod;
-		this.securitDate = securitDate;
-		CommercialDate = commercialDate;
-		this.saleDate = saleDate;
-		this.buildingDate = buildingDate;
-		this.clusterId = clusterId;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-		this.lastUpdatedBy = lastUpdatedBy;
-		this.lastUpdateDate = lastUpdateDate;
-		this.remark = remark;
+	public String getCommercialDate() {
+		return commercialDate;
 	}
 
-	@Override
-	public String toString() {
-		return "Plan [id=" + id + ", name=" + name + ", templateId=" + templateId + ", planCommercial=" + planCommercial
-				+ ", exploitPeriod=" + exploitPeriod + ", securitDate=" + securitDate + ", CommercialDate="
-				+ CommercialDate + ", saleDate=" + saleDate + ", buildingDate=" + buildingDate + ", clusterId="
-				+ clusterId + ", createdBy=" + createdBy + ", createdDate=" + createdDate + ", lastUpdatedBy="
-				+ lastUpdatedBy + ", lastUpdateDate=" + lastUpdateDate + ", remark=" + remark + "]";
+	public void setCommercialDate(String commercialDate) {
+		this.commercialDate = commercialDate;
 	}
+
+	public String getProjectName() {
+		return projectName;
+	}
+
+	public void setProjectName(String projectName) {
+		this.projectName = projectName;
+	}
+	
+
+
 }

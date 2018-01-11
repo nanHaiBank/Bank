@@ -1,29 +1,31 @@
 ﻿package com.lxit.sddc.bean;
 
+import java.io.Serializable;
+
 /**
  * 考核封存表
  * 
  * @author LongShao
  *
  */
-public class Safekeeping {
+public class Safekeeping{
 	int id;// 考核封存Id
 
 	int clusterId;// 组团Id
 
-	String oneNumber;// 一级节点完成率
+	int oneNumber;// 一级节点完成率
 
-	String oneReadNumber;// 一级节点延期完成数
+	int oneReadNumber;// 一级节点延期完成数
 
-	String twoNumber;// 二级节点完成数
+	int twoNumber;// 二级节点完成数
 
-	String twoReadNumber;// 二级节点延期完成数
+	int twoReadNumber;// 二级节点延期完成数
 
-	String oneRate;// 一级预警
+	int oneRate;// 一级预警
 
-	String twoRate;// 二级预警
+	int twoRate;// 二级预警
 
-	String threeRate;// 三级预警
+	int threeRate;// 三级预警
 
 	String accomplish;// 总完成率
 
@@ -61,59 +63,61 @@ public class Safekeeping {
 		this.clusterId = clusterId;
 	}
 
-	public String getOneNumber() {
+	
+	
+	public int getOneNumber() {
 		return oneNumber;
 	}
 
-	public void setOneNumber(String oneNumber) {
+	public void setOneNumber(int oneNumber) {
 		this.oneNumber = oneNumber;
 	}
 
-	public String getOneReadNumber() {
+	public int getOneReadNumber() {
 		return oneReadNumber;
 	}
 
-	public void setOneReadNumber(String oneReadNumber) {
+	public void setOneReadNumber(int oneReadNumber) {
 		this.oneReadNumber = oneReadNumber;
 	}
 
-	public String getTwoNumber() {
+	public int getTwoNumber() {
 		return twoNumber;
 	}
 
-	public void setTwoNumber(String twoNumber) {
+	public void setTwoNumber(int twoNumber) {
 		this.twoNumber = twoNumber;
 	}
 
-	public String getTwoReadNumber() {
+	public int getTwoReadNumber() {
 		return twoReadNumber;
 	}
 
-	public void setTwoReadNumber(String twoReadNumber) {
+	public void setTwoReadNumber(int twoReadNumber) {
 		this.twoReadNumber = twoReadNumber;
 	}
 
-	public String getOneRate() {
+	public int getOneRate() {
 		return oneRate;
 	}
 
-	public void setOneRate(String oneRate) {
+	public void setOneRate(int oneRate) {
 		this.oneRate = oneRate;
 	}
 
-	public String getTwoRate() {
+	public int getTwoRate() {
 		return twoRate;
 	}
 
-	public void setTwoRate(String twoRate) {
+	public void setTwoRate(int twoRate) {
 		this.twoRate = twoRate;
 	}
 
-	public String getThreeRate() {
+	public int getThreeRate() {
 		return threeRate;
 	}
 
-	public void setThreeRate(String threeRate) {
+	public void setThreeRate(int threeRate) {
 		this.threeRate = threeRate;
 	}
 
@@ -199,32 +203,6 @@ public class Safekeeping {
 
 	public Safekeeping() {
 		super();
-	}
-
-	public Safekeeping(int id, int clusterId, String oneNumber, String oneReadNumber, String twoNumber,
-			String twoReadNumber, String oneRate, String twoRate, String threeRate, String accomplish,
-			String operationTime, int operationUser, int lastName, String lastTime, int createdBy, String createdDate,
-			int lastUpdatedBy, String lastUpdateDate, String remark) {
-		super();
-		this.id = id;
-		this.clusterId = clusterId;
-		this.oneNumber = oneNumber;
-		this.oneReadNumber = oneReadNumber;
-		this.twoNumber = twoNumber;
-		this.twoReadNumber = twoReadNumber;
-		this.oneRate = oneRate;
-		this.twoRate = twoRate;
-		this.threeRate = threeRate;
-		this.accomplish = accomplish;
-		this.operationTime = operationTime;
-		this.operationUser = operationUser;
-		this.lastName = lastName;
-		this.lastTime = lastTime;
-		this.createdBy = createdBy;
-		this.createdDate = createdDate;
-		this.lastUpdatedBy = lastUpdatedBy;
-		this.lastUpdateDate = lastUpdateDate;
-		this.remark = remark;
 	}
 
 	@Override

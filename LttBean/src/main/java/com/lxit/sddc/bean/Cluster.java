@@ -49,16 +49,26 @@ public class Cluster {
 	
 	String landName;//组团名称
 
-	List<Plan> Plans;//组团中的计划
+	List<Plan> plans;//组团中的计划
 	
 	String images;//项目图片
 	
+	
+
 	public List<Plan> getPlans() {
-		return Plans;
+		return plans;
 	}
 
 	public void setPlans(List<Plan> plans) {
-		Plans = plans;
+		this.plans = plans;
+	}
+
+	public String getImages() {
+		return images;
+	}
+
+	public void setImages(String images) {
+		this.images = images;
 	}
 
 	public int getId() {

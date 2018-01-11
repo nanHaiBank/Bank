@@ -1,5 +1,7 @@
 ﻿package com.lxit.sddc.bean;
 
+import java.util.List;
+
 /**
  * 节点表
  * 
@@ -42,10 +44,69 @@ public class Node {
 	String lastUpdateDate;// 最后修改日期
 
 	String remark;// 备注
+
+	Task tasks;
 	
-	String companyName;//发起公司名称
+	List<Comment> comments;//评论操作表 
 	
-	String deptName;//发起岗位名称
+	String planName;
+	
+	String faceCompTime;//实际完成日期
+	
+	String rname;//接收
+	
+	String tname;//发布
+	
+	
+
+	
+	public String getRname() {
+		return rname;
+	}
+
+	public void setRname(String rname) {
+		this.rname = rname;
+	}
+
+	public String getTname() {
+		return tname;
+	}
+
+	public void setTname(String tname) {
+		this.tname = tname;
+	}
+
+	public String getFaceCompTime() {
+		return faceCompTime;
+	}
+
+	public void setFaceCompTime(String faceCompTime) {
+		this.faceCompTime = faceCompTime;
+	}
+
+	public String getPlanName() {
+		return planName;
+	}
+
+	public void setPlanName(String planName) {
+		this.planName = planName;
+	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
+	public Task getTasks() {
+		return tasks;
+	}
+
+	public void setTasks(Task tasks) {
+		this.tasks = tasks;
+	}
 
 	public int getId() {
 		return id;
@@ -196,22 +257,6 @@ public class Node {
 		this.assessStop = assessStop;
 	}
 
-	public String getCompanyName() {
-		return companyName;
-	}
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
-	}
-
-	public String getDeptName() {
-		return deptName;
-	}
-
-	public void setDeptName(String deptName) {
-		this.deptName = deptName;
-	}
-	
 
 	
 }
