@@ -7,6 +7,10 @@
  *
  */
 public class Plan {
+	public Plan() {
+
+	}
+
 	int id;// 计划Id
 
 	String name;// 计划名称
@@ -24,7 +28,7 @@ public class Plan {
 	String planType;//计划类型
 		
 	String planStateKey;//计划状态
-
+	
 	String saleDate;// 开售日
 
 	String buildingDate;// 交楼日
@@ -46,13 +50,6 @@ public class Plan {
 	
 	String projectName;//项目名称
 	
-	public String getPlanType() {
-		return planType;
-	}
-
-	public void setPlanType(String planType) {
-		this.planType = planType;
-	}
 
 	public int getGreen() {
 		return green;
@@ -70,13 +67,16 @@ public class Plan {
 		this.red = red;
 	}
 
-	public String getPlanStateKey() {
-		return planStateKey;
-	}
+	private int rank;// 节点级别
 
-	public void setPlanStateKey(String planStateKey) {
-		this.planStateKey = planStateKey;
-	}
+	private String nodeType;// 类别
+
+	private String planIdOk;// 完成日期
+	
+	private int nid;//节点id
+	
+	private int taskId;//任务id
+	
 
 	public int getId() {
 		return id;
@@ -126,6 +126,22 @@ public class Plan {
 		this.securitDate = securitDate;
 	}
 
+
+	public String getPlanType() {
+		return planType;
+	}
+
+	public void setPlanType(String planType) {
+		this.planType = planType;
+	}
+
+	public String getPlanStateKey() {
+		return planStateKey;
+	}
+
+	public void setPlanStateKey(String planStateKey) {
+		this.planStateKey = planStateKey;
+	}
 
 	public String getSaleDate() {
 		return saleDate;
@@ -191,16 +207,35 @@ public class Plan {
 		this.remark = remark;
 	}
 
-	public Plan() {
-		super();
+
+	public int getRank() {
+		return rank;
 	}
 
-	public String getCommercialDate() {
-		return commercialDate;
+	public void setRank(int rank) {
+		this.rank = rank;
 	}
 
+	public String getNodeType() {
+		return nodeType;
+	}
+
+	public void setNodeType(String nodeType) {
+		this.nodeType = nodeType;
+	}
+
+	public String getPlanIdOk() {
+		return planIdOk;
+	}
+
+	public void setPlanIdOk(String planIdOk) {
+		this.planIdOk = planIdOk;
+	}
 	public void setCommercialDate(String commercialDate) {
 		this.commercialDate = commercialDate;
+	}
+	public int getNid() {
+		return nid;
 	}
 
 	public String getProjectName() {
@@ -212,5 +247,22 @@ public class Plan {
 	}
 	
 
+	public void setNid(int nid) {
+		this.nid = nid;
+	}
 
+	public int getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getCommercialDate() {
+		return commercialDate;
+	}
+	
+	
+	
 }
