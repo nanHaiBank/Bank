@@ -35,4 +35,5 @@ public interface PandectService {
 	@RequestMapping("/getComment")
 	@ResponseBody
 	public Map<String,Object> getComment(@RequestParam("id") Integer id);
+     
 }
