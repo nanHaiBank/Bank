@@ -18,4 +18,21 @@ public interface PandectService {
 	@RequestMapping(value="/getProjects", method = RequestMethod.POST)
 	@ResponseBody
 	public Map<String,Object> getProjects(@RequestParam(name="contiding") String contiding);
+	
+	@RequestMapping(value="/clusterPandect", method = RequestMethod.POST)
+	@ResponseBody
+	public Map<String,Object> getClu(@RequestParam(name="id") Integer id);
+	
+	
+	@RequestMapping("/planPandect")
+	@ResponseBody
+	public Map<String,Object> planPandect(@RequestParam(name="id")Integer id);
+	
+	@RequestMapping("/getNodes")
+	@ResponseBody
+	public Map<String,Object> getNode(@RequestParam("stage") String stage,@RequestParam("id") Integer id);
+	
+	@RequestMapping("/getComment")
+	@ResponseBody
+	public Map<String,Object> getComment(@RequestParam("id") Integer id);
 }

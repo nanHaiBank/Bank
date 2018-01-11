@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<style>
+#tab12 td {
+	width: 100px;
+}
+</style>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		var id = sessionStorage["par3"];
+		$.ajax({
+			url:"getCommentPandect",
+			data:"id="+id,
+			type:"post",
+			dataType:"json",
+			success:function(result){
+				var data = result.data;
+				
+				var node = result.node;
+				
+				$("#divs3").html(node.planName);
+				$("#td1").html(node.nodeDate);
+				$("#td3").html(node.period);
+				$("#td5").html(node.planIdOk);
+				$("#td7").html(node.faceCompTime);
+				$("#td9").html(node.rank);
+				var results = node.rank*5;
+				$("#td11").html(results);
+				$("#td13").html(node.tname);
+				$("#td15").html(node.rname);
+				/* <![CDATA[ */
+				       if(node.comments!=null){
+						for (var i = 0; i < node.comments.length; i++) {
+							$("#tabs2").append(
+									'<tr>'
+										+'<td>'+node.comments[i].userName+'</td>'
+										+'<td>'+node.comments[i].key+'</td>'
+										+'<td>'+node.comments[i].content+'</td>'
+										+'<td>'+node.comments[i].accessory+'</td>'
+										+'<td>'+node.comments[i].createTime+'</td>'
+									+'</tr>'		
+								)
+							}
+				        }
+				for (var i = 0; i < data.length; i++) {
+					$("#trs1").append('<td>'+data[i]+'</td>');
+				}
+				/* ]]> */
+			}
+		})
+	})
+</script>
+<body>
+
+	<div style="width: 1200px;">
+		<div id="divs3"
+			style="color: black; height: 30px; color: blue; font-size: 30px;">
+			计划详细信息</div>
+		<hr></hr>
+		<br>
+		<div style="text-align: right; width: 100%;">
+			<input type="button" value="发表评论" />
+		</div>
+		</br>
+		<div style="background-color: cadetblue;">节点信息</div>
+		<table id="tab12 " width="100% " style="text-align: center;"
+			border="3px; ">
+			<tr>
+				<td style="text-align: right;">计划开始日期：</td>
+				<td style="text-align: left;" id="td1"></td>
+				<td style="text-align: right;">节点周期：</td>
+				<td style="text-align: left;" id="td3"></td>
+				<td style="text-align: right;">计划完成日期：</td>
+				<td style="text-align: left;" id="td5"></td>
+				<td style="text-align: right;">实际完成日期：</td>
+				<td style="text-align: left;"></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;">节点级别：</td>
+				<td style="text-align: left;" id="td7"></td>
+				<td style="text-align: right;">节点分数：</td>
+				<td style="text-align: left;" id="td9"></td>
+				<td style="text-align: right;">计划阶段：</td>
+				<td style="text-align: left;" colspan="3" id="td11"></td>
+			</tr>
+			<tr>
+				<td style="text-align: right;">发起部门：</td>
+				<td colspan="3 " style="text-align: left;" id="td13"></td>
+				<td style="text-align: right;">接受部门：</td>
+				<td colspan="3 " style="text-align: left;" id="td15"></td>
+			</tr>
+		</table>
+		<br>
+		<div style="color: black; height: 30px; background-color: cadetblue;">
+			执行情况</div>
+		<table id="tabs2" width="100% " border="1px; "
+			style="text-align: center;">
+			<tr>
+				<td width="100px ">执行人</td>
+				<td width="150px ">执行操作</td>
+				<td width="300px ">内容</td>
+				<td width="150px ">附件</td>
+				<td width="150px ">时间</td>
+			</tr>
+
+		</table>
+		</br>
+		<div style="color: black; height: 30px; background-color: cadetblue;">
+			责任人</div>
+		<br>
+		<table style="border: double; width: 400px; margin-left: 30px;">
+			<tr id="trs1">
+				<td></td>
+			</tr>
+		</table>
+		</br>
+	</div>
+	
+</body>
+</html>

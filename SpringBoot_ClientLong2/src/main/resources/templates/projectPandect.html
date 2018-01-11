@@ -13,96 +13,114 @@ body, html, #allmap {
 }
 </style>
 <script type="text/javascript" src="jquery/jquery.js"></script>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&amp;ak=67jMQ5DmYTe1TLMBKFUTcZAR"></script>
-
+<script type="text/javascript"
+	src="http://api.map.baidu.com/api?v=2.0&amp;ak=67jMQ5DmYTe1TLMBKFUTcZAR"></script>
 <body>
-<input type="radio" value="3" name="project" checked="checked" onclick="clicks(3);"/> 全部 <input type="radio" value="2" name="project" onclick="clicks(2);" /> 正常 <input type="radio" value="1" name="project" onclick="clicks(1);" /> 延期
+	<input type="radio" value="3" name="project" checked="checked"
+		onclick="clicks(3);" /> 全部
+	<input type="radio" value="2" name="project" onclick="clicks(2);" />
+	正常
+	<input type="radio" value="1" name="project" onclick="clicks(1);" />
+	延期
 	<div id="allmap"></div>
 	<script type="text/javascript">
-	function clicks(parameter){
+		function clicks(parameter) {
+			//创建地图
+			map = new BMap.Map("allmap");
+			map.centerAndZoom(new BMap.Point(100.33, 33.333), 11); // 设置中心点
+			map.centerAndZoom("中国");
+			map.setCurrentCity("中国"); //设置为衡阳
+			map.addControl(new BMap.MapTypeControl());
+			map.enableScrollWheelZoom(true);
+			$.ajax({
+				url : "getPandect",
+				dataType : "json",
+				data : "contiding=" + parameter,
+				type : "post",
+				success : function(result) {
+					addMarker(result.data);
+				}
+			})
+		}
+		//创建标注点并添加到地图中
+		var markers = new Array();
+
+		var info = new Array();
+		function addMarker(points) {
+			//循环建立标注点
+			var myIcon = new BMap.Icon("images/u3931.png",
+					new BMap.Size(90, 53));
+			/* <![CDATA[ */
+			for (var i = 0, pointsLen = points.length; i < pointsLen; i++) {
+				var point = new BMap.Point(points[i].coordinate.split(",")[0],
+						points[i].coordinate.split(",")[1]); //将标注点转化成地图上的点
+				var marker = new BMap.Marker(point, {
+					icon : myIcon
+				}); //将点转化成标注点
+				map.addOverlay(marker); //将标注点添加到地图上
+				var label = new window.BMap.Label(points[i].name, {
+					offset : new window.BMap.Size(29, 4)
+				});
+				label.setStyle({ //给label设置样式，任意的CSS都是可以的
+					color : "red", //颜色
+					fontSize : "14px", //字号
+					border : "0", //边
+				});
+				markers[i] = marker;
+				info[i] = points[i];
+				marker.setLabel(label);
+				//添加监听事件
+				(function(i) {
+					marker.addEventListener("click", function() {
+						showInfo(this, i);
+					});
+				})(i);
+			}
+			/* ]]> */
+		}
+
+		function plot(parameter) {
+			sessionStorage["par1"] = parameter;
+			location = "clusterPandect";
+		}
+		function showInfo(thisMarker, index) {
+			console.log(thisMarker)
+			/*<![CDATA[*/
+
+			var sContent = '<ul style="margin:0 0 5px 0;padding:0.2em 0">'
+			for (var i = 0; i < info[index].clusters.length; i++) {
+				sContent += '<li style="line-height: 26px;font-size: 15px;">'
+						+ '<span  style="width: 50px;display: inline-block;">组团：</span>'
+						+ '<a href="#" onclick="plot(' + info[index].clusters[i].id
+						+ ')">' + info[index].clusters[i].projectName + '项目-'
+						+ info[index].clusters[i].landName + '地块-'
+						+ info[index].clusters[i].name + '组团</a>' + '</li>'
+				sContent += '</ul>'
+				break;
+			}
+
+			/*]]>*/
+			var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
+			thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
+		}
+
 		//创建地图
-		map = new BMap.Map("allmap");
+		var map = new BMap.Map("allmap");
 		map.centerAndZoom(new BMap.Point(100.33, 33.333), 11); // 设置中心点
 		map.centerAndZoom("中国");
 		map.setCurrentCity("中国"); //设置为衡阳
 		map.addControl(new BMap.MapTypeControl());
 		map.enableScrollWheelZoom(true);
 		$.ajax({
-			url:"getPandect",
-			dataType:"json",
-			data:"contiding="+parameter,
-			type:"post",
-			success:function(result){
+			url : "getPandect",
+			dataType : "json",
+			type : "post",
+			success : function(result) {
 				addMarker(result.data);
 			}
 		})
-	}
-	//创建标注点并添加到地图中
-	 function addMarker(points) {
-		//循环建立标注点
-		var myIcon = new BMap.Icon("images/u3931.png", new BMap.Size(90,53));
-		/* <![CDATA[ */
-		for (var i=0,pointsLen=points.length;i<pointsLen;i++) {
-			var point = new BMap.Point(points[i].coordinate.split(",")[0], points[i].coordinate.split(",")[1]); //将标注点转化成地图上的点
-			var marker = new BMap.Marker(point,{icon:myIcon}); //将点转化成标注点
-			map.addOverlay(marker); //将标注点添加到地图上
-			var label = new window.BMap.Label(points[i].name, { offset: new window.BMap.Size(29,4) });
-			label.setStyle({                                   //给label设置样式，任意的CSS都是可以的
-			    color:"red",                   //颜色
-			    fontSize:"14px",               //字号
-			    border:"0",                    //边
-			});
-			marker.setLabel(label);
-			//添加监听事件
-			(function() {
-				var thePoint = points[i];
-				marker.addEventListener("click", function() {
-					showInfo(this, thePoint);
-				});
-			})();
-		}
-		/* ]]> */
-	}
-	
-	function plot(parameter){
-			alert(parameter);
-			sessionStorage["par1"]=parameter;
-			location = "clusterPandect";
-		}
-	function showInfo(thisMarker, point) {
-		//获取点的信息
-		/* <![CDATA[ */
-		    var sContent = '<ul style="margin:0 0 5px 0;padding:0.2em 0">'
-		  	for (var i = 0; i < point.clusters.length; i++) {
-		  		sContent+='<li style="line-height: 26px;font-size: 15px;">'
-		  			+'<span  style="width: 50px;display: inline-block;">组团：</span>'
-					+ '<a href="#" onclick="plot('+point.clusters[i].id+')">'+point.clusters[i].projectName+'项目-'+point.clusters[i].landName+'地块-'+point.clusters[i].name+'组团</a>'
-					+'</li>'
-			}
-		    sContent+='</ul>'      
-		  /* ]]> */
-		var infoWindow = new BMap.InfoWindow(sContent); //创建信息窗口对象
-		thisMarker.openInfoWindow(infoWindow); //图片加载完后重绘infoWindow
-	}
-	
-	
-	//创建地图
-	var map = new BMap.Map("allmap");
-	map.centerAndZoom(new BMap.Point(100.33, 33.333), 11); // 设置中心点
-	map.centerAndZoom("中国");
-	map.setCurrentCity("中国"); //设置为衡阳
-	map.addControl(new BMap.MapTypeControl());
-	map.enableScrollWheelZoom(true);
-	$.ajax({
-		url:"getPandect",
-		dataType:"json",
-		type:"post",
-		success:function(result){
-			addMarker(result.data);
-		}
-	})
-	//addMarker(points);
-</script>
+		//addMarker(points);
+	</script>
 </body>
 </head>
 </html>

@@ -1,17 +1,235 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <title>Insert title here</title>
 </head>
 <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 <script type="text/javascript">
-	$(function(){
-		var aa = sessionStorage["par1"];
-		alert(aa);
+	function jihuas(id) {
+		sessionStorage["par2"] = id;
+		location = "planPandet";
+	}
+	$(function() {
+		var id = sessionStorage["par1"];
+		$.ajax({
+					url : "getClusterPlan",
+					dataType : "json",
+					data : "id=" + id,
+					type : "post",
+					success : function(result) {
+						var cluster = result.cluster;
+						var safekeeping = result.Safekeeping;
+						$("#div").text(cluster.projectName + "项目");
+						$("#tdTj1").text(cluster.projectName + "项目图片");
+						$("#tdTj2").text(
+								cluster.projectName + "项目-地块"
+										+ cluster.landName + "-组团"
+										+ cluster.name + "详情");
+						$("#imgage").attr("src", cluster.images);
+						var table = '<table width="100%" style="text-align: center;" border="3px;">'
+								+ '<tr>'
+								+ '<th>信息名称</th>'
+								+ '<th>单位</th>'
+								+ '<th>数值</th>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td rowspan="2">用地面积</td>'
+								+ '<td>万㎡</td>'
+								+ '<td>'
+								+ cluster.landArea
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>亩</td>'
+								+ '<td>'
+								+ cluster.landareamu
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>地上建筑面积</td>'
+								+ '<td>万㎡</td>'
+								+ '<td>'
+								+ cluster.overgArea
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>地下建筑面积</td>'
+								+ '<td>万㎡</td>'
+								+ '<td>'
+								+ cluster.floorArea
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>可售计容面积</td>'
+								+ '<td>万㎡</td>'
+								+ '<td>'
+								+ cluster.mayArea
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>不可售计容面积</td>'
+								+ '<td>万㎡</td>'
+								+ '<td>'
+								+ cluster.notMayArea
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>产权车位</td>'
+								+ '<td>个</td>'
+								+ '<td>'
+								+ cluster.equityStall
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>使用权车位</td>'
+								+ '<td>个</td>'
+								+ '<td>'
+								+ cluster.useEquityStall
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>楼栋数</td>'
+								+ '<td>栋</td>'
+								+ '<td>'
+								+ cluster.clusterMessage
+								+ '</td>'
+								+ '</tr>'
+								+ '<tr>'
+								+ '<td>组团特殊信息</td>'
+								+ '<td colspan="2">'
+								+ cluster.landArea
+								+ '</td>' + '</tr>' + '</table>';
+						$("#clusterTd").append(table);
+						/* <![CDATA[ */
+						for (var i = 0; i < cluster.plans.length; i++) {
+								var j = i;
+								
+							var tr = '<tr>'
+									+ '<td>'
+									+ (j+1)
+									+ '</td>'
+									+ '<td style="color: blue;" onclick="jihuas('
+									+ cluster.plans[i].id + ')">'
+									+ cluster.plans[i].name + '</td>' + '<td>'
+									+ cluster.plans[i].createdDate + '</td>'
+									+ '<td>' + cluster.plans[i].planStateKey
+									+ '</td>' + '</tr>'
+							$("#planId").append(tr);
+						}
+						/* ]]> */
+						var count = safekeeping.oneNumber
+								+ safekeeping.oneReadNumber;
+						var a;
+						(count == 0) ? a = 0
+								: a = (100 / count * safekeeping.oneNumber);
+
+						var count1 = safekeeping.twoNumber
+								+ safekeeping.twoReadNumber;
+						var a1;
+						(count1 == 0) ? a1 = 0
+								: a1 = (100 / count * safekeeping.twoNumber);
+
+						var countA = count + count1;
+
+						var a2;
+
+						(countA == 0) ? a2 = 0
+								: a2 = (100 / countA * (safekeeping.twoNumber + safekeeping.oneNumber));
+						$("#yujinTr").append(
+								"<tr>" + "<td>" + safekeeping.oneNumber
+										+ safekeeping.oneReadNumber + "</td>"
+										+ "<td>" + safekeeping.oneNumber
+										+ "</td>" + "<td>"
+										+ safekeeping.oneReadNumber + "</td>"
+										+ "<td>" + a + "%</td>" + "<td>"
+										+ safekeeping.twoNumber
+										+ safekeeping.twoReadNumber + "</td>"
+										+ "<td>" + safekeeping.twoNumber
+										+ "</td>" + "<td>"
+										+ safekeeping.twoReadNumber + "</td>"
+										+ "<td>" + a1 + "%</td>" + "<td>"
+										+ safekeeping.oneRate + "</td>"
+										+ "<td>" + safekeeping.twoRate
+										+ "</td>" + "<td>"
+										+ safekeeping.threeRate + "</td>"
+										+ "<td>" + a2 + "%</td>" + "</tr>")
+					}
+				})
 	})
 </script>
 <body>
-111111
+	<div style="width: 1200px;">
+		<p>
+		<div id="div"
+			style="color: black; height: 30px; background-color: cadetblue;">
+		</div>
+		</p>
+		<table width="1200px" border="1px;" style="color: black;">
+			<tr>
+				<td width="500px" id="tdTj1"
+					style="background-color: darkblue; color: beige;"></td>
+				<td id="tdTj2" style="background-color: darkblue; color: beige;">
+
+				</td>
+			</tr>
+			<tr>
+				<td rowspan="2" style="height: 500px;" id="imggestj"><img
+					width="100%" src="" id="imgage" height="700px;" /></td>
+				<td height="270px" style="color: black;" id="clusterTd"><span>基本信息</span>
+				</td>
+			</tr>
+			<tr>
+				<td style="color: black;">计划信息
+					<table width="100%" border="3px;" style="text-align: center;"
+						id="planId">
+						<tr>
+							<th>序号</th>
+							<th>计划名称</th>
+							<th>上线日期</th>
+							<th>状态</th>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+		</table>
+		预警信息
+		<table width="100%" style="text-align: center;" border="3px;"
+			id="yujinTr">
+			<tr>
+				<th colspan="4">一级计划节点</th>
+				<th colspan="4">二级计划节点</th>
+				<th rowspan="2">一级预警</th>
+				<th rowspan="2">二级预警</th>
+				<th rowspan="2">三级预警</th>
+				<th rowspan="2">总完成率</th>
+			</tr>
+			<tr>
+				<td>合计</td>
+				<td>2</td>
+				<td>3</td>
+				<td>完成率</td>
+				<td>合计</td>
+				<td>6</td>
+				<td>7</td>
+				<td>完成率</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>

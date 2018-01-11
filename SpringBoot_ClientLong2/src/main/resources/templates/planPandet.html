@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+</head>
+<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	function nodes(id) {
+		alert(id);
+		sessionStorage["par3"] = id;
+		location="nodePandect";
+	}
+
+	function resultDate(value) {
+		var id = sessionStorage["par2"];
+		var text = $(value).text();
+		var data = {"id":id,"stage":text};
+		$.ajax({
+			url : "getNode",
+			dataType : "json",
+			data:data,
+			type:"post",
+			success : function(result) {
+				$("#tab3 tr:gt(0)").remove();
+				/* <![CDATA[ */
+				for (var i = 0; i < result.node.length; i++) {
+					alert(result.node[i].id);
+					var j = i;
+					var ts = '<tr>' + '<td>' + (j + 1) + '</td>' + '<td>'
+							+ result.node[i].rank + '</td>'
+							+ '<td onclick="nodes(' + result.node[i].id + ')">'
+							+ result.node[i].businessMatter + '</td>' + '<td>'
+							+ result.node[i].planIdOk + '</td>' + '<td>'
+							+ result.node[i].tasks.predictCompTime + '</td>'
+							+ '<td>' + result.node[i].tasks.faceCompTime
+							+ '</td>' + '<td>'
+							+ result.node[i].tasks.companyName + '--'
+							+ result.node[i].tasks.deptName + '</td>' + '<td>'
+							+ result.node[i].rank + '</td>' + '</tr>'
+					$("#tab3").append(ts);
+				}
+				/* ]]> */
+			}
+
+		});
+	}
+	$(function() {
+		var id = sessionStorage["par2"];
+		$.ajax({
+			url : "getPlanPandet",
+			dataType : "json",
+			data : "id=" + id,
+			type : "post",
+			success : function(result) {
+				var tr = '<tr>' + '<td>项目名称：' + result.plan.projectName
+						+ '</td>' + '<td>上线时间：' + result.plan.createdDate
+						+ '</td>' + '<td>绿灯：' + result.plan.green + '</td>'
+						+ '<td>红灯：' + result.plan.red + '</td>' + '</tr>'
+
+				$("#table1").append(tr)
+				tr = '<tr>' + '<td>摘牌日：' + result.plan.securitDate + '</td>'
+						+ '<td>开工日：' + result.plan.commercialDate + '</td>'
+						+ '<td></td>' + '<td></td>' + '</tr>'
+				$("#table1").append(tr)
+				/* <![CDATA[ */
+				for (var i = 0; i < result.data.length; i++) {
+					$("#ul1").append(
+							'<br><li  onclick="resultDate(this)"  style="border: double; width: 110px;">'
+									+ result.data[i] + '</li></br>')
+				}
+
+				for (var i = 0; i < result.node.length; i++) {
+					var j = i;
+					var ts = '<tr>' + '<td>' + (j + 1) + '</td>' + '<td>'
+							+ result.node[i].rank + '</td>'
+							+ '<td onclick="nodes(' + result.node[i].id + ')">'
+							+ result.node[i].businessMatter + '</td>' + '<td>'
+							+ result.node[i].planIdOk + '</td>' + '<td>'
+							+ result.node[i].tasks.predictCompTime + '</td>'
+							+ '<td>' + result.node[i].tasks.faceCompTime
+							+ '</td>' + '<td>'
+							+ result.node[i].tasks.companyName + '--'
+							+ result.node[i].tasks.deptName + '</td>' + '<td>'
+							+ result.node[i].rank + '</td>' + '</tr>'
+					$("#tab3").append(ts);
+				}
+
+				/* ]]> */
+
+			}
+		})
+	})
+</script>
+<body>
+	<div style="width: 1200px;">
+		<div style="color: black; height: 30px; background-color: cadetblue;">
+			计划详细信息</div>
+		<p>
+		<table id="table1" width="100%" style="text-align: center;"
+			border="3px;">
+		</table>
+		</p>
+		<br>
+		<div style="color: black; height: 30px; background-color: cadetblue;">
+			节点列表</div>
+		</br>
+		<table width="100%" border="1px;">
+			<tr>
+				<td width="200px">
+					<div style="width: 200px; height: 600px;">
+						<ul id="ul1" style="list-style: none; text-align: center;">
+
+						</ul>
+					</div>
+				</td>
+				<td>
+					<div style="width: 985px; height: 600px">
+						<table id="tab3" width="100%" border="1px"
+							style="text-align: top;">
+							<tr>
+								<th>序号</th>
+								<th>级别</th>
+								<th>业务事项</th>
+								<th>计划完成日期</th>
+								<th>预计完成时间</th>
+								<th>实际完成时间</th>
+								<th>发起部门</th>
+								<th>状态</th>
+							</tr>
+						</table>
+			</div>
+			</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
