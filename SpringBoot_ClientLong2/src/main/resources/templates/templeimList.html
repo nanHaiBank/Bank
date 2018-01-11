@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>模板列表</title>
+</head>
+<body>
+	<div style="height: 30px;">查询条件</div>
+	<table>
+		<tr>
+			<!-- 类型分为：一、二级项目计划 、总控计划、专项计划 -->
+			<td>模板类型：<select name="templateType" id="templateType">
+			</select></td>
+			<!-- 业态分为：住宅、别墅、酒店 -->
+			<td>模板业态:<select name="templatecial" id="templatecial">
+			</select></td>
+			<!-- 状态：未发布、已发布、已下线 -->
+			<td>状态：<select name="templateState" id="templateState">
+			</select></td>
+			<td>模板名称：<input type="text" name="templateName"
+				id="templateName" /></td>
+			<td><input type="button" value="查询" id="mobanselect" /></td>
+		</tr>
+	</table>
+	<div style="height: 30px;">模板列表</div>
+	<table id="templTableId">
+	</table>
+
+	<script type="text/javascript">
+		$(function() {
+			//模板类型
+			$.ajax({
+				url : 'disType',
+				type : 'post',
+				success : function(result) {
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#templateType").html(html);
+				}
+			});
+
+			//模板业态
+			$.ajax({
+				url : 'disCommercial',
+				type : 'post',
+				success : function(result) {
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#templatecial").html(html);
+				}
+			});
+
+			//查询模板状态
+			$.ajax({
+				url : 'disStart',
+				type : 'post',
+				success : function(result) {
+					/* <![CDATA[ */
+					var html;
+					html += "<option value=''>全部</option>";
+					for (var i = 0; i < result.length; i++) {
+						html += "<option value="+result[i].key+">"
+								+ result[i].value + "</option>";
+					}
+					/* ]]> */
+					$("#templateState").html(html);
+				}
+			});
+			//查询模板列表数据
+			$('#templTableId').datagrid({
+				url : 'templ',
+				queryParams:{
+					templateType:$("#templateType").val(),
+					templatecial:$("#templatecial").val(),
+					templateState:$("#templateState").val(),
+					templateName:$("#templateName").val()
+				},
+				border : true,
+				fitColumns : true,
+				pagination : true,
+				pageSize : 5,
+				pageList : [ 2, 4, 6, 8, 10 ],
+				pageNumber : 1,
+				columns : [ [ {
+					field : 'id',
+					title : '序号',
+					width : 60
+
+				}, {
+					field : 'templateType',
+					title : '模板类型',
+					width : 60
+				}, {
+					field : 'templateName',
+					title : '模板名称',
+					width : 60
+				}, {
+					field : 'createdBy',
+					title : '创建人',
+					width : 60
+				}, {
+					field : 'createdDate',
+					title : '创建日期',
+					width : 60
+				}, {
+					field : 'templateState',
+					title : '状态',
+					width : 60
+				}, {
+					field : 'caozuo',
+					title : '操作',
+					width : 60,
+					formatter: function(value,row,index){
+						var one;
+						if (row.templateState == 'J1'){
+							one = '<span onclick="fabu('+row.id+');">发布</span>|<span onclick="shanchu('+row.id+');">删除</span>|<span onclick="xiazaimb('+row.id+');">下载模板</span>';
+						}else if(row.templateState == 'J3'){
+							one = '<span onclick="mbshangxian('+row.id+');">模板上线</span>|<span onclick="xiazaimb('+row.id+');">下载模板</span>';
+						}else {
+						 	one = '<span onclick="mbxiaxian('+row.id+');">模板下线</span>|<span onclick="xiazaimb('+row.id+');">下载模板</span>';
+						}
+						return one;
+					}
+				} ] ]
+			});
+		});
+
+		function fabu(id) {
+			$.ajax({
+				url : 'isses',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					location = "templeimList";
+				}
+			});
+		}
+
+		function mbxiaxian(id) {
+			$.ajax({
+				url : 'showing',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					location = "templeimList";
+				}
+			});
+		}
+
+		function mbshangxian(id) {
+			$.ajax({
+				url : 'theaters',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					location = "templeimList";
+				}
+			});
+		}
+
+		function tiaozhuan(id) {
+			$.ajax({
+				url : 'showingmb',
+				type : 'post',
+				data : {
+					id : id
+				},
+				success : function(result) {
+					if (result.templateState == "J2") {
+						location = "selectTempl?" + id;
+					} else {
+						alert("该模板已下线,请先上线再查看！");
+					}
+				}
+			});
+		}
+	</script>
+</body>
+</html>
