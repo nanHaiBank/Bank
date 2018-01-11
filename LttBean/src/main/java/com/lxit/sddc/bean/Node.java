@@ -107,7 +107,15 @@ public class Node {
 	public void setTasks(Task tasks) {
 		this.tasks = tasks;
 	}
+	String deptName;//发起岗位名称
+	
+	private int taskId;//任务id
+	
+	private String sendname;//发生部门
+	
+	private String takename;//接受部门
 
+	private String planIDate;//计划完成日期
 	public int getId() {
 		return id;
 	}
@@ -196,7 +204,6 @@ public class Node {
 		this.receptionDeptId = receptionDeptId;
 	}
 
-
 	public int getCreatedBy() {
 		return createdBy;
 	}
@@ -258,5 +265,46 @@ public class Node {
 	}
 
 
+	public String getDeptName() {
+		return deptName;
+	}
+
+	public void setDeptName(String deptName) {
+		this.deptName = deptName;
+	}
+
+	public int getTaskId() {
+		return taskId;
+	}
+
+	public void setTaskId(int taskId) {
+		this.taskId = taskId;
+	}
+
+	public String getSendname() {
+		return sendname;
+	}
+
+	public void setSendname(String sendname) {
+		this.sendname = sendname;
+	}
+
+	public String getTakename() {
+		return takename;
+	}
+
+	public void setTakename(String takename) {
+		this.takename = takename;
+	}
+
+	public String getPlanIDate() {
+		return planIDate;
+	}
+
+	public void setPlanIDate(String planIDate) {
+		this.planIDate = planIDate;
+	}
+	
+	
 	
 }
